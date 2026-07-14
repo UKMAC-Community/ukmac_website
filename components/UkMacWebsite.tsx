@@ -63,10 +63,7 @@ export default function UkMacWebsite() {
 
       {/* Scrolling Content Panels */}
       <div className="relative z-10">
-        <HeroSection 
-          onExploreClick={() => handleNavClick("about")} 
-          onMapClick={() => handleNavClick("network")} 
-        />
+        <HeroSection />
 
         <StatsOverview />
 
@@ -87,5 +84,4 @@ export default function UkMacWebsite() {
     </div>
   );
 }
-
 
