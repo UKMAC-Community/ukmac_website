@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), var(--font-plus-jakarta-sans), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+
+  --color-brand-green-50: #f0fdf4;
+  --color-brand-green-100: #dcfce7;
+  --color-brand-green-150: #cef9dc;
+  --color-brand-green-200: #bbf7d0;
+  --color-brand-green-250: #a7f3c4;
+  --color-brand-green-400: #34d399;
+  --color-brand-green-500: #10b981;
+  --color-brand-green-550: #0aa874;
+  --color-brand-green-600: #059669;
+  --color-brand-green-650: #04876f;
+  --color-brand-green-700: #047857;
+  --color-brand-green-800: #065f46;
+  --color-brand-green-900: #064e3b;
+  --color-brand-green-950: #022c22;
+
+  --color-brand-amber-50: #fffbeb;
+  --color-brand-amber-400: #fbbf24;
+  --color-brand-amber-500: #f59e0b;
+  --color-brand-amber-600: #d97706;
+  --color-brand-amber-700: #b45309;
+
+  --color-earth-50: #fcfcfb;
+  --color-earth-100: #f7f7f5;
+  --color-earth-800: #1e1b18;
+  --color-earth-900: #12100e;
+  --color-earth-950: #0a0807;
+
+  --color-stone-150: #eeecea;
+  --color-stone-250: #dcd8d5;
+  --color-stone-550: #67605a;
+  --color-stone-750: #37322f;
+  --color-stone-850: #231f1d;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--color-earth-50);
+    color: var(--color-earth-900);
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
