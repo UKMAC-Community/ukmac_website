@@ -27,7 +27,7 @@ export default function HeroSection() {
           className="absolute -top-[10%] left-0 w-full h-[130%] select-none pointer-events-none"
         >
           <Image
-            src="/images/unspast/img1.jpg"
+            src="/images/unspast/img1.webp"
             alt="Sustainable Cambodian Agriculture"
             fill
             sizes="100vw"
