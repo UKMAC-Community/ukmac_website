@@ -1,23 +1,35 @@
 import { motion } from "motion/react";
 import type { Variants } from "motion/react";
 import { focusAreas } from "@/lib/data";
-import { Sparkles, Award, BookOpen, Network, Check } from "lucide-react";
+import {
+  BadgeCheck,
+  Check,
+  HandCoins,
+  Handshake,
+  PackageCheck,
+  ShieldCheck,
+  ShoppingBasket,
+} from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 
 export default function FocusAreas() {
   const { copy } = useLanguage();
   const getIcon = (name: string, className: string) => {
     switch (name) {
-      case "Sparkles":
-        return <Sparkles className={className} />;
-      case "Award":
-        return <Award className={className} />;
-      case "BookOpen":
-        return <BookOpen className={className} />;
-      case "Network":
-        return <Network className={className} />;
+      case "HandCoins":
+        return <HandCoins className={className} />;
+      case "Handshake":
+        return <Handshake className={className} />;
+      case "ShoppingBasket":
+        return <ShoppingBasket className={className} />;
+      case "BadgeCheck":
+        return <BadgeCheck className={className} />;
+      case "ShieldCheck":
+        return <ShieldCheck className={className} />;
+      case "PackageCheck":
+        return <PackageCheck className={className} />;
       default:
-        return <Sparkles className={className} />;
+        return <ShoppingBasket className={className} />;
     }
   };
 
@@ -63,7 +75,7 @@ export default function FocusAreas() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-stone-200"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 border-t border-l border-stone-200"
         >
           {focusAreas.map((area) => {
             const areaCopy = copy.focus.items[area.id];

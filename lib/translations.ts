@@ -9,12 +9,12 @@ export const DATE_LOCALES: Record<Language, string> = {
 
 const en = {
   metadata: {
-    title: "UKMAC | Modern Agricultural Community",
+    title: "UKMAC | Modern Agricultural Cooperative Union",
     description:
-      "The Union of Kampuchea Modern Agricultural Community advances sustainable, modern, and commercially competitive agriculture across Cambodia.",
+      "UKMAC unites Cambodia's Modern Agricultural Cooperatives to expand markets, strengthen governance, and build one of the country's leading agricultural enterprises.",
   },
   brand: {
-    name: "Kampuchea Modern Agricultural Community",
+    name: "Modern Agricultural Cooperative Union",
     logoAlt: "UKMAC logo",
   },
   language: {
@@ -32,310 +32,300 @@ const en = {
     items: {
       hero: "Overview",
       news: "Updates",
-      about: "Our Purpose",
+      about: "Why Now",
       pillars: "Core Pillars",
-      focus: "Impact Areas",
-      network: "Regional Network",
-      timeline: "Our History",
+      focus: "Member Benefits",
+      network: "Structure & Roles",
+      timeline: "Shared Vision",
     },
   },
   hero: {
-    titleBefore: "Cultivating",
-    titleAccent: "Modern",
-    titleSeparator: ",",
-    titleAfter: "Sustainable Agriculture",
+    presentationNote: "Board of Directors Presentation • May 2026",
+    tagline: "Uniting Solidarity • Expanding Markets • Strengthening Management",
+    titleBefore: "Modern Agricultural",
+    titleAccent: "Cooperative Union",
+    titleSeparator: "",
+    titleAfter: "(UKMAC)",
     description:
-      "UKMAC leads Cambodia's farming network as a semi-autonomous apex Union, supporting smart innovation, capacity building, and competitive global value chains.",
-    imageAlt: "Sustainable Cambodian agriculture",
+      "Today, we are no longer individual cooperatives operating in isolation. We are a network of Modern Agricultural Cooperatives joining hands to form one of Cambodia's largest agricultural enterprises.",
+    imageAlt: "Cambodian modern agricultural cooperative members working together",
     indicatorsLabel: "Choose hero image",
     showImage: "Show hero image {number}",
   },
   stats: {
+    conclusion:
+      "If we work together as one, we will possess greater market leverage, stronger financial capacity, and more powerful management capabilities than ever before.",
     items: {
-      cooperatives: {
-        label: "Member Cooperatives",
-        description: "Local farming communities joined under a single unified voice",
+      communities: {
+        label: "Modern Agricultural Cooperatives",
+        description: "No longer just a trial phase",
       },
-      hectares: {
-        label: "Hectares Cultivated",
-        description: "Vast arable land applying sustainable, high-yield methods",
+      cycleRevenue: {
+        label: "Estimated Total Revenue",
+        description: "For the 2026–2027 cycle",
       },
-      families: {
-        label: "Families Supported",
-        description: "Improving livelihoods and ensuring fair pricing for farm households",
-      },
-      provinces: {
-        label: "Provinces Covered",
-        description: "Spanning across key agricultural heartlands of Cambodia",
+      revenueTarget: {
+        label: "Joint Goal by 2028",
+        description: "To become a robust national agricultural enterprise",
       },
     },
   },
   about: {
-    eyebrow: "Constitutional Identity",
-    title: "An Apex, Semi-Autonomous Agricultural Union",
-    introBefore:
-      "The Union of Kampuchea Modern Agricultural Community (UKMAC) is established in accordance with the",
-    lawName: "Law on Agricultural Cooperatives of the Kingdom of Cambodia",
-    quote:
-      "UKMAC is dedicated to promoting modern, sustainable, and commercially competitive agriculture. Through its network of member agricultural communities, cooperatives, and agricultural enterprises, UKMAC supports innovations, capacity building, knowledge sharing, and value chain development across the agricultural sector.",
-    description:
-      "As Cambodia's premier agricultural union, we serve as the vital bridge linking grassroots farming cooperatives directly with advanced technology, global trading networks, and modern governance standards. By operating at scale, we allow Cambodian farmers to collectively thrive in competitive international arenas.",
-    foundationTitle: "Constitutional Foundation",
-    legalPoints: [
-      {
-        title: "Law on Agricultural Cooperatives",
-        description:
-          "Formally registered as an Apex Union under the landmark Royal Decree of the Kingdom of Cambodia, ensuring secure legal standing and operations.",
-      },
-      {
-        title: "Semi-Autonomous Apex Union",
-        description:
-          "Operating with corporate administrative autonomy while collaborating closely with government ministries and international development partners.",
-      },
-      {
-        title: "Cooperative Networks Protection",
-        description:
-          "Creating structural policies that shield smallholders and local agricultural communities from market price fluctuations and unfair trade.",
-      },
+    eyebrow: "Why Strengthen the Union Now?",
+    title: "From Policy Pilot to Vision-Driven Mission",
+    intro:
+      "The network is scaling rapidly. Modern Agricultural Cooperatives have grown to 32 and are projected to reach as many as 50 by 2030, requiring a sustainable support system beyond the original pilot phase.",
+    cooperativeTitle: "Challenges at the Cooperative Level",
+    cooperativeChallenges: [
+      "The network has grown to 32 cooperatives and may reach 50 by 2030.",
+      "Direct Ministry support during the pilot phase cannot be sustained during expansion.",
+      "Cooperatives across provinces need robust business support, good governance, and strong financial backing.",
+      "The network's market potential has not yet been fully harnessed.",
     ],
-    disclaimer: "Established under Article 42 of the Agricultural Cooperatives Act.",
+    nationalTitle: "Challenges at the National Level",
+    nationalChallenges: [
+      "Market connectivity remains fragile and lacks competitiveness.",
+      "Joint production planning is not yet aligned with shared market demand.",
+      "Banks, institutional buyers, and development partners remain difficult to attract.",
+      "Value-added opportunities in storage, processing, packaging, and branding are being lost.",
+    ],
+    solutionTitle: "The National Solution",
+    solution:
+      "A national-level institution is essential to unite all Modern Agricultural Cooperatives and drive them forward in a single direction.",
   },
   pillars: {
-    eyebrow: "Our Strategic Directives",
-    title: "The Three Pillars of UKMAC",
-    description:
-      "Guiding Cambodia's agricultural communities toward smart modernity, climate resilience, and unfettered access to competitive global markets.",
+    eyebrow: "Core Pillars",
+    title: "Four Strategic Pillars",
+    description: "Our mission is driven by four strategic pillars that strengthen every part of the agricultural community network.",
     viewDetails: "View details",
     closeDetails: "Close pillar details",
-    operationalDirective: "Operational Directive",
-    milestonesTitle: "Implementation Milestones & Standards",
-    acknowledge: "Acknowledge Directive",
+    operationalDirective: "Strategic Pillar",
+    milestonesTitle: "Primary Areas of Work",
+    acknowledge: "Close Details",
     items: {
-      modern: {
-        title: "Modern Agriculture",
+      finance: {
+        title: "Finance & Governance",
         shortDescription:
-          "Driving efficiency through technological integration and automated systems.",
+          "Building disciplined, transparent, and accountable community institutions.",
         longDescription:
-          "Transitioning traditional farming into data-driven operations. We support our cooperatives in adopting smart drone mapping, sensor-based soil analysis, automated precision irrigation, and digital pest-monitoring systems.",
-        metricLabel: "Average increase in farm yield efficiency",
+          "Instilling strict financial discipline, transparent accounting systems, regular reporting, and robust internal auditing.",
+        metricLabel: "Strategic Pillar",
         highlights: [
-          "IoT Soil NPK and automated soil sensors",
-          "Multispectral crop imagery via customized flight logs",
-          "Precision pesticide and fertilizer delivery systems",
-          "Mobile cloud ledger software for local communities",
+          "Strict financial discipline",
+          "Transparent accounting systems",
+          "Regular financial reporting",
+          "Robust internal auditing",
         ],
       },
-      sustainable: {
-        title: "Sustainable Farming",
-        shortDescription: "Securing the future of agriculture through eco-friendly practices.",
+      business: {
+        title: "Crop-Based Business Development",
+        shortDescription: "Turning community production into scalable, commercially viable enterprises.",
         longDescription:
-          "Preserving Cambodia's rich soils and water resources for generations to come. UKMAC champions bio-fertilizers, solar-powered water management, climate-resilient crop varieties, and strict environmental compliance.",
-        metricLabel: "Hectares converted to certified eco-farming",
+          "Organizing crop-based business plans, establishing partnerships, and expanding commercial activities.",
+        metricLabel: "Strategic Pillar",
         highlights: [
-          "Strict organic certification and compliance mapping",
-          "Solar-powered micro-drip field installations",
-          "Drought and flood resilient Jasmine rice strains",
-          "Zero-waste agricultural recycling cooperatives",
+          "Crop-specific business plans",
+          "Strong commercial partnerships",
+          "Expanded production capacity",
         ],
       },
-      competitive: {
-        title: "Commercially Competitive",
-        shortDescription:
-          "Connecting local farming communities directly to high-value global markets.",
+      technology: {
+        title: "Agricultural Technology",
+        shortDescription: "Improving productivity, consistency, and resilience through modern methods.",
         longDescription:
-          "Empowering cooperatives to meet rigorous global standards. By strengthening direct contract farming, optimizing collective warehouse logistics, and branding unique Cambodian crops, we eliminate costly middlemen.",
-        metricLabel: "Total cooperative trade volume generated",
+          "Supporting production, quality management, standardization, and risk reduction.",
+        metricLabel: "Strategic Pillar",
         highlights: [
-          "Direct contract-farming dispute mitigation guidelines",
-          "Unified cold-storage hubs near national borders",
-          "Direct logistics integration to export container terminals",
-          "Global GAP certification counseling services",
+          "Production support",
+          "Quality management and standardization",
+          "Agricultural risk reduction",
+        ],
+      },
+      market: {
+        title: "Market & Value Chains",
+        shortDescription: "Creating stronger buyer connections and more value from every harvest.",
+        longDescription:
+          "Connecting buyers, managing agricultural contract farming, matching demand forecasts, and facilitating processing.",
+        metricLabel: "Strategic Pillar",
+        highlights: [
+          "Buyer connections",
+          "Agricultural contract farming",
+          "Demand forecasting",
+          "Processing facilitation",
         ],
       },
     },
   },
   focus: {
-    eyebrow: "Operational Strategies & Impact",
-    title: "Comprehensive Support Across the Value Chain",
+    eyebrow: "Benefits for Cooperatives",
+    title: "Serving the Best Interests of Member Farmers",
     description:
-      "Through targeted field interventions, UKMAC fosters continuous development, ensuring local farming operations scale into sustainable commercial enterprises.",
-    deliverables: "Key Deliverables",
+      "UKMAC turns collective strength into six practical benefits that make cooperatives stronger, open better markets, and stabilize farmer incomes.",
+    deliverables: "What Members Receive",
     items: {
-      innovations: {
-        title: "Modern Innovations",
+      loans: {
+        title: "Loans & Grants",
         description:
-          "Integrating smart technology and digital intelligence into traditional field operations.",
+          "Access low-interest loans, financial support, and backing from national and international partners.",
         features: [
-          "Precision spraying & multispectral drone mappings",
-          "IoT soil moisture and nutrient sensor grid deployments",
-          "Digital cooperative bookkeeping and yield forecasting apps",
+          "Low-interest finance and grants",
+          "Support from institutions and development partners",
         ],
       },
-      capacity: {
-        title: "Capacity Building",
+      markets: {
+        title: "Robust Markets",
         description:
-          "Nurturing farmer leadership and technical proficiency across member cooperatives.",
+          "Secure agricultural contract farming with buyers and execute network-wide sales.",
         features: [
-          "Agronomist-led modern crop management workshops",
-          "Cooperative management, financial literacy, and governance training",
-          "Standard Operating Procedures (SOPs) for export-grade harvesting",
+          "Reliable buyer contracts",
+          "Sales executed across the network",
         ],
       },
-      knowledge: {
-        title: "Knowledge Sharing",
+      lowerCosts: {
+        title: "Lower Cost of Capital",
         description:
-          "Establishing an open, cross-cooperative exchange network to propagate best practices.",
+          "Cut costs through bulk input purchasing, shared services, and the removal of unnecessary expenses.",
         features: [
-          "Inter-provincial cooperative exchange visits",
-          "Centralized digital library for agronomy & crop diagnostics",
-          "Monthly market intelligence and pricing advisory bulletins",
+          "Bulk purchasing power",
+          "Shared services and leaner operations",
         ],
       },
-      valuechain: {
-        title: "Value Chain Development",
+      standards: {
+        title: "Production Standards",
         description:
-          "Bridging the gap between rural field harvests and international consumer tables.",
+          "Achieve uniform quality under high standards to meet premium market demand.",
         features: [
-          "Collective agricultural input purchasing for cost reduction",
-          "Post-harvest infrastructure (cold storage, drying facilities)",
-          "Direct contract-farming agreements with premium global exporters",
+          "Consistent quality across production",
+          "Readiness for premium markets",
+        ],
+      },
+      governance: {
+        title: "Strong Governance",
+        description:
+          "Ensure clear decisions, disciplined financial management, and high member confidence.",
+        features: [
+          "Transparent decision-making",
+          "Financial discipline and member trust",
+        ],
+      },
+      valueAddition: {
+        title: "Added Value",
+        description:
+          "Enable storage, processing, packaging, product branding, and inventory financing.",
+        features: [
+          "Processing, packaging, and branding",
+          "Storage and inventory finance",
         ],
       },
     },
   },
   network: {
-    eyebrow: "Territorial Strength & Reach",
-    title: "Our Regional Cooperative Network",
+    eyebrow: "Structure & Roles",
+    title: "Functions and Management Structure of the Union",
     description:
-      "Explore the active agricultural hubs of UKMAC. Click on a province to view its specialized crop yield, cooperative counts, and local modernization initiatives.",
-    mapLabel: "Cambodia Agricultural Grid Map (Schematic)",
-    tonleSap: "Tonle Sap",
-    lakeReserve: "Lake Reserve",
-    focusCrop: "Focus crop: {crop}",
-    cooperatives: "Cooperatives",
-    registered: "{count} Registered",
-    families: "Families",
-    members: "{count}+ Members",
-    featuredCommunity: "Featured Community Union",
-    modernizations: "Strategic Modernizations",
-    connect: "Connect with regional director",
-    provinces: {
-      battambang: {
-        name: "Battambang",
-        cropType: "Premium Jasmine Rice",
-        featuredCoop: "Thma Koul Agricultural Union",
-        description:
-          "Famed as the historic 'Rice Bowl' of Cambodia, Battambang leads our national modern seed-selection and collective harvester-sharing programs.",
-        initiatives: [
-          "Laser land leveling for optimal water distribution",
-          "Premium fragrant Phka Rumduol rice seed preservation",
-          "Large-scale drone spraying service hubs",
+      "UKMAC is a non-profit institution dedicated to strengthening the governance of Modern Agricultural Cooperatives.",
+    definition:
+      "Cooperatives remain the primary owners of local operations. The Union supports them by doing what individual cooperatives cannot achieve efficiently on their own.",
+    policyRule: "Maintain local cooperative management + Build a national support system",
+    hierarchyTitle: "Management Hierarchy",
+    hierarchy: [
+      { title: "Advisory Council" },
+      { title: "Board of Directors" },
+      { title: "Management Committee" },
+    ],
+    teamsTitle: "Specialized Working Groups",
+    teams: [
+      { title: "Business & Technical Support Team", tone: "blue" },
+      { title: "Training & Capacity Building Team", tone: "green" },
+      { title: "Production Chain Management System Team", tone: "darkGreen" },
+      { title: "Production Processing Team", tone: "lightGreen" },
+    ],
+    rolesEyebrow: "Operating Model from July 1",
+    rolesTitle: "Working Directly Through the Union",
+    transition:
+      "Support shifts from direct Ministry delivery to the Union serving as the core supporting institution.",
+    roles: {
+      cooperatives: {
+        title: "The Cooperatives",
+        items: [
+          "Manage daily operations.",
+          "Supervise local work teams.",
+          "Execute production plans and sales.",
+          "Maintain accountability to members.",
         ],
       },
-      siem_reap: {
-        name: "Siem Reap",
-        cropType: "Organic Safe Vegetables",
-        featuredCoop: "Angkor Organic Co-op",
-        description:
-          "Integrating safe agricultural practices with local hospitality chains, Siem Reap serves as a premier hub for chemical-free horticulture.",
-        initiatives: [
-          "Automated solar-pumped drip irrigation systems",
-          "Net-house farming structures protecting crops from intense heat",
-          "Direct farm-to-table supply chains with local hotels",
+      union: {
+        title: "The Union (UKMAC)",
+        items: [
+          "Discuss and execute major decisions.",
+          "Support business plans, programs, marketing, finances, and contracts.",
+          "Audit financial management, build transparency, and protect collective interests.",
+          "Meet with each cooperative at least once a month.",
         ],
       },
-      kampong_cham: {
-        name: "Kampong Cham",
-        cropType: "Cashew Nuts & Cocoa",
-        featuredCoop: "Chamkar Leu Cashew Enterprise",
-        description:
-          "A crucial hub for high-yield cash crops. Focus is on transitioning raw harvests into high-value processed exports on-site.",
-        initiatives: [
-          "Local cooperative cashew drying and deshelling units",
-          "Smart composting recycling organic farm waste",
-          "Soil restoration programs with bio-char inoculations",
-        ],
-      },
-      takeo: {
-        name: "Takeo",
-        cropType: "Early Rice & Aquaculture",
-        featuredCoop: "Tram Kak Agriculture Cooperative",
-        description:
-          "Takeo has pioneered early wet-season rice cultivation. It hosts modern community mills and sustainable freshwater fisheries.",
-        initiatives: [
-          "Flood-resilient early crop variety selection",
-          "Cooperative organic fertilizer formulation mills",
-          "Community aquaculture system monitoring",
-        ],
-      },
-      kampot: {
-        name: "Kampot",
-        cropType: "GI Kampot Pepper & Durian",
-        featuredCoop: "Phnom Voar Pepper Cooperative",
-        description:
-          "Home to Cambodia's globally acclaimed Geographical Indication (GI) Pepper. UKMAC protects its high standards and supports global branding.",
-        initiatives: [
-          "Micro-drip irrigation for water scarcity resilience",
-          "Blockchain-enabled batch tracking and digital authenticity labels",
-          "Premium export packaging and marketing training",
+      ministry: {
+        title: "Ministry of Agriculture",
+        items: [
+          "Define and drive policies for Modern Agricultural Cooperatives.",
+          "Monitor and evaluate both the Cooperatives and the Union.",
+          "Support the mobilization of resources and partners.",
+          "Act as final arbitrator in the event of disputes.",
         ],
       },
     },
   },
   timeline: {
-    eyebrow: "Historic Milestones & Growth",
-    title: "Journey of Cooperation",
-    description:
-      "From regional smallholder coalitions to an autonomous apex national authority—tracing the milestones of Cambodian agricultural modernization.",
-    items: {
-      legal: {
-        title: "Legal Framework Established",
+    eyebrow: "Shared Vision",
+    title: "We Are Stronger When We Walk Together",
+    principle:
+      "Joining UKMAC means building the future of both Modern Agricultural Cooperatives and our farmers.",
+    vision:
+      "If all Modern Agricultural Cooperatives unite as one solid block, we can become one of Cambodia's leading agricultural enterprises.",
+    achievementsTitle: "What We Must Achieve Together",
+    achievements: [
+      {
+        title: "Networked Production",
         description:
-          "The Kingdom of Cambodia enacts the comprehensive Law on Agricultural Cooperatives, laying the foundations for farming union structures.",
+          "Coordinate rice, cashews, vegetables, tubers, spices, and meat production across the network.",
       },
-      consolidation: {
-        title: "Regional Union Consolidation",
+      {
+        title: "Networked Sales",
         description:
-          "Provincial farming communities start organizing into unified cooperative unions, aligning goals for collective logistics and bargaining.",
+          "Achieve scale, standardized quality, and strong collective bargaining power.",
       },
-      inception: {
-        title: "UKMAC Inception",
+      {
+        title: "Networked Management",
         description:
-          "Established as the semi-autonomous apex Union, UKMAC brings member cooperatives together under a single cohesive national mission.",
+          "Build transparency, discipline, and trust among members, banks, and buyers.",
       },
-      smart: {
-        title: "Smart Agriculture Launch",
-        description:
-          "Initiated the Digital Agriculture Roadmap, introducing multispectral drone mapping and specialized cooperative business software.",
-      },
-      global: {
-        title: "Global Supply Chain Influx",
-        description:
-          "Scaling modern post-harvest infrastructure and direct eco-labeled exports to high-value markets in Asia, Europe, and America.",
-      },
-    },
+    ],
+    startingToday:
+      "Starting today, embrace the Union as our national supporting institution.",
+    motto: "The Union is born from all of us, and it serves the benefit of all of us.",
   },
   contact: {
-    eyebrow: "Cooperative Adhesion",
-    title: "Join the Union Network",
+    eyebrow: "Build the Future Together",
+    title: "Join UKMAC",
     description:
-      "We invite registered agricultural communities, independent farming cooperatives, and eco-agriculture enterprises across Cambodia to join our unified national network.",
+      "Joining UKMAC means building the future of Modern Agricultural Cooperatives and member farmers through shared production, markets, and management.",
     partnershipBefore:
-      "Are you an independent agronomist, researcher, or development agency? Write directly to",
-    partnershipAfter: "to explore strategic partnerships.",
+      "Are you a cooperative, buyer, financial institution, researcher, or development partner? Write directly to",
+    partnershipAfter: "to explore how we can work together.",
     perks: [
       {
-        title: "Full Legal Representation",
-        description: "Secure trade advocacy under the Law on Agricultural Cooperatives.",
-      },
-      {
-        title: "Advanced Technology Access",
-        description: "Deploy drone diagnostics and soil moisture sensor networks at cost.",
-      },
-      {
-        title: "Value Chain Protection",
+        title: "Stronger Markets",
         description:
-          "Secure direct exporting channels, bypassing intermediary brokers completely.",
+          "Join network-wide sales, contract farming, and collective negotiations with major buyers.",
+      },
+      {
+        title: "Finance & Governance",
+        description:
+          "Improve access to financing through disciplined, transparent, and trusted management.",
+      },
+      {
+        title: "Value Addition",
+        description:
+          "Develop storage, processing, packaging, branding, and inventory-finance opportunities.",
       },
     ],
     errors: {
@@ -358,7 +348,7 @@ const en = {
       email: "e.g. contact@coop.org.kh",
       phone: "e.g. +855 23 888 999",
       goals:
-        "Describe your current harvesting scope, crops, and which UKMAC services (innovation, value chain alignment, training) you require most...",
+        "Describe your production, priority crops, and the support you need in finance, markets, technology, or governance...",
     },
     provinceOptions: {
       battambang: "Battambang",
@@ -382,7 +372,7 @@ const en = {
       other: "Other Cash Crops",
     },
     preparing: "Preparing Preview...",
-    preview: "Preview Adhesion Proposal",
+    preview: "Preview Membership Proposal",
     successEyebrow: "Application Preview Complete",
     successTitle: "Proposal Details Validated",
     successDescription:
@@ -438,28 +428,28 @@ const en = {
   footer: {
     homeLabel: "UKMAC — go to homepage",
     description:
-      "UKMAC is an apex, semi-autonomous agricultural Union established under the Law on Agricultural Cooperatives of the Kingdom of Cambodia, empowering agricultural cooperatives with smart technologies and direct global market entry.",
+      "UKMAC is a non-profit institution dedicated to the governance and growth of Modern Agricultural Cooperatives across Cambodia.",
     legal:
-      "Official union registration established in accordance with Royal Decrees & provisions governing the Ministry of Agriculture, Forestry, and Fisheries (MAFF), Kingdom of Cambodia.",
+      "Local cooperative management, supported by national-level coordination for finance, technology, markets, and governance.",
     quickNavigation: "Quick Navigation",
     navigationLabel: "Footer navigation",
     headquarters: "Secretariat Headquarters",
     address:
       "Preah Norodom Boulevard, Sangkat Tonle Bassac, Khan Chamkarmon, Phnom Penh, Kingdom of Cambodia.",
     copyright:
-      "© {year} UKMAC (Union of Kampuchea Modern Agricultural Community). All rights reserved.",
+      "© {year} UKMAC (Modern Agricultural Cooperative Union). All rights reserved.",
     privacy: "Privacy Policy",
     statutes: "Constitutional Statutes",
     maff: "MAFF Cambodia",
     opensNewTab: "(opens in new tab)",
     navItems: {
-      hero: "Introduction",
+      hero: "Overview",
       news: "News & Announcements",
-      about: "About & Mandate",
-      pillars: "Operational Pillars",
-      focus: "Strategic Focus",
-      network: "Cooperative Network",
-      timeline: "Historical Milestones",
+      about: "Why Now",
+      pillars: "Core Pillars",
+      focus: "Member Benefits",
+      network: "Structure & Roles",
+      timeline: "Shared Vision",
     },
   },
 } as const;
@@ -476,12 +466,12 @@ type TranslationShape<T> = T extends string
 
 const km: TranslationShape<typeof en> = {
   metadata: {
-    title: "UKMAC | សហគមន៍កសិកម្មទំនើបកម្ពុជា",
+    title: "UKMAC | សហភាពសហគមន៍កសិកម្មទំនើប",
     description:
-      "សហភាពសហគមន៍កសិកម្មទំនើបកម្ពុជា ជំរុញកសិកម្មប្រកបដោយចីរភាព ទំនើប និងមានសមត្ថភាពប្រកួតប្រជែងនៅទូទាំងកម្ពុជា។",
+      "UKMAC រួបរួមសហគមន៍កសិកម្មទំនើបនៅកម្ពុជា ដើម្បីពង្រីកទីផ្សារ ពង្រឹងអភិបាលកិច្ច និងកសាងសហគ្រាសកសិកម្មឈានមុខមួយរបស់ប្រទេស។",
   },
   brand: {
-    name: "សហគមន៍កសិកម្មទំនើបកម្ពុជា",
+    name: "សហភាពសហគមន៍កសិកម្មទំនើប",
     logoAlt: "និមិត្តសញ្ញា UKMAC",
   },
   language: {
@@ -497,303 +487,292 @@ const km: TranslationShape<typeof en> = {
     toggleMenu: "បើក ឬបិទម៉ឺនុយ",
     joinNetwork: "ចូលរួមបណ្តាញសហភាព",
     items: {
-      hero: "ទំព័រដើម",
+      hero: "ទិដ្ឋភាពទូទៅ",
       news: "បច្ចុប្បន្នភាព",
-      about: "គោលបំណង",
-      pillars: "សសរស្តម្ភ",
-      focus: "វិស័យអាទិភាព",
-      network: "បណ្តាញតំបន់",
-      timeline: "ប្រវត្តិរបស់យើង",
+      about: "ហេតុអ្វីឥឡូវនេះ",
+      pillars: "សសរស្តម្ភស្នូល",
+      focus: "អត្ថប្រយោជន៍សមាជិក",
+      network: "រចនាសម្ព័ន្ធ និងតួនាទី",
+      timeline: "ចក្ខុវិស័យរួម",
     },
   },
   hero: {
-    titleBefore: "ដាំដុះកសិកម្ម",
-    titleAccent: "ទំនើប",
+    presentationNote: "បទបង្ហាញជូនក្រុមប្រឹក្សាភិបាល • ខែឧសភា ឆ្នាំ ២០២៦",
+    tagline: "រួបរួមសាមគ្គីភាព • ពង្រីកទីផ្សារ • ពង្រឹងការគ្រប់គ្រង",
+    titleBefore: "សហភាពសហគមន៍",
+    titleAccent: "កសិកម្មទំនើប",
     titleSeparator: "",
-    titleAfter: "និងប្រកបដោយចីរភាព",
+    titleAfter: "(UKMAC)",
     description:
-      "UKMAC ដឹកនាំបណ្តាញកសិកម្មកម្ពុជា ជាសហភាពកំពូលពាក់កណ្តាលស្វយ័ត ដោយគាំទ្រនវានុវត្តន៍ឆ្លាតវៃ ការកសាងសមត្ថភាព និងខ្សែច្រវាក់តម្លៃសកលដែលមានការប្រកួតប្រជែង។",
-    imageAlt: "កសិកម្មកម្ពុជាប្រកបដោយចីរភាព",
+      "ថ្ងៃនេះ យើងមិនមែនជាសហគមន៍នីមួយៗដែលដំណើរការដាច់ដោយឡែកទៀតទេ។ យើងជាបណ្តាញសហគមន៍កសិកម្មទំនើប ដែលរួមដៃគ្នាបង្កើតសហគ្រាសកសិកម្មដ៏ធំបំផុតមួយនៅកម្ពុជា។",
+    imageAlt: "សមាជិកសហគមន៍កសិកម្មទំនើបកម្ពុជាធ្វើការរួមគ្នា",
     indicatorsLabel: "ជ្រើសរើសរូបភាពផ្ទាំងមេ",
     showImage: "បង្ហាញរូបភាពផ្ទាំងមេលេខ {number}",
   },
   stats: {
+    conclusion:
+      "ប្រសិនបើយើងធ្វើការរួមគ្នាជាធ្លុងមួយ យើងនឹងមានអំណាចទីផ្សារកាន់តែខ្លាំង សមត្ថភាពហិរញ្ញវត្ថុកាន់តែរឹងមាំ និងសមត្ថភាពគ្រប់គ្រងកាន់តែប្រសើរជាងមុន។",
     items: {
-      cooperatives: {
-        label: "សហគមន៍សមាជិក",
-        description: "សហគមន៍កសិកម្មមូលដ្ឋានរួមគ្នាក្រោមសំឡេងតែមួយ",
+      communities: {
+        label: "សហគមន៍កសិកម្មទំនើប",
+        description: "លែងស្ថិតនៅត្រឹមដំណាក់កាលសាកល្បង",
       },
-      hectares: {
-        label: "ហិកតាដាំដុះ",
-        description: "ផ្ទៃដីកសិកម្មធំទូលាយ ប្រើវិធីសាស្ត្រចីរភាព និងទិន្នផលខ្ពស់",
+      cycleRevenue: {
+        label: "ចំណូលសរុបប៉ាន់ស្មាន",
+        description: "សម្រាប់វដ្តឆ្នាំ ២០២៦–២០២៧",
       },
-      families: {
-        label: "គ្រួសារទទួលការគាំទ្រ",
-        description: "លើកកម្ពស់ជីវភាព និងធានាតម្លៃសមរម្យសម្រាប់គ្រួសារកសិករ",
-      },
-      provinces: {
-        label: "ខេត្តគ្របដណ្តប់",
-        description: "គ្របដណ្តប់តំបន់កសិកម្មសំខាន់ៗនៅទូទាំងកម្ពុជា",
+      revenueTarget: {
+        label: "គោលដៅរួមត្រឹមឆ្នាំ ២០២៨",
+        description: "ដើម្បីក្លាយជាសហគ្រាសកសិកម្មជាតិដ៏រឹងមាំ",
       },
     },
   },
   about: {
-    eyebrow: "អត្តសញ្ញាណតាមរដ្ឋធម្មនុញ្ញ",
-    title: "សហភាពកសិកម្មកំពូលពាក់កណ្តាលស្វយ័ត",
-    introBefore: "សហភាពសហគមន៍កសិកម្មទំនើបកម្ពុជា (UKMAC) ត្រូវបានបង្កើតឡើងស្របតាម",
-    lawName: "ច្បាប់ស្តីពីសហគមន៍កសិកម្មនៃព្រះរាជាណាចក្រកម្ពុជា",
-    quote:
-      "UKMAC ប្តេជ្ញាលើកកម្ពស់កសិកម្មទំនើប ប្រកបដោយចីរភាព និងមានសមត្ថភាពប្រកួតប្រជែង។ តាមរយៈបណ្តាញសហគមន៍កសិកម្ម សហករណ៍ និងសហគ្រាសកសិកម្មជាសមាជិក UKMAC គាំទ្រនវានុវត្តន៍ ការកសាងសមត្ថភាព ការចែករំលែកចំណេះដឹង និងការអភិវឌ្ឍខ្សែច្រវាក់តម្លៃ។",
-    description:
-      "ក្នុងនាមជាសហភាពកសិកម្មឈានមុខរបស់កម្ពុជា យើងជាស្ពានភ្ជាប់សហគមន៍កសិករមូលដ្ឋានទៅនឹងបច្ចេកវិទ្យាទំនើប បណ្តាញពាណិជ្ជកម្មសកល និងស្តង់ដារអភិបាលកិច្ចទំនើប ដើម្បីឱ្យកសិករកម្ពុជារីកចម្រើនរួមគ្នាក្នុងទីផ្សារអន្តរជាតិ។",
-    foundationTitle: "មូលដ្ឋានគ្រឹះតាមច្បាប់",
-    legalPoints: [
-      {
-        title: "ច្បាប់ស្តីពីសហគមន៍កសិកម្ម",
-        description:
-          "បានចុះបញ្ជីជាផ្លូវការជាសហភាពកំពូលក្រោមព្រះរាជក្រឹត្យនៃព្រះរាជាណាចក្រកម្ពុជា ដើម្បីធានាស្ថានភាពច្បាប់ និងប្រតិបត្តិការរឹងមាំ។",
-      },
-      {
-        title: "សហភាពកំពូលពាក់កណ្តាលស្វយ័ត",
-        description:
-          "ដំណើរការដោយស្វ័យភាពរដ្ឋបាល ខណៈសហការយ៉ាងជិតស្និទ្ធជាមួយក្រសួង និងដៃគូអភិវឌ្ឍន៍អន្តរជាតិ។",
-      },
-      {
-        title: "ការការពារបណ្តាញសហគមន៍",
-        description:
-          "បង្កើតគោលនយោបាយការពារកសិករខ្នាតតូច និងសហគមន៍កសិកម្មពីការប្រែប្រួលតម្លៃ និងពាណិជ្ជកម្មមិនយុត្តិធម៌។",
-      },
+    eyebrow: "ហេតុអ្វីត្រូវពង្រឹងសហភាពឥឡូវនេះ?",
+    title: "ពីការសាកល្បងគោលនយោបាយ ទៅបេសកកម្មដឹកនាំដោយចក្ខុវិស័យ",
+    intro:
+      "បណ្តាញកំពុងរីកធំយ៉ាងឆាប់រហ័ស។ សហគមន៍កសិកម្មទំនើបបានកើនដល់ ៣២ និងរំពឹងថាអាចកើនដល់ ៥០ ត្រឹមឆ្នាំ ២០៣០ ដែលទាមទារប្រព័ន្ធគាំទ្រប្រកបដោយចីរភាព ក្រៅពីដំណាក់កាលសាកល្បងដំបូង។",
+    cooperativeTitle: "បញ្ហាប្រឈមនៅកម្រិតសហគមន៍",
+    cooperativeChallenges: [
+      "បណ្តាញបានកើនដល់ ៣២ សហគមន៍ ហើយអាចដល់ ៥០ ត្រឹមឆ្នាំ ២០៣០។",
+      "ការគាំទ្រផ្ទាល់ពីក្រសួងក្នុងដំណាក់កាលសាកល្បង មិនអាចបន្តបានជានិរន្តរភាពក្នុងដំណាក់កាលពង្រីក។",
+      "សហគមន៍តាមរាជធានី-ខេត្តត្រូវការប្រព័ន្ធគាំទ្រអាជីវកម្ម អភិបាលកិច្ចល្អ និងទុនហិរញ្ញវត្ថុរឹងមាំ។",
+      "សក្តានុពលទីផ្សាររបស់បណ្តាញមិនទាន់ត្រូវបានប្រើប្រាស់ពេញលេញ។",
     ],
-    disclaimer: "បង្កើតឡើងក្រោមមាត្រា ៤២ នៃច្បាប់ស្តីពីសហគមន៍កសិកម្ម។",
+    nationalTitle: "បញ្ហាប្រឈមនៅកម្រិតជាតិ",
+    nationalChallenges: [
+      "ការតភ្ជាប់ទីផ្សារនៅតែខ្សោយ និងខ្វះសមត្ថភាពប្រកួតប្រជែង។",
+      "ផែនការផលិតកម្មរួមមិនទាន់ស្របតាមតម្រូវការទីផ្សាររួម។",
+      "ការទាក់ទាញធនាគារ អ្នកទិញស្ថាប័ន និងដៃគូអភិវឌ្ឍន៍នៅតែពិបាក។",
+      "ឱកាសបន្ថែមតម្លៃលើការស្តុក កែច្នៃ វេចខ្ចប់ និងបង្កើតម៉ាកកំពុងបាត់បង់។",
+    ],
+    solutionTitle: "ដំណោះស្រាយថ្នាក់ជាតិ",
+    solution:
+      "ស្ថាប័នថ្នាក់ជាតិមួយគឺចាំបាច់ ដើម្បីរួបរួមសហគមន៍កសិកម្មទំនើបទាំងអស់ និងជំរុញពួកគេឆ្ពោះទៅទិសដៅតែមួយ។",
   },
   pillars: {
-    eyebrow: "ទិសដៅយុទ្ធសាស្ត្ររបស់យើង",
-    title: "សសរស្តម្ភទាំងបីរបស់ UKMAC",
+    eyebrow: "សសរស្តម្ភស្នូល",
+    title: "សសរស្តម្ភយុទ្ធសាស្ត្រទាំងបួន",
     description:
-      "ដឹកនាំសហគមន៍កសិកម្មកម្ពុជាឆ្ពោះទៅរកភាពទំនើបឆ្លាតវៃ ភាពធន់នឹងអាកាសធាតុ និងការចូលទីផ្សារសកលប្រកបដោយការប្រកួតប្រជែង។",
+      "បេសកកម្មរបស់យើងត្រូវបានជំរុញដោយសសរស្តម្ភយុទ្ធសាស្ត្រចំនួនបួន ដែលពង្រឹងគ្រប់ផ្នែកនៃបណ្តាញសហគមន៍កសិកម្ម។",
     viewDetails: "មើលព័ត៌មានលម្អិត",
     closeDetails: "បិទព័ត៌មានសសរស្តម្ភ",
-    operationalDirective: "ទិសដៅប្រតិបត្តិការ",
-    milestonesTitle: "ដំណាក់កាលអនុវត្ត និងស្តង់ដារ",
-    acknowledge: "យល់ព្រម",
+    operationalDirective: "សសរស្តម្ភយុទ្ធសាស្ត្រ",
+    milestonesTitle: "វិស័យការងារសំខាន់ៗ",
+    acknowledge: "បិទព័ត៌មានលម្អិត",
     items: {
-      modern: {
-        title: "កសិកម្មទំនើប",
-        shortDescription: "បង្កើនប្រសិទ្ធភាពតាមរយៈបច្ចេកវិទ្យា និងប្រព័ន្ធស្វ័យប្រវត្តិ។",
+      finance: {
+        title: "ហិរញ្ញវត្ថុ និងអភិបាលកិច្ច",
+        shortDescription: "កសាងស្ថាប័នសហគមន៍ដែលមានវិន័យ តម្លាភាព និងគណនេយ្យភាព។",
         longDescription:
-          "ផ្លាស់ប្តូរកសិកម្មបែបប្រពៃណីទៅជាប្រតិបត្តិការដែលផ្អែកលើទិន្នន័យ។ យើងគាំទ្រការប្រើដ្រូនឆ្លាតវៃ ឧបករណ៍វាស់ដី ប្រព័ន្ធស្រោចស្រពច្បាស់លាស់ និងការតាមដានសត្វល្អិតឌីជីថល។",
-        metricLabel: "កំណើនមធ្យមនៃប្រសិទ្ធភាពទិន្នផល",
+          "បង្កើតវិន័យហិរញ្ញវត្ថុតឹងរ៉ឹង ប្រព័ន្ធគណនេយ្យមានតម្លាភាព ការរាយការណ៍ទៀងទាត់ និងសវនកម្មផ្ទៃក្នុងរឹងមាំ។",
+        metricLabel: "សសរស្តម្ភយុទ្ធសាស្ត្រ",
         highlights: [
-          "ឧបករណ៍វាស់ជី NPK និងសំណើមដី IoT",
-          "រូបភាពពហុវិសាលគមដំណាំតាមផែនការហោះហើរ",
-          "ប្រព័ន្ធបាញ់ថ្នាំ និងជីបានច្បាស់លាស់",
-          "កម្មវិធីកត់ត្រាទិន្នន័យលើពពកសម្រាប់សហគមន៍",
+          "វិន័យហិរញ្ញវត្ថុតឹងរ៉ឹង",
+          "ប្រព័ន្ធគណនេយ្យមានតម្លាភាព",
+          "ការរាយការណ៍ហិរញ្ញវត្ថុទៀងទាត់",
+          "សវនកម្មផ្ទៃក្នុងរឹងមាំ",
         ],
       },
-      sustainable: {
-        title: "កសិកម្មប្រកបដោយចីរភាព",
-        shortDescription: "ធានាអនាគតកសិកម្មតាមរយៈការអនុវត្តដែលមេត្រីនឹងបរិស្ថាន។",
+      business: {
+        title: "ការអភិវឌ្ឍអាជីវកម្មតាមដំណាំ",
+        shortDescription: "បម្លែងផលិតកម្មសហគមន៍ទៅជាសហគ្រាសពាណិជ្ជកម្មដែលអាចពង្រីកបាន។",
         longDescription:
-          "ថែរក្សាដី និងធនធានទឹករបស់កម្ពុជាសម្រាប់ជំនាន់ក្រោយ។ UKMAC លើកកម្ពស់ជីជីវៈ ការគ្រប់គ្រងទឹកដោយថាមពលព្រះអាទិត្យ ពូជដំណាំធន់នឹងអាកាសធាតុ និងការអនុលោមតាមបទដ្ឋានបរិស្ថាន។",
-        metricLabel: "ហិកតាប្តូរទៅកសិកម្មអេកូមានវិញ្ញាបនបត្រ",
+          "រៀបចំផែនការអាជីវកម្មតាមដំណាំ បង្កើតភាពជាដៃគូ និងពង្រីកសកម្មភាពពាណិជ្ជកម្ម។",
+        metricLabel: "សសរស្តម្ភយុទ្ធសាស្ត្រ",
         highlights: [
-          "ការបញ្ជាក់ស្តង់ដារសរីរាង្គ និងផែនទីអនុលោម",
-          "ប្រព័ន្ធស្រោចស្រពតំណក់ដោយថាមពលព្រះអាទិត្យ",
-          "ពូជស្រូវផ្កាម្លិះធន់នឹងរាំងស្ងួត និងទឹកជំនន់",
-          "សហគមន៍កែច្នៃសំណល់កសិកម្មគ្មានកាកសំណល់",
+          "ផែនការអាជីវកម្មតាមប្រភេទដំណាំ",
+          "ភាពជាដៃគូពាណិជ្ជកម្មរឹងមាំ",
+          "ការពង្រីកសមត្ថភាពផលិតកម្ម",
         ],
       },
-      competitive: {
-        title: "សមត្ថភាពប្រកួតប្រជែងពាណិជ្ជកម្ម",
-        shortDescription: "ភ្ជាប់សហគមន៍កសិកម្មទៅកាន់ទីផ្សារសកលតម្លៃខ្ពស់ដោយផ្ទាល់។",
+      technology: {
+        title: "បច្ចេកវិទ្យាកសិកម្ម",
+        shortDescription: "បង្កើនផលិតភាព ភាពស្មើគ្នានៃគុណភាព និងភាពធន់តាមរយៈវិធីសាស្ត្រទំនើប។",
         longDescription:
-          "ពង្រឹងសហគមន៍ឱ្យបំពេញស្តង់ដារសកល តាមរយៈកសិកម្មកិច្ចសន្យាផ្ទាល់ ការរៀបចំឃ្លាំងរួម និងការកសាងម៉ាកដំណាំកម្ពុជា ដើម្បីកាត់បន្ថយអន្តរការី។",
-        metricLabel: "ទំហំពាណិជ្ជកម្មសហគមន៍សរុប",
+          "គាំទ្រផលិតកម្ម ការគ្រប់គ្រងគុណភាព ការធ្វើស្តង់ដារ និងការកាត់បន្ថយហានិភ័យ។",
+        metricLabel: "សសរស្តម្ភយុទ្ធសាស្ត្រ",
         highlights: [
-          "គោលការណ៍ដោះស្រាយវិវាទកសិកម្មកិច្ចសន្យា",
-          "មជ្ឈមណ្ឌលឃ្លាំងត្រជាក់រួមនៅជិតព្រំដែន",
-          "ការភ្ជាប់ដឹកជញ្ជូនទៅស្ថានីយកុងតឺន័រនាំចេញ",
-          "សេវាប្រឹក្សាវិញ្ញាបនបត្រ Global GAP",
+          "ការគាំទ្រផលិតកម្ម",
+          "ការគ្រប់គ្រងគុណភាព និងស្តង់ដារ",
+          "ការកាត់បន្ថយហានិភ័យកសិកម្ម",
+        ],
+      },
+      market: {
+        title: "ទីផ្សារ និងខ្សែច្រវាក់តម្លៃ",
+        shortDescription: "បង្កើតទំនាក់ទំនងជាមួយអ្នកទិញកាន់តែរឹងមាំ និងបន្ថែមតម្លៃដល់គ្រប់ទិន្នផល។",
+        longDescription:
+          "ភ្ជាប់អ្នកទិញ គ្រប់គ្រងកសិកម្មតាមកិច្ចសន្យា ផ្គូផ្គងការព្យាករណ៍តម្រូវការ និងសម្របសម្រួលការកែច្នៃ។",
+        metricLabel: "សសរស្តម្ភយុទ្ធសាស្ត្រ",
+        highlights: [
+          "ការភ្ជាប់អ្នកទិញ",
+          "កសិកម្មតាមកិច្ចសន្យា",
+          "ការព្យាករណ៍តម្រូវការ",
+          "ការសម្របសម្រួលការកែច្នៃ",
         ],
       },
     },
   },
   focus: {
-    eyebrow: "យុទ្ធសាស្ត្រប្រតិបត្តិការ និងផលប៉ះពាល់",
-    title: "ការគាំទ្រគ្រប់ជ្រុងជ្រោយតាមខ្សែច្រវាក់តម្លៃ",
+    eyebrow: "អត្ថប្រយោជន៍សម្រាប់សហគមន៍",
+    title: "បម្រើផលប្រយោជន៍ល្អបំផុតរបស់កសិករសមាជិក",
     description:
-      "តាមរយៈអន្តរាគមន៍ជាក់លាក់នៅមូលដ្ឋាន UKMAC ជំរុញការអភិវឌ្ឍជាបន្ត ដើម្បីឱ្យប្រតិបត្តិការកសិកម្មមូលដ្ឋានក្លាយជាសហគ្រាសពាណិជ្ជកម្មប្រកបដោយចីរភាព។",
-    deliverables: "លទ្ធផលសំខាន់ៗ",
+      "UKMAC បម្លែងកម្លាំងរួមទៅជាអត្ថប្រយោជន៍ជាក់ស្តែងចំនួនប្រាំមួយ ដែលធ្វើឱ្យសហគមន៍រឹងមាំ បើកទីផ្សារល្អ និងរក្សាស្ថិរភាពចំណូលកសិករ។",
+    deliverables: "អ្វីដែលសមាជិកទទួលបាន",
     items: {
-      innovations: {
-        title: "នវានុវត្តន៍ទំនើប",
-        description: "បញ្ចូលបច្ចេកវិទ្យាឆ្លាតវៃ និងទិន្នន័យឌីជីថលទៅក្នុងការងារកសិកម្ម។",
+      loans: {
+        title: "កម្ចី និងជំនួយឥតសំណង",
+        description: "ទទួលបានកម្ចីការប្រាក់ទាប ការគាំទ្រហិរញ្ញវត្ថុ និងការគាំទ្រពីដៃគូជាតិ និងអន្តរជាតិ។",
         features: [
-          "ការបាញ់ថ្នាំច្បាស់លាស់ និងផែនទីដ្រូនពហុវិសាលគម",
-          "បណ្តាញឧបករណ៍វាស់សំណើម និងសារធាតុចិញ្ចឹមដី IoT",
-          "កម្មវិធីគណនេយ្យសហគមន៍ និងព្យាករណ៍ទិន្នផល",
+          "ហិរញ្ញប្បទានការប្រាក់ទាប និងជំនួយឥតសំណង",
+          "ការគាំទ្រពីស្ថាប័ន និងដៃគូអភិវឌ្ឍន៍",
         ],
       },
-      capacity: {
-        title: "ការកសាងសមត្ថភាព",
-        description: "បណ្តុះភាពជាអ្នកដឹកនាំ និងជំនាញបច្ចេកទេសក្នុងសហគមន៍សមាជិក។",
+      markets: {
+        title: "ទីផ្សាររឹងមាំ",
+        description: "ធានាកសិកម្មតាមកិច្ចសន្យាជាមួយអ្នកទិញ និងអនុវត្តការលក់ទូទាំងបណ្តាញ។",
         features: [
-          "សិក្ខាសាលាគ្រប់គ្រងដំណាំទំនើបដោយអ្នកជំនាញកសិកម្ម",
-          "បណ្តុះបណ្តាលការគ្រប់គ្រង ហិរញ្ញវត្ថុ និងអភិបាលកិច្ចសហគមន៍",
-          "នីតិវិធីស្តង់ដារ (SOP) សម្រាប់ការប្រមូលផលនាំចេញ",
+          "កិច្ចសន្យាអ្នកទិញដែលអាចទុកចិត្តបាន",
+          "ការលក់រួមទូទាំងបណ្តាញ",
         ],
       },
-      knowledge: {
-        title: "ការចែករំលែកចំណេះដឹង",
-        description: "បង្កើតបណ្តាញបើកចំហរវាងសហគមន៍ ដើម្បីផ្សព្វផ្សាយការអនុវត្តល្អៗ។",
+      lowerCosts: {
+        title: "កាត់បន្ថយថ្លៃដើមទុន",
+        description: "កាត់បន្ថយចំណាយតាមរយៈការទិញធាតុចូលជាបរិមាណច្រើន សេវារួម និងការលុបបំបាត់ចំណាយមិនចាំបាច់។",
         features: [
-          "ទស្សនកិច្ចផ្លាស់ប្តូររវាងសហគមន៍តាមខេត្ត",
-          "បណ្ណាល័យឌីជីថលកណ្តាលសម្រាប់ក្សេត្រសាស្ត្រ និងរោគវិនិច្ឆ័យដំណាំ",
-          "ព្រឹត្តិបត្រប្រចាំខែស្តីពីទីផ្សារ និងតម្លៃ",
+          "អំណាចទិញជាបរិមាណច្រើន",
+          "សេវារួម និងប្រតិបត្តិការសន្សំសំចៃ",
         ],
       },
-      valuechain: {
-        title: "ការអភិវឌ្ឍខ្សែច្រវាក់តម្លៃ",
-        description: "ភ្ជាប់ផលិតផលពីចម្ការជនបទទៅកាន់តុអ្នកប្រើប្រាស់អន្តរជាតិ។",
+      standards: {
+        title: "ស្តង់ដារផលិតកម្ម",
+        description: "សម្រេចគុណភាពស្មើគ្នាក្រោមស្តង់ដារខ្ពស់ ដើម្បីបំពេញតម្រូវការទីផ្សារកម្រិតខ្ពស់។",
         features: [
-          "ការទិញធាតុចូលកសិកម្មរួម ដើម្បីកាត់បន្ថយថ្លៃដើម",
-          "ហេដ្ឋារចនាសម្ព័ន្ធក្រោយប្រមូលផល ដូចជា ឃ្លាំងត្រជាក់ និងកន្លែងសម្ងួត",
-          "កិច្ចសន្យាកសិកម្មផ្ទាល់ជាមួយអ្នកនាំចេញតម្លៃខ្ពស់",
+          "គុណភាពស្មើគ្នាទូទាំងផលិតកម្ម",
+          "ត្រៀមខ្លួនសម្រាប់ទីផ្សារកម្រិតខ្ពស់",
+        ],
+      },
+      governance: {
+        title: "អភិបាលកិច្ចរឹងមាំ",
+        description: "ធានាការសម្រេចចិត្តច្បាស់លាស់ ការគ្រប់គ្រងហិរញ្ញវត្ថុមានវិន័យ និងទំនុកចិត្តខ្ពស់របស់សមាជិក។",
+        features: [
+          "ការសម្រេចចិត្តប្រកបដោយតម្លាភាព",
+          "វិន័យហិរញ្ញវត្ថុ និងទំនុកចិត្តសមាជិក",
+        ],
+      },
+      valueAddition: {
+        title: "ការបន្ថែមតម្លៃ",
+        description: "សម្របសម្រួលការស្តុក កែច្នៃ វេចខ្ចប់ បង្កើតម៉ាកផលិតផល និងហិរញ្ញប្បទានស្តុក។",
+        features: [
+          "ការកែច្នៃ វេចខ្ចប់ និងបង្កើតម៉ាក",
+          "ការស្តុក និងហិរញ្ញប្បទានស្តុក",
         ],
       },
     },
   },
   network: {
-    eyebrow: "កម្លាំង និងវិសាលភាពតាមតំបន់",
-    title: "បណ្តាញសហគមន៍កសិកម្មតាមតំបន់",
-    description:
-      "ស្វែងយល់មជ្ឈមណ្ឌលកសិកម្មសកម្មរបស់ UKMAC។ ចុចលើខេត្ត ដើម្បីមើលដំណាំឯកទេស ចំនួនសហគមន៍ និងគម្រោងទំនើបកម្មមូលដ្ឋាន។",
-    mapLabel: "ផែនទីបណ្តាញកសិកម្មកម្ពុជា (គំរូ)",
-    tonleSap: "ទន្លេសាប",
-    lakeReserve: "តំបន់បឹងអភិរក្ស",
-    focusCrop: "ដំណាំអាទិភាព៖ {crop}",
-    cooperatives: "សហគមន៍",
-    registered: "បានចុះបញ្ជី {count}",
-    families: "គ្រួសារ",
-    members: "សមាជិក {count}+",
-    featuredCommunity: "សហភាពសហគមន៍លេចធ្លោ",
-    modernizations: "ទំនើបកម្មយុទ្ធសាស្ត្រ",
-    connect: "ទាក់ទងនាយកតំបន់",
-    provinces: {
-      battambang: {
-        name: "បាត់ដំបង",
-        cropType: "ស្រូវផ្កាម្លិះគុណភាពខ្ពស់",
-        featuredCoop: "សហភាពកសិកម្មថ្មគោល",
-        description:
-          "បាត់ដំបងល្បីជាជង្រុកស្រូវរបស់កម្ពុជា និងដឹកនាំកម្មវិធីជ្រើសរើសពូជទំនើប និងការប្រើម៉ាស៊ីនប្រមូលផលរួម។",
-        initiatives: [
-          "ការកៀរដីដោយឡាស៊ែរ ដើម្បីចែកចាយទឹកបានល្អ",
-          "ការអភិរក្សពូជស្រូវផ្ការំដួលក្លិនក្រអូប",
-          "មជ្ឈមណ្ឌលសេវាបាញ់ថ្នាំដោយដ្រូនទ្រង់ទ្រាយធំ",
+    eyebrow: "រចនាសម្ព័ន្ធ និងតួនាទី",
+    title: "មុខងារ និងរចនាសម្ព័ន្ធគ្រប់គ្រងរបស់សហភាព",
+    description: "UKMAC គឺជាស្ថាប័នមិនស្វែងរកប្រាក់ចំណេញ ដែលប្តេជ្ញាពង្រឹងអភិបាលកិច្ចរបស់សហគមន៍កសិកម្មទំនើប។",
+    definition:
+      "សហគមន៍នៅតែជាម្ចាស់ចម្បងនៃប្រតិបត្តិការមូលដ្ឋាន។ សហភាពគាំទ្រដោយធ្វើការងារដែលសហគមន៍នីមួយៗមិនអាចសម្រេចបានដោយមានប្រសិទ្ធភាពដោយខ្លួនឯង។",
+    policyRule: "រក្សាការគ្រប់គ្រងមូលដ្ឋាន + កសាងប្រព័ន្ធគាំទ្រថ្នាក់ជាតិ",
+    hierarchyTitle: "ឋានានុក្រមគ្រប់គ្រង",
+    hierarchy: [
+      { title: "ក្រុមប្រឹក្សាប្រឹក្សា" },
+      { title: "ក្រុមប្រឹក្សាភិបាល" },
+      { title: "គណៈកម្មការគ្រប់គ្រង" },
+    ],
+    teamsTitle: "ក្រុមការងារឯកទេស",
+    teams: [
+      { title: "ក្រុមគាំទ្រអាជីវកម្ម និងបច្ចេកទេស", tone: "blue" },
+      { title: "ក្រុមបណ្តុះបណ្តាល និងកសាងសមត្ថភាព", tone: "green" },
+      { title: "ក្រុមប្រព័ន្ធគ្រប់គ្រងខ្សែច្រវាក់ផលិតកម្ម", tone: "darkGreen" },
+      { title: "ក្រុមកែច្នៃផលិតកម្ម", tone: "lightGreen" },
+    ],
+    rolesEyebrow: "គំរូប្រតិបត្តិការចាប់ពីថ្ងៃទី ១ ខែកក្កដា",
+    rolesTitle: "ធ្វើការដោយផ្ទាល់តាមរយៈសហភាព",
+    transition:
+      "ការគាំទ្រផ្លាស់ប្តូរពីការផ្តល់ដោយផ្ទាល់ពីក្រសួង ទៅឱ្យសហភាពដើរតួជាស្ថាប័នគាំទ្រស្នូល។",
+    roles: {
+      cooperatives: {
+        title: "សហគមន៍",
+        items: [
+          "គ្រប់គ្រងប្រតិបត្តិការប្រចាំថ្ងៃ។",
+          "ត្រួតពិនិត្យក្រុមការងារមូលដ្ឋាន។",
+          "អនុវត្តផែនការផលិតកម្ម និងការលក់។",
+          "រក្សាគណនេយ្យភាពចំពោះសមាជិក។",
         ],
       },
-      siem_reap: {
-        name: "សៀមរាប",
-        cropType: "បន្លែសុវត្ថិភាពសរីរាង្គ",
-        featuredCoop: "សហគមន៍សរីរាង្គអង្គរ",
-        description:
-          "សៀមរាបភ្ជាប់ការអនុវត្តកសិកម្មសុវត្ថិភាពជាមួយវិស័យបដិសណ្ឋារកិច្ច និងជាមជ្ឈមណ្ឌលបន្លែគ្មានសារធាតុគីមី។",
-        initiatives: [
-          "ប្រព័ន្ធស្រោចស្រពតំណក់ដោយបូមទឹកថាមពលព្រះអាទិត្យ",
-          "ផ្ទះសំណាញ់ការពារដំណាំពីកម្តៅខ្លាំង",
-          "ខ្សែផ្គត់ផ្គង់ផ្ទាល់ពីចម្ការទៅសណ្ឋាគារ",
+      union: {
+        title: "សហភាព (UKMAC)",
+        items: [
+          "ពិភាក្សា និងអនុវត្តសេចក្តីសម្រេចសំខាន់ៗ។",
+          "គាំទ្រផែនការអាជីវកម្ម កម្មវិធី ទីផ្សារ ហិរញ្ញវត្ថុ និងកិច្ចសន្យា។",
+          "ធ្វើសវនកម្មហិរញ្ញវត្ថុ កសាងតម្លាភាព និងការពារផលប្រយោជន៍រួម។",
+          "ប្រជុំជាមួយសហគមន៍នីមួយៗយ៉ាងហោចណាស់ម្តងក្នុងមួយខែ។",
         ],
       },
-      kampong_cham: {
-        name: "កំពង់ចាម",
-        cropType: "គ្រាប់ស្វាយចន្ទី និងកាកាវ",
-        featuredCoop: "សហគ្រាសស្វាយចន្ទីចម្ការលើ",
-        description:
-          "ជាមជ្ឈមណ្ឌលសំខាន់សម្រាប់ដំណាំពាណិជ្ជកម្មទិន្នផលខ្ពស់ ដោយផ្តោតលើការកែច្នៃផលិតផលឆៅទៅជាផលិតផលនាំចេញតម្លៃខ្ពស់។",
-        initiatives: [
-          "អង្គភាពសម្ងួត និងបកសំបកស្វាយចន្ទីក្នុងសហគមន៍",
-          "ការធ្វើជីកំប៉ុសឆ្លាតវៃពីសំណល់កសិកម្ម",
-          "កម្មវិធីស្តារដីដោយជីធ្យូងជីវៈ",
-        ],
-      },
-      takeo: {
-        name: "តាកែវ",
-        cropType: "ស្រូវដើមរដូវ និងវារីវប្បកម្ម",
-        featuredCoop: "សហគមន៍កសិកម្មត្រាំកក់",
-        description:
-          "តាកែវឈានមុខក្នុងការដាំស្រូវដើមរដូវវស្សា និងមានរោងម៉ាស៊ីនសហគមន៍ទំនើប ព្រមទាំងវារីវប្បកម្មប្រកបដោយចីរភាព។",
-        initiatives: [
-          "ជ្រើសរើសពូជដំណាំដើមរដូវធន់នឹងទឹកជំនន់",
-          "រោងផលិតជីសរីរាង្គរបស់សហគមន៍",
-          "ប្រព័ន្ធតាមដានវារីវប្បកម្មសហគមន៍",
-        ],
-      },
-      kampot: {
-        name: "កំពត",
-        cropType: "ម្រេចកំពត GI និងទុរេន",
-        featuredCoop: "សហគមន៍ម្រេចភ្នំវល្លិ៍",
-        description:
-          "កំពតជាទឹកដីម្រេចសម្គាល់ភូមិសាស្ត្រដ៏ល្បីលើពិភពលោក។ UKMAC ការពារស្តង់ដារខ្ពស់ និងគាំទ្រការកសាងម៉ាកសកល។",
-        initiatives: [
-          "ប្រព័ន្ធស្រោចស្រពតំណក់ខ្នាតតូចសម្រាប់ភាពធន់នឹងកង្វះទឹក",
-          "ការតាមដានប្រភពផលិតផល និងស្លាកសញ្ញាឌីជីថល",
-          "ការបណ្តុះបណ្តាលវេចខ្ចប់ និងទីផ្សារនាំចេញគុណភាពខ្ពស់",
+      ministry: {
+        title: "ក្រសួងកសិកម្ម",
+        items: [
+          "កំណត់ និងជំរុញគោលនយោបាយសម្រាប់សហគមន៍កសិកម្មទំនើប។",
+          "តាមដាន និងវាយតម្លៃទាំងសហគមន៍ និងសហភាព។",
+          "គាំទ្រការកៀរគរធនធាន និងដៃគូ។",
+          "ដើរតួជាអាជ្ញាកណ្តាលចុងក្រោយនៅពេលមានវិវាទ។",
         ],
       },
     },
   },
   timeline: {
-    eyebrow: "ព្រឹត្តិការណ៍ប្រវត្តិសាស្ត្រ និងកំណើន",
-    title: "ដំណើរនៃកិច្ចសហប្រតិបត្តិការ",
-    description:
-      "ពីសម្ព័ន្ធកសិករខ្នាតតូចតាមតំបន់ ទៅជាស្ថាប័នកំពូលថ្នាក់ជាតិពាក់កណ្តាលស្វយ័ត—បង្ហាញដំណាក់កាលនៃទំនើបកម្មកសិកម្មកម្ពុជា។",
-    items: {
-      legal: {
-        title: "បង្កើតក្របខណ្ឌច្បាប់",
+    eyebrow: "ចក្ខុវិស័យរួម",
+    title: "យើងកាន់តែរឹងមាំ នៅពេលដើររួមគ្នា",
+    principle: "ការចូលរួម UKMAC គឺជាការកសាងអនាគតរបស់សហគមន៍កសិកម្មទំនើប និងកសិកររបស់យើង។",
+    vision: "ប្រសិនបើសហគមន៍កសិកម្មទំនើបទាំងអស់រួបរួមជាធ្លុងមួយ យើងអាចក្លាយជាសហគ្រាសកសិកម្មឈានមុខមួយរបស់កម្ពុជា។",
+    achievementsTitle: "អ្វីដែលយើងត្រូវសម្រេចរួមគ្នា",
+    achievements: [
+      {
+        title: "ផលិតកម្មជាបណ្តាញ",
         description:
-          "ព្រះរាជាណាចក្រកម្ពុជាអនុម័តច្បាប់ស្តីពីសហគមន៍កសិកម្ម ដើម្បីដាក់មូលដ្ឋានសម្រាប់រចនាសម្ព័ន្ធសហភាពកសិករ។",
+          "សម្របសម្រួលផលិតកម្មស្រូវ ស្វាយចន្ទី បន្លែ ដំណាំមើម គ្រឿងទេស និងសាច់ទូទាំងបណ្តាញ។",
       },
-      consolidation: {
-        title: "ការរួមបញ្ចូលសហភាពតាមតំបន់",
+      {
+        title: "ការលក់ជាបណ្តាញ",
         description:
-          "សហគមន៍កសិកម្មតាមខេត្តចាប់ផ្តើមរួមគ្នាជាសហភាព ដើម្បីសម្របសម្រួលការដឹកជញ្ជូន និងអំណាចចរចា។",
+          "សម្រេចទំហំធំ គុណភាពស្តង់ដារ និងអំណាចចរចារួមដ៏រឹងមាំ។",
       },
-      inception: {
-        title: "ការបង្កើត UKMAC",
+      {
+        title: "ការគ្រប់គ្រងជាបណ្តាញ",
         description:
-          "UKMAC ត្រូវបានបង្កើតជាសហភាពកំពូលពាក់កណ្តាលស្វយ័ត ដើម្បីរួមបញ្ចូលសហគមន៍សមាជិកក្រោមបេសកកម្មជាតិតែមួយ។",
+          "កសាងតម្លាភាព វិន័យ និងទំនុកចិត្តក្នុងចំណោមសមាជិក ធនាគារ និងអ្នកទិញ។",
       },
-      smart: {
-        title: "ចាប់ផ្តើមកសិកម្មឆ្លាតវៃ",
-        description:
-          "ដាក់ឱ្យដំណើរការផែនទីបង្ហាញផ្លូវកសិកម្មឌីជីថល ដោយណែនាំដ្រូនពហុវិសាលគម និងកម្មវិធីអាជីវកម្មសហគមន៍។",
-      },
-      global: {
-        title: "ពង្រីកខ្សែផ្គត់ផ្គង់សកល",
-        description:
-          "ពង្រីកហេដ្ឋារចនាសម្ព័ន្ធក្រោយប្រមូលផល និងការនាំចេញផលិតផលអេកូដោយផ្ទាល់ទៅទីផ្សារតម្លៃខ្ពស់នៅអាស៊ី អឺរ៉ុប និងអាមេរិក។",
-      },
-    },
+    ],
+    startingToday: "ចាប់ពីថ្ងៃនេះ សូមទទួលយកសហភាពជាស្ថាប័នគាំទ្រថ្នាក់ជាតិរបស់យើង។",
+    motto: "សហភាពកើតចេញពីយើងទាំងអស់គ្នា ហើយបម្រើផលប្រយោជន៍របស់យើងទាំងអស់គ្នា។",
   },
   contact: {
-    eyebrow: "ការចូលរួមសហគមន៍",
-    title: "ចូលរួមបណ្តាញសហភាព",
+    eyebrow: "រួមគ្នាកសាងអនាគត",
+    title: "ចូលរួមជាមួយ UKMAC",
     description:
-      "យើងសូមអញ្ជើញសហគមន៍កសិកម្មដែលបានចុះបញ្ជី សហករណ៍ឯករាជ្យ និងសហគ្រាសកសិកម្មអេកូនៅទូទាំងកម្ពុជា ចូលរួមបណ្តាញជាតិរបស់យើង។",
-    partnershipBefore: "តើអ្នកជាអ្នកជំនាញកសិកម្ម អ្នកស្រាវជ្រាវ ឬអង្គការអភិវឌ្ឍន៍មែនទេ? សូមសរសេរមក",
-    partnershipAfter: "ដើម្បីស្វែងរកកិច្ចសហការយុទ្ធសាស្ត្រ។",
+      "ការចូលរួម UKMAC គឺជាការកសាងអនាគតរបស់សហគមន៍កសិកម្មទំនើប និងកសិករសមាជិក តាមរយៈផលិតកម្ម ទីផ្សារ និងការគ្រប់គ្រងរួម។",
+    partnershipBefore:
+      "តើអ្នកជាសហគមន៍ អ្នកទិញ ស្ថាប័នហិរញ្ញវត្ថុ អ្នកស្រាវជ្រាវ ឬដៃគូអភិវឌ្ឍន៍មែនទេ? សូមសរសេរមក",
+    partnershipAfter: "ដើម្បីស្វែងរកឱកាសធ្វើការរួមគ្នា។",
     perks: [
       {
-        title: "តំណាងផ្លូវច្បាប់ពេញលេញ",
-        description: "ទទួលការតស៊ូមតិពាណិជ្ជកម្មក្រោមច្បាប់ស្តីពីសហគមន៍កសិកម្ម។",
+        title: "ទីផ្សារកាន់តែរឹងមាំ",
+        description:
+          "ចូលរួមការលក់ជាបណ្តាញ កសិកម្មតាមកិច្ចសន្យា និងការចរចារួមជាមួយអ្នកទិញធំៗ។",
       },
       {
-        title: "ការប្រើប្រាស់បច្ចេកវិទ្យាទំនើប",
-        description: "ប្រើដ្រូនវិនិច្ឆ័យ និងបណ្តាញឧបករណ៍វាស់សំណើមដីក្នុងតម្លៃសមរម្យ។",
+        title: "ហិរញ្ញវត្ថុ និងអភិបាលកិច្ច",
+        description:
+          "បង្កើនលទ្ធភាពទទួលបានហិរញ្ញប្បទាន តាមរយៈការគ្រប់គ្រងប្រកបដោយវិន័យ តម្លាភាព និងទំនុកចិត្ត។",
       },
       {
-        title: "ការការពារខ្សែច្រវាក់តម្លៃ",
-        description: "ទទួលបានបណ្តាញនាំចេញផ្ទាល់ និងកាត់បន្ថយអន្តរការី។",
+        title: "ការបន្ថែមតម្លៃ",
+        description:
+          "អភិវឌ្ឍឱកាសស្តុក កែច្នៃ វេចខ្ចប់ បង្កើតម៉ាក និងហិរញ្ញប្បទានសារពើភ័ណ្ឌ។",
       },
     ],
     errors: {
@@ -816,7 +795,7 @@ const km: TranslationShape<typeof en> = {
       email: "ឧ. contact@coop.org.kh",
       phone: "ឧ. +855 23 888 999",
       goals:
-        "ពិពណ៌នាអំពីទំហំផលិតកម្ម ដំណាំ និងសេវា UKMAC ដែលអ្នកត្រូវការបំផុត ដូចជា នវានុវត្តន៍ ខ្សែច្រវាក់តម្លៃ ឬការបណ្តុះបណ្តាល...",
+        "ពិពណ៌នាអំពីផលិតកម្ម ដំណាំអាទិភាព និងការគាំទ្រដែលអ្នកត្រូវការផ្នែកហិរញ្ញវត្ថុ ទីផ្សារ បច្ចេកវិទ្យា ឬអភិបាលកិច្ច...",
     },
     provinceOptions: {
       battambang: "បាត់ដំបង",
@@ -840,7 +819,7 @@ const km: TranslationShape<typeof en> = {
       other: "ដំណាំពាណិជ្ជកម្មផ្សេងទៀត",
     },
     preparing: "កំពុងរៀបចំការមើលជាមុន...",
-    preview: "មើលសំណើចូលរួមជាមុន",
+    preview: "មើលសំណើសមាជិកភាពជាមុន",
     successEyebrow: "ការមើលពាក្យស្នើសុំជាមុនបានបញ្ចប់",
     successTitle: "ព័ត៌មានសំណើបានផ្ទៀងផ្ទាត់",
     successDescription:
@@ -894,26 +873,26 @@ const km: TranslationShape<typeof en> = {
   footer: {
     homeLabel: "UKMAC — ត្រឡប់ទៅទំព័រដើម",
     description:
-      "UKMAC ជាសហភាពកសិកម្មកំពូលពាក់កណ្តាលស្វយ័ត ដែលបង្កើតក្រោមច្បាប់ស្តីពីសហគមន៍កសិកម្មនៃព្រះរាជាណាចក្រកម្ពុជា ដើម្បីពង្រឹងសហគមន៍ដោយបច្ចេកវិទ្យាឆ្លាតវៃ និងការចូលទីផ្សារសកលដោយផ្ទាល់។",
+      "UKMAC គឺជាស្ថាប័នមិនស្វែងរកប្រាក់ចំណេញ ដែលប្តេជ្ញាពង្រឹងអភិបាលកិច្ច និងកំណើនរបស់សហគមន៍កសិកម្មទំនើបនៅទូទាំងកម្ពុជា។",
     legal:
-      "ការចុះបញ្ជីសហភាពជាផ្លូវការ ស្របតាមព្រះរាជក្រឹត្យ និងបទប្បញ្ញត្តិរបស់ក្រសួងកសិកម្ម រុក្ខាប្រមាញ់ និងនេសាទ នៃព្រះរាជាណាចក្រកម្ពុជា។",
+      "ការគ្រប់គ្រងដោយសហគមន៍មូលដ្ឋាន គាំទ្រដោយការសម្របសម្រួលថ្នាក់ជាតិលើហិរញ្ញវត្ថុ បច្ចេកវិទ្យា ទីផ្សារ និងអភិបាលកិច្ច។",
     quickNavigation: "តំណភ្ជាប់រហ័ស",
     navigationLabel: "ម៉ឺនុយបាតទំព័រ",
     headquarters: "ទីស្នាក់ការលេខាធិការដ្ឋាន",
     address: "មហាវិថីព្រះនរោត្តម សង្កាត់ទន្លេបាសាក់ ខណ្ឌចំការមន រាជធានីភ្នំពេញ ព្រះរាជាណាចក្រកម្ពុជា។",
-    copyright: "© {year} UKMAC (សហភាពសហគមន៍កសិកម្មទំនើបកម្ពុជា)។ រក្សាសិទ្ធិគ្រប់យ៉ាង។",
+    copyright: "© {year} UKMAC (សហភាពសហគមន៍កសិកម្មទំនើប)។ រក្សាសិទ្ធិគ្រប់យ៉ាង។",
     privacy: "គោលការណ៍ឯកជនភាព",
     statutes: "លក្ខន្តិកៈសហភាព",
     maff: "ក្រសួងកសិកម្ម កម្ពុជា",
     opensNewTab: "(បើកក្នុងផ្ទាំងថ្មី)",
     navItems: {
-      hero: "សេចក្តីផ្តើម",
+      hero: "ទិដ្ឋភាពទូទៅ",
       news: "ព័ត៌មាន និងសេចក្តីជូនដំណឹង",
-      about: "អំពីយើង និងអាណត្តិ",
-      pillars: "សសរស្តម្ភប្រតិបត្តិការ",
-      focus: "យុទ្ធសាស្ត្រអាទិភាព",
-      network: "បណ្តាញសហគមន៍",
-      timeline: "ព្រឹត្តិការណ៍ប្រវត្តិសាស្ត្រ",
+      about: "ហេតុអ្វីឥឡូវនេះ",
+      pillars: "សសរស្តម្ភស្នូល",
+      focus: "អត្ថប្រយោជន៍សមាជិក",
+      network: "រចនាសម្ព័ន្ធ និងតួនាទី",
+      timeline: "ចក្ខុវិស័យរួម",
     },
   },
 };

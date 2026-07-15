@@ -1,12 +1,17 @@
 import { motion } from "motion/react";
 import type { Variants } from "motion/react";
 import { ukmacStats } from "@/lib/data";
-import { Building2, Landmark, Users2, MapPin } from "lucide-react";
+import { CircleDollarSign, Target, Users2 } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
+
+const statIcons = {
+  communities: Users2,
+  cycleRevenue: CircleDollarSign,
+  revenueTarget: Target,
+} as const;
 
 export default function StatsOverview() {
   const { copy } = useLanguage();
-  const icons = [Building2, Landmark, Users2, MapPin];
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -38,17 +43,17 @@ export default function StatsOverview() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-stone-200"
+          className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-x sm:divide-y-0 divide-stone-200"
         >
           {ukmacStats.map((stat, idx) => {
-            const IconComponent = icons[idx] || Building2;
+            const IconComponent = statIcons[stat.id];
             const statCopy = copy.stats.items[stat.id];
             return (
               <motion.div
                 key={stat.id}
                 variants={itemVariants}
-                className={`py-8 sm:py-12 lg:px-8 ${idx === 0 ? "lg:pl-0" : ""} ${
-                  idx === ukmacStats.length - 1 ? "lg:pr-0" : ""
+                className={`py-8 sm:px-8 sm:py-12 ${idx === 0 ? "sm:pl-0" : ""} ${
+                  idx === ukmacStats.length - 1 ? "sm:pr-0" : ""
                 }`}
               >
                 <IconComponent className="w-5 h-5 text-stone-400 stroke-[1.5] mb-5" />
@@ -68,6 +73,24 @@ export default function StatsOverview() {
               </motion.div>
             );
           })}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
+          className="border-t border-stone-200 py-7 sm:py-8"
+        >
+          <div className="flex items-start gap-4 sm:items-center sm:gap-5">
+            <span
+              aria-hidden="true"
+              className="mt-1 block h-10 w-1 shrink-0 rounded-full bg-brand-green-600 sm:mt-0"
+            />
+            <p className="max-w-5xl font-display text-base font-medium leading-relaxed text-stone-700 sm:text-lg">
+              {copy.stats.conclusion}
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -1,27 +1,32 @@
 export const ukmacStats = [
-  { id: "cooperatives", value: "140+" },
-  { id: "hectares", value: "45k+" },
-  { id: "families", value: "35k+" },
-  { id: "provinces", value: "18+" },
+  { id: "communities", value: "32+" },
+  { id: "cycleRevenue", value: "$55M" },
+  { id: "revenueTarget", value: "$100M" },
 ] as const;
 
 export const pillars = [
   {
-    id: "modern",
-    iconName: "Cpu",
-    metric: "40%",
-    image: "/images/ukmac_smart_innovation_1784000222966.jpg",
+    id: "finance",
+    iconName: "Landmark",
+    metric: "01",
+    image: "/images/ukmac_cooperative_collaboration_1784000237090.jpg",
   },
   {
-    id: "sustainable",
-    iconName: "Leaf",
-    metric: "12k+",
+    id: "business",
+    iconName: "BriefcaseBusiness",
+    metric: "02",
     image: "/images/cambodia_agriculture_hero_1784000209131.jpg",
   },
   {
-    id: "competitive",
+    id: "technology",
+    iconName: "Cpu",
+    metric: "03",
+    image: "/images/ukmac_smart_innovation_1784000222966.jpg",
+  },
+  {
+    id: "market",
     iconName: "TrendingUp",
-    metric: "$24M+",
+    metric: "04",
     image: "/images/ukmac_cooperative_collaboration_1784000237090.jpg",
   },
 ] as const;
@@ -29,10 +34,12 @@ export const pillars = [
 export type Pillar = (typeof pillars)[number];
 
 export const focusAreas = [
-  { id: "innovations", iconName: "Sparkles" },
-  { id: "capacity", iconName: "Award" },
-  { id: "knowledge", iconName: "BookOpen" },
-  { id: "valuechain", iconName: "Network" },
+  { id: "loans", iconName: "HandCoins" },
+  { id: "markets", iconName: "Handshake" },
+  { id: "lowerCosts", iconName: "ShoppingBasket" },
+  { id: "standards", iconName: "BadgeCheck" },
+  { id: "governance", iconName: "ShieldCheck" },
+  { id: "valueAddition", iconName: "PackageCheck" },
 ] as const;
 
 export const provinces = [
@@ -66,12 +73,4 @@ export const provinces = [
     coopCount: 15,
     farmersCount: 2500,
   },
-] as const;
-
-export const timelineMilestones = [
-  { id: "legal", year: "2013" },
-  { id: "consolidation", year: "2018" },
-  { id: "inception", year: "2021" },
-  { id: "smart", year: "2024" },
-  { id: "global", year: "2026" },
 ] as const;

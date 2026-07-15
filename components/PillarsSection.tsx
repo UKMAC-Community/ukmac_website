@@ -3,7 +3,15 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { pillars } from "@/lib/data";
 import type { Pillar } from "@/lib/data";
-import { Cpu, Leaf, TrendingUp, X, CheckCircle, ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  BriefcaseBusiness,
+  CheckCircle,
+  Cpu,
+  Landmark,
+  TrendingUp,
+  X,
+} from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 
 export default function PillarsSection() {
@@ -12,10 +20,12 @@ export default function PillarsSection() {
 
   const getIcon = (name: string, className: string) => {
     switch (name) {
+      case "Landmark":
+        return <Landmark className={className} />;
+      case "BriefcaseBusiness":
+        return <BriefcaseBusiness className={className} />;
       case "Cpu":
         return <Cpu className={className} />;
-      case "Leaf":
-        return <Leaf className={className} />;
       case "TrendingUp":
         return <TrendingUp className={className} />;
       default:
@@ -41,7 +51,7 @@ export default function PillarsSection() {
         </div>
 
         {/* Pillars Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-stone-200 border-y border-stone-200">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 border-t border-l border-stone-200">
           {pillars.map((pillar) => {
             const pillarCopy = copy.pillars.items[pillar.id];
 
@@ -52,7 +62,7 @@ export default function PillarsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6 }}
-                className="flex flex-col p-6 sm:p-8 group"
+                className="flex flex-col p-6 sm:p-8 group border-r border-b border-stone-200"
               >
               <div className="flex items-center justify-between mb-8">
                 {getIcon(pillar.iconName, "w-6 h-6 text-brand-green-700 stroke-[1.5]")}
@@ -74,7 +84,10 @@ export default function PillarsSection() {
 
               <div className="pt-6 border-t border-stone-200">
                 <button
+                  type="button"
                   onClick={() => setSelectedPillar(pillar)}
+                  aria-haspopup="dialog"
+                  aria-controls={`pillar-dialog-${pillar.id}`}
                   className="font-sans text-xs font-semibold text-stone-700 group-hover:text-brand-green-700 flex items-center gap-1.5 transition-colors cursor-pointer"
                 >
                   {copy.pillars.viewDetails}
@@ -103,14 +116,19 @@ export default function PillarsSection() {
 
             {/* Modal Container */}
             <motion.div
+              id={`pillar-dialog-${selectedPillar.id}`}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={`pillar-dialog-title-${selectedPillar.id}`}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 12 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="relative w-full max-w-4xl bg-white border border-stone-200 overflow-hidden shadow-xl z-10 flex flex-col md:flex-row max-h-[90vh] md:max-h-none overflow-y-auto md:overflow-y-visible"
+              className="relative w-full max-w-4xl bg-white border border-stone-200 overflow-hidden shadow-xl z-10 flex flex-col md:flex-row max-h-[90vh] overflow-y-auto md:overflow-y-hidden"
             >
               {/* Close Button */}
               <button
+                type="button"
                 onClick={() => setSelectedPillar(null)}
                 aria-label={copy.pillars.closeDetails}
                 className="absolute top-4 right-4 z-20 w-9 h-9 bg-white/90 hover:bg-stone-100 text-stone-700 flex items-center justify-center border border-stone-200 transition-colors cursor-pointer"
@@ -148,7 +166,10 @@ export default function PillarsSection() {
                   <span className="font-mono text-[10px] text-brand-green-700 font-semibold tracking-widest uppercase block">
                     {copy.pillars.operationalDirective}
                   </span>
-                  <h3 className="font-display font-bold text-2xl sm:text-3xl text-stone-900 tracking-tight leading-tight">
+                  <h3
+                    id={`pillar-dialog-title-${selectedPillar.id}`}
+                    className="font-display font-bold text-2xl sm:text-3xl text-stone-900 tracking-tight leading-tight"
+                  >
                     {copy.pillars.items[selectedPillar.id].title}
                   </h3>
                   <p className="font-sans text-sm text-stone-600 leading-relaxed">
@@ -175,6 +196,7 @@ export default function PillarsSection() {
 
                 <div className="pt-6 border-t border-stone-200 flex justify-end">
                   <button
+                    type="button"
                     onClick={() => setSelectedPillar(null)}
                     className="px-5 py-2.5 bg-stone-900 hover:bg-brand-green-800 text-white font-sans font-semibold text-xs transition-colors cursor-pointer"
                   >

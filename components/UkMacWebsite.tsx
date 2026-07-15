@@ -72,9 +72,9 @@ export default function UkMacWebsite({ posts, postsError }: UkMacWebsiteProps) {
       <div className="relative z-10">
         <HeroSection />
 
-        <News posts={posts} error={postsError} />
-
         <StatsOverview />
+
+        <News posts={posts} error={postsError} />
 
         <AboutSection />
 

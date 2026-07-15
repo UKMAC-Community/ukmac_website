@@ -133,7 +133,7 @@ export default function HeroSection() {
 
           {/* Overlays stay fixed above the sliding images */}
           <div className="absolute inset-0 bg-[#9ae27f]/20 mix-blend-soft-light z-10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-green-950/55 via-brand-green-900/18 to-transparent sm:from-brand-green-950/35 sm:via-brand-green-900/10 z-10" />
+          <div className="absolute inset-0 z-10 [background:linear-gradient(30deg,rgba(3,35,24,0.84)_0%,rgba(3,35,24,0.68)_55%,rgba(3,35,24,0.34)_100%)] sm:[background:linear-gradient(30deg,rgba(3,35,24,0.82)_0%,rgba(3,35,24,0.62)_30%,rgba(3,35,24,0.28)_50%,rgba(3,35,24,0)_74%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,transparent_78%,rgba(4,120,87,0.16)_100%)] z-10" />
         </motion.div>
       </div>
@@ -141,8 +141,26 @@ export default function HeroSection() {
       {/* Content Foreground Layer */}
       <motion.div
         style={{ x: textX, y: textY, opacity: opacityFade }}
-        className="relative z-10 w-full max-w-[21rem] px-4 text-left select-text py-6 min-[375px]:max-w-[23rem] sm:max-w-2xl sm:px-8 sm:py-8 lg:px-16"
+        className="relative z-10 w-full max-w-[22rem] px-4 py-6 text-left select-text min-[375px]:max-w-[24rem] sm:max-w-2xl sm:px-8 sm:py-8 lg:max-w-3xl lg:px-16"
       >
+        {/* <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.02, ease: "easeOut" }}
+          className="mb-3 inline-flex max-w-full items-center rounded-full border border-white/20 bg-stone-950/25 px-3 py-1.5 font-sans text-[0.58rem] font-medium leading-relaxed tracking-[0.08em] text-white/80 shadow-sm backdrop-blur-sm min-[375px]:text-[0.62rem] sm:mb-4 sm:text-[0.68rem]"
+        >
+          {copy.hero.presentationNote}
+        </motion.p> */}
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+          className="mb-3 font-sans text-[0.65rem] font-semibold uppercase leading-relaxed tracking-[0.16em] text-[#b8f0a8] drop-shadow-[0_3px_10px_rgba(0,0,0,0.7)] min-[375px]:text-[0.7rem] sm:mb-4 sm:text-xs"
+        >
+          {copy.hero.tagline}
+        </motion.p>
+
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -159,7 +177,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
-          className="mt-3 sm:mt-4 font-sans text-[0.72rem] min-[375px]:text-xs sm:text-sm text-stone-100 max-w-[19rem] sm:max-w-lg font-medium leading-relaxed drop-shadow-[0_3px_12px_rgba(0,0,0,0.7)]"
+          className="mt-3 max-w-[20rem] font-sans text-[0.72rem] font-medium leading-relaxed text-stone-100 drop-shadow-[0_3px_12px_rgba(0,0,0,0.7)] min-[375px]:text-xs sm:mt-4 sm:max-w-xl sm:text-sm"
         >
           {copy.hero.description}
         </motion.p>
