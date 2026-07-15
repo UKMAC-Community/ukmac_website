@@ -4,6 +4,8 @@ import {
   Outfit,
   Plus_Jakarta_Sans,
 } from "next/font/google";
+import LanguageProvider from "@/components/LanguageProvider";
+import { translations } from "@/lib/translations";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -25,9 +27,8 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "UKMAC | Modern Agricultural Community",
-  description:
-    "The Union of Kampuchea Modern Agricultural Community advances sustainable, modern, and commercially competitive agriculture across Cambodia.",
+  title: translations.en.metadata.title,
+  description: translations.en.metadata.description,
 };
 
 export default function RootLayout({
@@ -40,7 +41,9 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakartaSans.variable} ${outfit.variable} ${jetBrainsMono.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }

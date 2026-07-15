@@ -11,13 +11,20 @@ import InteractiveMap from "./InteractiveMap";
 import TimelineSection from "./TimelineSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
+import News from "./news/news";
+import type { PublicPost } from "@/lib/news";
 
-export default function UkMacWebsite() {
+interface UkMacWebsiteProps {
+  posts: PublicPost[];
+  postsError?: boolean;
+}
+
+export default function UkMacWebsite({ posts, postsError }: UkMacWebsiteProps) {
   const [activeSection, setActiveSection] = useState("hero");
   const lastClickTimeRef = useRef<number>(0);
 
   useEffect(() => {
-    const sections = ["hero", "about", "pillars", "focus", "network", "timeline", "contact"];
+    const sections = ["hero", "news", "about", "pillars", "focus", "network", "timeline", "contact"];
     
     const observerOptions = {
       root: null,
@@ -65,6 +72,8 @@ export default function UkMacWebsite() {
       <div className="relative z-10">
         <HeroSection />
 
+        <News posts={posts} error={postsError} />
+
         <StatsOverview />
 
         <AboutSection />
@@ -84,4 +93,3 @@ export default function UkMacWebsite() {
     </div>
   );
 }
-

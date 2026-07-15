@@ -2,8 +2,10 @@ import { motion } from "motion/react";
 import type { Variants } from "motion/react";
 import { ukmacStats } from "@/lib/data";
 import { Building2, Landmark, Users2, MapPin } from "lucide-react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function StatsOverview() {
+  const { copy } = useLanguage();
   const icons = [Building2, Landmark, Users2, MapPin];
 
   const containerVariants: Variants = {
@@ -40,9 +42,10 @@ export default function StatsOverview() {
         >
           {ukmacStats.map((stat, idx) => {
             const IconComponent = icons[idx] || Building2;
+            const statCopy = copy.stats.items[stat.id];
             return (
               <motion.div
-                key={stat.label}
+                key={stat.id}
                 variants={itemVariants}
                 className={`py-8 sm:py-12 lg:px-8 ${idx === 0 ? "lg:pl-0" : ""} ${
                   idx === ukmacStats.length - 1 ? "lg:pr-0" : ""
@@ -57,10 +60,10 @@ export default function StatsOverview() {
                 <div className="mt-3 h-px w-8 bg-brand-green-600" />
 
                 <div className="mt-3 font-sans font-semibold text-[11px] text-stone-900 tracking-[0.12em] uppercase">
-                  {stat.label}
+                  {statCopy.label}
                 </div>
                 <p className="mt-1.5 font-sans text-[13px] text-stone-500 leading-relaxed">
-                  {stat.desc}
+                  {statCopy.description}
                 </p>
               </motion.div>
             );

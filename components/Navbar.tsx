@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Languages } from "lucide-react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 interface NavbarProps {
   onNavClick: (sectionId: string) => void;
@@ -11,6 +12,13 @@ interface NavbarProps {
 export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, toggleLanguage, copy } = useLanguage();
+  const languageToggleLabel =
+    language === "en"
+      ? copy.language.switchToKhmer
+      : copy.language.switchToEnglish;
+  const nextLanguage =
+    language === "en" ? copy.language.khmer : copy.language.english;
   
   useEffect(() => {
     const handleScroll = () => {
@@ -21,12 +29,13 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
   }, []);
 
   const navItems = [
-    { label: "Overview", id: "hero" },
-    { label: "Our Purpose", id: "about" },
-    { label: "Core Pillars", id: "pillars" },
-    { label: "Impact Areas", id: "focus" },
-    { label: "Regional Network", id: "network" },
-    { label: "Our History", id: "timeline" },
+    { label: copy.nav.items.hero, id: "hero" },
+    { label: copy.nav.items.news, id: "news" },
+    { label: copy.nav.items.about, id: "about" },
+    { label: copy.nav.items.pillars, id: "pillars" },
+    { label: copy.nav.items.focus, id: "focus" },
+    { label: copy.nav.items.network, id: "network" },
+    { label: copy.nav.items.timeline, id: "timeline" },
   ];
 
   return (
@@ -41,7 +50,7 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
             : "bg-white/10 py-2"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <button 
@@ -51,7 +60,7 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
               <div className="relative w-11 h-11 sm:w-12 sm:h-12 flex-shrink-0">
                 <Image
                   src="/logo/UKMAC_Logo.webp"
-                  alt="UKMAC logo"
+                  alt={copy.brand.logoAlt}
                   fill
                   sizes="48px"
                   className="object-contain transition-transform duration-300 group-hover:scale-105"
@@ -64,18 +73,25 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
                   UKMAC
                   
                 </div>
-                <div className={`font-sans text-[7px] min-[375px]:text-[8px] sm:text-[9.5px] font-medium tracking-tight uppercase transition-colors whitespace-nowrap overflow-hidden text-ellipsis ${
+                <div className={`font-sans text-[7px] min-[375px]:text-[8px] sm:text-[9.5px] font-medium uppercase transition-colors whitespace-nowrap overflow-hidden text-ellipsis ${
+                  language === "en"
+                    ? "tracking-normal [word-spacing:0.14em]"
+                    : "tracking-tight"
+                } ${
                   isScrolled
                     ? "text-stone-500 group-hover:text-stone-800"
                     : "text-white/80 group-hover:text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.24)]"
                 }`}>
-                  Kampuchea Modern Agricultural Community
+                  {copy.brand.name}
                 </div>
               </div>
             </button>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center lg:space-x-1 xl:space-x-2">
+            <nav
+              className="hidden xl:flex items-center xl:space-x-2"
+              aria-label={copy.nav.ariaLabel}
+            >
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -102,22 +118,39 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
                   )}
                 </button>
               ))}
-              
-              {/* <button
-                onClick={() => onNavClick("contact")}
-                className={`ml-3 xl:ml-4 flex items-center space-x-1 font-sans font-semibold text-xs xl:text-sm px-3.5 xl:px-4.5 py-2 xl:py-2.5 rounded-xl shadow-lg transition-all active:scale-[0.98] cursor-pointer focus:outline-none group ${
+
+              <button
+                type="button"
+                onClick={toggleLanguage}
+                aria-label={languageToggleLabel}
+                title={languageToggleLabel}
+                className={`ml-1 flex h-8 items-center gap-1.5 rounded-full border px-2.5 font-sans text-[11px] font-bold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green-400 ${
                   isScrolled
-                    ? "bg-brand-green-600 hover:bg-brand-green-500 text-white shadow-brand-green-600/20 hover:shadow-brand-green-500/30"
-                    : "bg-white/95 hover:bg-white text-brand-green-700 shadow-black/15 hover:shadow-black/25"
+                    ? "border-stone-200 bg-stone-50 text-stone-700 hover:border-brand-green-300 hover:text-brand-green-700"
+                    : "border-white/35 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
                 }`}
               >
-                <span>Join Union</span>
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </button> */}
+                <Languages className="h-3.5 w-3.5" aria-hidden="true" />
+                <span>{nextLanguage}</span>
+              </button>
             </nav>
 
             {/* Mobile Hamburger */}
-            <div className="lg:hidden">
+            <div className="flex items-center gap-1.5 xl:hidden">
+              <button
+                type="button"
+                onClick={toggleLanguage}
+                aria-label={languageToggleLabel}
+                title={languageToggleLabel}
+                className={`flex h-9 items-center gap-1.5 rounded-full border px-2.5 font-sans text-[11px] font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green-400 ${
+                  isScrolled
+                    ? "border-stone-200 bg-stone-50 text-stone-700 hover:text-brand-green-700"
+                    : "border-white/35 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
+                }`}
+              >
+                <Languages className="h-3.5 w-3.5" aria-hidden="true" />
+                <span>{nextLanguage}</span>
+              </button>
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`p-2 rounded-lg transition-colors cursor-pointer focus:outline-none ${
@@ -125,9 +158,14 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
                     ? "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
                     : "text-white hover:bg-white/15 drop-shadow-[0_1px_2px_rgba(0,0,0,0.24)]"
                 }`}
-                aria-label="Toggle Menu"
+                aria-label={copy.nav.toggleMenu}
+                aria-expanded={isOpen}
               >
-                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {isOpen ? (
+                  <X className="w-6 h-6" aria-hidden="true" />
+                ) : (
+                  <Menu className="w-6 h-6" aria-hidden="true" />
+                )}
               </button>
             </div>
           </div>
@@ -141,9 +179,12 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="lg:hidden overflow-hidden bg-white border-b border-stone-200 shadow-md"
+              className="xl:hidden overflow-hidden bg-white border-b border-stone-200 shadow-md"
             >
-              <div className="px-4 pt-2 pb-6 space-y-1.5">
+              <nav
+                className="px-4 pt-2 pb-6 space-y-1.5"
+                aria-label={copy.nav.ariaLabel}
+              >
                 {navItems.map((item) => (
                   <button
                     key={item.id}
@@ -168,11 +209,11 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
                     }}
                     className="w-full flex items-center justify-center space-x-1.5 bg-brand-green-600 hover:bg-brand-green-500 text-white font-sans font-bold py-3.5 rounded-xl shadow-lg transition-colors"
                   >
-                    <span>Join Union Network</span>
-                    <ArrowUpRight className="w-4.5 h-4.5" />
+                    <span>{copy.nav.joinNetwork}</span>
+                    <ArrowUpRight className="w-4.5 h-4.5" aria-hidden="true" />
                   </button>
                 </div>
-              </div>
+              </nav>
             </motion.div>
           )}
         </AnimatePresence>

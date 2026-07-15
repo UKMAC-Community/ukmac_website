@@ -4,6 +4,7 @@
   --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-outfit), var(--font-plus-jakarta-sans), sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;
+  --font-khmer: "Noto Sans Khmer", "Khmer Sangam MN", "Leelawadee UI", sans-serif;
 
   --color-brand-green-50: #f0fdf4;
   --color-brand-green-100: #dcfce7;
@@ -37,6 +38,18 @@
   --color-stone-550: #67605a;
   --color-stone-750: #37322f;
   --color-stone-850: #231f1d;
+}
+
+html[data-language="km"] body,
+html[data-language="km"] .font-sans,
+html[data-language="km"] .font-display,
+html[data-language="km"] .font-mono {
+  font-family: var(--font-khmer);
+}
+
+html[data-language="km"] .uppercase {
+  text-transform: none;
+  letter-spacing: 0.02em;
 }
 
 @layer base {

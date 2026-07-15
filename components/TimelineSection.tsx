@@ -2,8 +2,10 @@ import { motion } from "motion/react";
 import type { Variants } from "motion/react";
 import { timelineMilestones } from "@/lib/data";
 import { Landmark, CalendarRange, Award, CheckCircle } from "lucide-react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function TimelineSection() {
+  const { copy } = useLanguage();
   const icons = [Landmark, CalendarRange, Award, CheckCircle, CheckCircle];
 
   const containerVariants: Variants = {
@@ -32,13 +34,13 @@ export default function TimelineSection() {
         {/* Section Title */}
         <div className="max-w-2xl space-y-4 mb-20">
           <span className="font-mono text-xs text-brand-green-700 font-semibold tracking-widest uppercase block">
-            Historic Milestones & Growth
+            {copy.timeline.eyebrow}
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-stone-900 tracking-tight leading-tight">
-            Journey of Cooperation
+            {copy.timeline.title}
           </h2>
           <p className="font-sans text-stone-600 text-base sm:text-lg leading-relaxed">
-            From regional smallholder coalitions to an autonomous apex national authority—tracing the milestones of Cambodian agricultural modernization.
+            {copy.timeline.description}
           </p>
         </div>
 
@@ -56,6 +58,7 @@ export default function TimelineSection() {
           <div className="space-y-10 sm:space-y-12">
             {timelineMilestones.map((milestone, index) => {
               const IconComponent = icons[index] || CheckCircle;
+              const milestoneCopy = copy.timeline.items[milestone.id];
 
               return (
                 <motion.div key={milestone.year} variants={itemVariants} className="relative flex gap-6 sm:gap-8">
@@ -71,11 +74,11 @@ export default function TimelineSection() {
                     </div>
 
                     <h3 className="font-display font-bold text-xl text-stone-900 tracking-tight leading-none mb-3">
-                      {milestone.title}
+                      {milestoneCopy.title}
                     </h3>
 
                     <p className="font-sans text-xs sm:text-sm text-stone-600 leading-relaxed">
-                      {milestone.description}
+                      {milestoneCopy.description}
                     </p>
                   </div>
                 </motion.div>
