@@ -115,23 +115,15 @@ export default function HeroSection() {
           className="absolute -top-[10%] left-0 w-full h-[130%] select-none pointer-events-none"
         >
           {HERO_IMAGES.map((image, imageIndex) => {
-          const isActive = imageIndex === index;
+            const isActive = imageIndex === index;
 
-          return (
-            <div
-              key={image}
-              aria-hidden={!isActive}
-              className={`pointer-events-none absolute inset-0 h-full w-full transition-opacity duration-1000 ease-in-out ${
-                isActive ? "z-[1] opacity-100" : "z-0 opacity-0"
-              }`}
-            >
-              <motion.div
-                className="relative h-full w-full"
-                animate={{ scale: isActive ? 1.12 : 1 }}
-                transition={{
-                  duration: isActive ? SLIDE_DURATION / 1000 : 0,
-                  ease: "linear",
-                }}
+            return (
+              <div
+                key={image}
+                aria-hidden={!isActive}
+                className={`pointer-events-none absolute inset-0 h-full w-full transition-opacity duration-1000 ease-in-out ${
+                  isActive ? "z-[1] opacity-100" : "z-0 opacity-0"
+                }`}
               >
                 <Image
                   src={image}
@@ -142,10 +134,9 @@ export default function HeroSection() {
                   loading={imageIndex === 0 ? undefined : "eager"}
                   className="h-full w-full object-cover object-[62%_center] sm:object-center"
                 />
-              </motion.div>
-            </div>
-          );
-        })}
+              </div>
+            );
+          })}
 
           {/* Overlays stay fixed above the sliding images */}
           <div className="absolute inset-0 bg-[#9ae27f]/20 mix-blend-soft-light z-10" />
