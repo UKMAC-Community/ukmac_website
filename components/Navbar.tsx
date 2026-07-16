@@ -35,9 +35,9 @@ const HOME_SECTIONS: ReadonlyArray<{
   navId: ActiveNavId;
 }> = [
   { sectionId: "hero", navId: "home" },
+  { sectionId: "about-preview", navId: "about" },
   { sectionId: "important-announcement", navId: "news" },
   { sectionId: "news", navId: "news" },
-  { sectionId: "about-preview", navId: "about" },
   { sectionId: "projects", navId: "projects" },
   { sectionId: "gallery", navId: "gallery" },
   { sectionId: "contact", navId: "contact" },
@@ -248,16 +248,6 @@ export default function Navbar() {
               {activeIndicator(isLinkActive("home"))}
             </Link>
 
-            <Link
-              href={MAIN_LINKS[1].href}
-              onClick={() => handleMainLinkClick("news")}
-              aria-current={isLinkActive("news") ? "page" : undefined}
-              className={desktopLinkClass(isLinkActive("news"))}
-            >
-              {copy.nav.items.news}
-              {activeIndicator(isLinkActive("news"))}
-            </Link>
-
             <div
               className="relative"
               onMouseEnter={() => setIsDesktopAboutOpen(true)}
@@ -332,6 +322,16 @@ export default function Navbar() {
                 )}
               </AnimatePresence>
             </div>
+
+            <Link
+              href={MAIN_LINKS[1].href}
+              onClick={() => handleMainLinkClick("news")}
+              aria-current={isLinkActive("news") ? "page" : undefined}
+              className={desktopLinkClass(isLinkActive("news"))}
+            >
+              {copy.nav.items.news}
+              {activeIndicator(isLinkActive("news"))}
+            </Link>
 
             {MAIN_LINKS.slice(2).map((item) => {
               const active = isLinkActive(item.id);
@@ -410,14 +410,6 @@ export default function Navbar() {
                 {copy.nav.items.home}
               </MobileLink>
 
-              <MobileLink
-                href="/news"
-                active={isLinkActive("news")}
-                onClick={() => handleMainLinkClick("news")}
-              >
-                {copy.nav.items.news}
-              </MobileLink>
-
               <div>
                 <div
                   className={`flex w-full items-center border-l-4 font-sans text-base font-semibold transition-colors ${
@@ -476,6 +468,14 @@ export default function Navbar() {
                   )}
                 </AnimatePresence>
               </div>
+
+              <MobileLink
+                href="/news"
+                active={isLinkActive("news")}
+                onClick={() => handleMainLinkClick("news")}
+              >
+                {copy.nav.items.news}
+              </MobileLink>
 
               {MAIN_LINKS.slice(2).map((item) => (
                 <MobileLink

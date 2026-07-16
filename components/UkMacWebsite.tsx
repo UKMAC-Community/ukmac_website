@@ -8,6 +8,7 @@ import ImportantAnnouncement, {
 } from "@/components/news/ImportantAnnouncement";
 import News from "@/components/news/news";
 import ContactSection from "@/components/ContactSection";
+import CoverageMapSection from "@/components/CoverageMapSection";
 import HeroSection from "@/components/HeroSection";
 import type { PublicPost } from "@/lib/news";
 
@@ -29,15 +30,16 @@ export default function UkMacWebsite({
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-white font-sans text-stone-900 selection:bg-brand-green-500/20 selection:text-brand-green-900">
       <HeroSection />
+      <AboutPreview />
       <ImportantAnnouncement post={importantPost} />
       <News
         posts={posts}
         error={postsError}
         excludePostId={importantPost?.id}
       />
-      <AboutPreview />
       <ProjectsActivities posts={projectPosts} error={projectPostsError} />
       <GalleryPreview />
+      <CoverageMapSection />
       <ContactSection />
     </main>
   );

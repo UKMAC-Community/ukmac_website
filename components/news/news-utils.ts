@@ -1,4 +1,5 @@
 import type { PublicPost } from "@/lib/news";
+import { normalizeContentDocument, plainTextFromDocument } from "@/lib/post-content";
 
 export const NEWS_FILTERS = [
   "all",
@@ -66,8 +67,10 @@ export function getContentPreview(
   content: string | null | undefined,
   emptyPreview: string,
   maxLength = 150,
+  contentJson?: unknown,
 ) {
-  const normalized = (content ?? "").replace(/\s+/g, " ").trim();
+  const document = normalizeContentDocument(contentJson, content);
+  const normalized = plainTextFromDocument(document).replace(/\s+/g, " ").trim();
   if (!normalized) return emptyPreview;
   if (normalized.length <= maxLength) return normalized;
 

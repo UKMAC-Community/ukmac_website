@@ -82,6 +82,50 @@ export function normalizeContentDocument(
   return parseContentDocument(value) ?? documentFromLegacy(fallbackContent);
 }
 
+const FILENAME_PATTERN = /\.(jpe?g|png|gif|webp|svg)$/i;
+
+function isFilenameLike(text: string): boolean {
+  return FILENAME_PATTERN.test(text);
+}
+
+export function referencedMediaIds(document: ContentDocument): string[] {
+  const ids: string[] = [];
+
+  for (const block of document.blocks) {
+    if (block.type === "image") {
+      ids.push(block.data.media_id);
+    } else if (block.type === "gallery") {
+      ids.push(...block.data.images.map((image) => image.media_id));
+    }
+  }
+
+  return [...new Set(ids)];
+}
+
+export function plainTextFromDocument(document: ContentDocument): string {
+  const parts: string[] = [];
+
+  for (const block of document.blocks) {
+    if (block.type === "paragraph" || block.type === "heading") {
+      if (block.data.text.trim()) parts.push(block.data.text.trim());
+      continue;
+    }
+
+    if (block.type === "image") {
+      const label = block.data.caption?.trim() || block.data.alt.trim();
+      if (label && !isFilenameLike(label)) parts.push(label);
+      continue;
+    }
+
+    for (const image of block.data.images) {
+      const label = image.caption?.trim() || image.alt.trim();
+      if (label && !isFilenameLike(label)) parts.push(label);
+    }
+  }
+
+  return parts.join("\n\n").trim();
+}
+
 export function parseContentDocument(value: unknown): ContentDocument | null {
   const candidate = parseJsonValue(value);
 

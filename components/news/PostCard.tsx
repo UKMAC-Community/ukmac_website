@@ -9,13 +9,18 @@ import { formatPostDate, getContentPreview } from "./news-utils";
 
 export default function PostCard({ post }: { post: PublicPost }) {
   const { copy, locale } = useLanguage();
-  const preview = getContentPreview(post.content, copy.news.emptyPreview);
+  const preview = getContentPreview(
+    post.content,
+    copy.news.emptyPreview,
+    150,
+    post.content_json,
+  );
 
   return (
     <article className="group relative flex min-h-full flex-col overflow-hidden border border-stone-200 bg-white transition-[border-color,transform,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-green-300 hover:shadow-[0_20px_55px_-30px_rgba(2,44,34,0.35)]">
       <Link
         href={`/news/${encodeURIComponent(post.slug)}`}
-        className="relative block aspect-[16/9] overflow-hidden bg-brand-green-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-green-400"
+        className="relative block aspect-[16/10] overflow-hidden bg-brand-green-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-green-400"
         aria-label={post.title}
       >
         {post.cover_image ? (

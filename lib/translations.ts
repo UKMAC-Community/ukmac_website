@@ -243,6 +243,13 @@ const en = {
       },
     },
   },
+  coverage: {
+    eyebrow: "Where We Work",
+    title: "Our Provincial Footprint",
+    description:
+      "UKMAC member cooperatives operate across Cambodia's leading agricultural provinces.",
+    provincesLabel: "Active Provinces",
+  },
   network: {
     eyebrow: "Structure & Roles",
     title: "Functions and Management Structure of the Union",
@@ -443,6 +450,7 @@ const en = {
       "Browse all published UKMAC notices, organizational news, events, and career opportunities.",
     loadMore: "View more",
     backToHome: "Back to home",
+    featuredLabel: "Featured",
   },
   newsDetail: {
     allUpdates: "All updates",
@@ -725,6 +733,13 @@ const km: TranslationShape<typeof en> = {
       },
     },
   },
+  coverage: {
+    eyebrow: "តំបន់ដែលយើងធ្វើការ",
+    title: "វត្តមានតាមខេត្តរបស់យើង",
+    description:
+      "សហគមន៍សមាជិក UKMAC ធ្វើប្រតិបត្តិការនៅទូទាំងខេត្តកសិកម្មឈានមុខរបស់កម្ពុជា។",
+    provincesLabel: "ខេត្តសកម្ម",
+  },
   network: {
     eyebrow: "រចនាសម្ព័ន្ធ និងតួនាទី",
     title: "មុខងារ និងរចនាសម្ព័ន្ធគ្រប់គ្រងរបស់សហភាព",
@@ -921,6 +936,7 @@ const km: TranslationShape<typeof en> = {
       "រកមើលសេចក្តីជូនដំណឹង ព័ត៌មានអង្គការ ព្រឹត្តិការណ៍ និងឱកាសការងាររបស់ UKMAC ដែលបានផ្សព្វផ្សាយទាំងអស់។",
     loadMore: "មើលបន្ថែម",
     backToHome: "ត្រឡប់ទៅទំព័រដើម",
+    featuredLabel: "លេចធ្លោ",
   },
   newsDetail: {
     allUpdates: "បច្ចុប្បន្នភាពទាំងអស់",

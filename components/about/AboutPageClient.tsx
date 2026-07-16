@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import AboutSection from "@/components/AboutSection";
+import CoverageMapSection from "@/components/CoverageMapSection";
 import DocumentsSection from "@/components/DocumentsSection";
 import FocusAreas from "@/components/FocusAreas";
 import InteractiveMap from "@/components/InteractiveMap";
@@ -64,14 +65,15 @@ export default function AboutPageClient() {
         title={aboutPageCopy.statsTitle}
       />
       <AboutSection id="background" />
-      <TimelineSection id="vision-mission" />
       <PillarsSection id="objectives" />
       <FocusAreas id="members" />
       <InteractiveMap
         id="structure"
         leadershipId="leadership"
       />
+      <TimelineSection id="vision-mission" />
       <DocumentsSection id="documents" />
+      <CoverageMapSection id="coverage" />
     </main>
   );
 }

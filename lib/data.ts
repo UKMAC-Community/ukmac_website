@@ -9,25 +9,25 @@ export const pillars = [
     id: "finance",
     iconName: "Landmark",
     metric: "01",
-    image: "/images/ukmac_cooperative_collaboration_1784000237090.jpg",
+    image: "/images/union/governance.webp",
   },
   {
     id: "business",
     iconName: "BriefcaseBusiness",
     metric: "02",
-    image: "/images/cambodia_agriculture_hero_1784000209131.jpg",
+    image: "/images/union/development.webp",
   },
   {
     id: "technology",
     iconName: "Cpu",
     metric: "03",
-    image: "/images/ukmac_smart_innovation_1784000222966.jpg",
+    image: "/images/union/technique.webp",
   },
   {
     id: "market",
     iconName: "TrendingUp",
     metric: "04",
-    image: "/images/ukmac_cooperative_collaboration_1784000237090.jpg",
+    image: "/images/union/market.webp",
   },
 ] as const;
 
@@ -42,35 +42,29 @@ export const focusAreas = [
   { id: "valueAddition", iconName: "PackageCheck" },
 ] as const;
 
+// `mapName` must match a "name" in lib/cambodia-provinces.json — that's
+// how the map finds the province shape and places its marker. To add a
+// new province, just add an entry with its id and its exact map name;
+// no manual coordinates needed.
 export const provinces = [
   {
     id: "battambang",
-    coordinates: { x: 28, y: 35 },
-    coopCount: 34,
-    farmersCount: 8500,
+    mapName: "Battambang",
   },
   {
     id: "siem_reap",
-    coordinates: { x: 42, y: 22 },
-    coopCount: 22,
-    farmersCount: 4200,
+    mapName: "Siem Reap",
   },
   {
     id: "kampong_cham",
-    coordinates: { x: 68, y: 54 },
-    coopCount: 28,
-    farmersCount: 6100,
+    mapName: "Kampong Cham",
   },
   {
     id: "takeo",
-    coordinates: { x: 52, y: 84 },
-    coopCount: 19,
-    farmersCount: 4800,
+    mapName: "Takeo",
   },
   {
     id: "kampot",
-    coordinates: { x: 38, y: 88 },
-    coopCount: 15,
-    farmersCount: 2500,
+    mapName: "Kampot",
   },
 ] as const;

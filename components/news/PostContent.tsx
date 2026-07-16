@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import type { ContentDocument, ContentMedia } from "@/lib/post-content";
 
 type RenderImage = {
@@ -163,8 +166,9 @@ function ArticleImage({
 }) {
   const safeImageUrl = getSafeImageUrl(imageUrl);
   const caption = media.caption?.trim() || fallbackCaption?.trim();
+  const [failedToLoad, setFailedToLoad] = useState(false);
 
-  if (!safeImageUrl) {
+  if (!safeImageUrl || failedToLoad) {
     return (
       <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-stone-300 bg-stone-100 px-5 text-center text-sm text-stone-500">
         {unavailableText}
@@ -181,6 +185,7 @@ function ArticleImage({
         alt={media.alt}
         loading="lazy"
         decoding="async"
+        onError={() => setFailedToLoad(true)}
         className={`block w-full rounded-2xl bg-stone-100 ${
           crop ? "object-cover" : "h-auto"
         }`}

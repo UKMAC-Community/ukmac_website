@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { motion } from "motion/react";
+import Image from "next/image";
 import { pillars } from "@/lib/data";
 import {
   BriefcaseBusiness,
@@ -14,6 +16,7 @@ interface PillarsSectionProps {
 
 export default function PillarsSection({ id = "pillars" }: PillarsSectionProps) {
   const { copy } = useLanguage();
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const getIcon = (name: string, className: string) => {
     switch (name) {
@@ -51,9 +54,11 @@ export default function PillarsSection({ id = "pillars" }: PillarsSectionProps) 
         </div>
 
         {/* Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 border-t border-l border-stone-200">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:flex border-t border-l border-stone-200">
           {pillars.map((pillar) => {
             const pillarCopy = copy.pillars.items[pillar.id];
+            const isHovered = hoveredId === pillar.id;
+            const isDimmed = hoveredId !== null && !isHovered;
 
             return (
               <motion.div
@@ -62,15 +67,35 @@ export default function PillarsSection({ id = "pillars" }: PillarsSectionProps) 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6 }}
-                className="flex flex-col p-6 sm:p-8 border-r border-b border-stone-200"
+                onMouseEnter={() => setHoveredId(pillar.id)}
+                onMouseLeave={() => setHoveredId(null)}
+                style={{ flexGrow: isHovered ? 2.4 : isDimmed ? 0.7 : 1, flexBasis: 0 }}
+                className="group relative isolate flex h-[280px] min-w-0 flex-col overflow-hidden p-6 sm:p-8 border-r border-b border-stone-200 transition-[flex-grow] duration-500 ease-in-out"
               >
-                {getIcon(pillar.iconName, "w-6 h-6 text-brand-green-700 stroke-[1.5] mb-8")}
+                <Image
+                  src={pillar.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                  className="absolute inset-0 -z-10 object-cover opacity-0 scale-105 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-100"
+                  aria-hidden="true"
+                />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-stone-950/90 via-stone-950/60 to-stone-950/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                <h3 className="font-display font-bold text-2xl text-stone-900 mb-3 tracking-tight">
+                {getIcon(
+                  pillar.iconName,
+                  "w-6 h-6 text-brand-green-700 stroke-[1.5] mb-4 transition-colors duration-500 group-hover:text-white",
+                )}
+
+                <h3 className="font-display font-bold text-2xl text-stone-900 mb-3 tracking-tight transition-colors duration-500 group-hover:text-white line-clamp-2">
                   {pillarCopy.title}
                 </h3>
 
-                <p className="font-sans text-sm text-stone-600 leading-relaxed">
+                <p
+                  className={`font-sans text-sm text-stone-600 leading-relaxed transition-all duration-300 group-hover:text-stone-100 ${
+                    isDimmed ? "max-h-0 opacity-0" : "max-h-24 opacity-100"
+                  }`}
+                >
                   {pillarCopy.shortDescription}
                 </p>
               </motion.div>

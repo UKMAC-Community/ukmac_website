@@ -9,6 +9,7 @@ import type { PublicPost } from "@/lib/news";
 import {
   documentFromLegacy,
   parseContentDocument,
+  referencedMediaIds,
 } from "@/lib/post-content";
 
 export default function NewsDetail({ post }: { post: PublicPost }) {
@@ -21,49 +22,68 @@ export default function NewsDetail({ post }: { post: PublicPost }) {
     ? []
     : (post.images?.filter((image) => image.image_role === "gallery") ?? []);
 
+  // Mirrors the admin post view: skip the standalone cover figure when that
+  // same image is already placed inline within the article body.
+  const coverImage = post.images?.find((image) => image.image_role === "cover");
+  const referencedIds = new Set(referencedMediaIds(contentDocument));
+  const coverIsPlacedInArticle = coverImage
+    ? referencedIds.has(coverImage.id)
+    : false;
+  const showCoverFigure = Boolean(post.cover_image) && !coverIsPlacedInArticle;
+
   return (
-    <main className="min-h-screen bg-earth-50 pt-16 text-stone-900">
-      <article>
-        <div className="bg-brand-green-950 text-white">
-          <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
-            <div className="flex min-h-[24rem] flex-col justify-center px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-              <span className="w-fit bg-brand-green-500/20 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-brand-green-200">
-                {typeName}
+    <main className="min-h-screen bg-white pt-16 text-stone-900">
+      <div className="mx-auto w-full max-w-4xl px-4 pb-12 pt-8 sm:px-6 sm:pt-10 lg:px-8">
+        <Link
+          href="/news"
+          className="inline-flex items-center gap-2 text-sm font-medium text-stone-500 transition-colors hover:text-stone-900"
+        >
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+          {copy.newsDetail.back}
+        </Link>
+
+        <article className="mx-auto mt-8 w-full max-w-3xl sm:mt-12">
+          <div className="flex flex-wrap items-center gap-2 text-xs font-medium">
+            <span className="rounded-full bg-stone-100 px-2.5 py-1 text-stone-600">
+              {typeName}
+            </span>
+            {post.featured && (
+              <span className="rounded-full bg-brand-green-50 px-2.5 py-1 text-brand-green-700">
+                {copy.news.featuredLabel}
               </span>
-              <h1 className="mt-6 max-w-2xl font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-                {post.title}
-              </h1>
-              <div className="mt-6 flex items-center gap-2 text-xs text-brand-green-100/75">
-                <CalendarDays className="h-4 w-4" aria-hidden="true" />
-                <time dateTime={post.created_at}>
-                  {formatDate(post.created_at, locale, copy.news.recentUpdate)}
-                </time>
-              </div>
-            </div>
-
-            <div className="relative min-h-72 overflow-hidden bg-brand-green-900 lg:min-h-full">
-              {post.cover_image ? (
-                <div
-                  role="img"
-                  aria-label={formatTranslation(copy.news.coverAlt, { title: post.title })}
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${JSON.stringify(post.cover_image)})` }}
-                />
-              ) : (
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(52,211,153,0.4),transparent_45%),linear-gradient(135deg,#022c22,#065f46)]" />
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-green-950/45 to-transparent" />
-            </div>
+            )}
           </div>
-        </div>
 
-        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-          <PostContent
-            document={contentDocument}
-            images={post.images ?? []}
-            emptyText={copy.newsDetail.emptyContent}
-            unavailableImageText={copy.newsDetail.imageUnavailable}
-          />
+          <h1 className="mt-5 break-words font-display text-[clamp(2rem,6vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-stone-900">
+            {post.title}
+          </h1>
+
+          <div className="mt-5 flex items-center gap-2 text-xs text-stone-500">
+            <CalendarDays className="h-4 w-4" aria-hidden="true" />
+            <time dateTime={post.created_at}>
+              {formatDate(post.created_at, locale, copy.news.recentUpdate)}
+            </time>
+          </div>
+
+          {showCoverFigure && (
+            <figure className="mt-9">
+              {/* eslint-disable-next-line @next/next/no-img-element -- URLs come from the public media API; intrinsic size matches the admin post view */}
+              <img
+                src={post.cover_image ?? undefined}
+                alt={formatTranslation(copy.news.coverAlt, { title: post.title })}
+                className="h-auto w-full rounded-2xl bg-stone-100"
+              />
+            </figure>
+          )}
+
+          <div className="mt-9">
+            <PostContent
+              document={contentDocument}
+              images={post.images ?? []}
+              emptyText={copy.newsDetail.emptyContent}
+              unavailableImageText={copy.newsDetail.imageUnavailable}
+            />
+          </div>
 
           {galleryImages.length > 0 && (
             <section
@@ -103,18 +123,8 @@ export default function NewsDetail({ post }: { post: PublicPost }) {
               </div>
             </section>
           )}
-
-          <div className="mt-16 border-t border-stone-200 pt-8">
-            <Link
-              href="/news"
-              className="inline-flex items-center gap-2 border border-brand-green-600 px-5 py-3 text-sm font-bold text-brand-green-700 transition-colors hover:bg-brand-green-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green-500"
-            >
-              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-              {copy.newsDetail.back}
-            </Link>
-          </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </main>
   );
 }

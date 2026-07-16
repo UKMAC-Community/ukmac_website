@@ -96,7 +96,12 @@ export default function ProjectsActivities({
                     </Link>
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-stone-600">
-                    {getContentPreview(post.content, copy.news.emptyPreview)}
+                    {getContentPreview(
+                      post.content,
+                      copy.news.emptyPreview,
+                      150,
+                      post.content_json,
+                    )}
                   </p>
                 </div>
               </motion.article>
