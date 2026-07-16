@@ -78,7 +78,7 @@ export default function InteractiveMap({
       />
       <div
         aria-hidden="true"
-        className="absolute -right-44 top-48 hidden h-96 w-96 rounded-full border border-brand-green-900/5 sm:block"
+        className="absolute -right-44 top-48 hidden h-96 w-96 rounded-full border border-brand-green-900/5 lg:block"
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -127,7 +127,10 @@ export default function InteractiveMap({
 
           {/* Hierarchy: always a single stacked column, at every screen size —
               each level is a full-width box with the number in its own left
-              column, connected to the next by a thin line + down arrow.
+              column, connected to the next by a thin line + down arrow. The
+              connector is skipped after the LAST item — the elbow bracket
+              below (into the teams section) takes over that job instead of
+              a second arrow stacking on top of it.
               Sizes scale down via sm:/lg: but the structure never switches
               to a horizontal row, so nothing can misalign or disconnect. */}
           <ol className="mx-auto mt-8 flex max-w-3xl flex-col items-stretch sm:mt-10 lg:mt-12">
@@ -135,23 +138,17 @@ export default function InteractiveMap({
               <motion.li
                 key={index}
                 variants={itemVariants}
-                className="flex w-full flex-col items-center"
+                className="flex w-full flex-col items-start"
               >
-                <div className="group grid w-full grid-cols-[3rem_minmax(0,1fr)] items-center border border-stone-200 bg-white shadow-[0_18px_50px_-38px_rgba(28,25,23,0.5)] transition-colors duration-300 hover:border-brand-green-700/40 sm:grid-cols-[4rem_minmax(0,1fr)]">
-                  <span
-                    aria-hidden="true"
-                    className="flex h-full min-h-16 items-center justify-center border-r border-stone-200 font-mono text-xs font-bold text-brand-green-700 sm:min-h-20"
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="px-5 py-4 font-display text-sm font-bold tracking-tight text-stone-900 sm:px-7 sm:text-lg lg:text-xl">
+                <div className="group flex w-full min-h-16 items-center justify-center border border-stone-200 bg-white shadow-[0_18px_50px_-38px_rgba(28,25,23,0.5)] transition-colors duration-300 hover:border-brand-green-700/40 sm:min-h-20">
+                  <span className="px-5 py-4 text-center font-display text-sm font-bold tracking-tight text-stone-900 sm:px-7 sm:text-lg lg:text-xl">
                     {level.title}
                   </span>
                 </div>
 
                 {index < networkCopy.hierarchy.length - 1 && (
-                  <div aria-hidden="true" className="flex h-11 flex-col items-center justify-end text-brand-green-700">
-                    <span className="h-full w-px bg-stone-300" />
+                  <div aria-hidden="true" className="flex h-11 w-full flex-col items-center justify-end text-brand-green-700">
+                    <span className="h-full w-px bg-brand-green-700/30" />
                     <ArrowDown className="-mt-1 h-4 w-4" />
                   </div>
                 )}
@@ -159,40 +156,70 @@ export default function InteractiveMap({
             ))}
           </ol>
 
-          <motion.div variants={itemVariants} className="mt-10 sm:mt-2">
+          <motion.div variants={itemVariants} className="mx-auto mt-2 max-w-3xl lg:mx-0 lg:max-w-none">
             <h4 className="sr-only">{networkCopy.teamsTitle}</h4>
 
-            {/* Stem connecting the hierarchy to the team branch line (desktop only) */}
-            <div aria-hidden="true" className="mx-auto hidden h-10 w-px bg-stone-300 lg:block" />
+            {/* Mobile/tablet: elbow-bracket tree — a stub drops from the last
+                hierarchy box's center, turns left into a trunk line, which
+                then runs down with horizontal ticks feeding each team box.
+                No arrowhead on this segment; matches the reference bracket
+                shape (vertical stub -> corner -> long trunk with ticks). */}
+            <div className="relative lg:hidden">
+              {/* elbow: vertical stub from box-03's center, then a left turn to the trunk x */}
+              <div className="relative h-10 w-full">
+                <span className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 bg-brand-green-700/30" />
+                <span className="absolute left-6 right-1/2 top-1/2 h-px bg-brand-green-700/30 sm:left-8" />
+              </div>
 
-            {/* Horizontal branch line connecting to each team column (desktop only) */}
+              {/* trunk: continues down from the elbow's corner, past all team boxes */}
+              <div
+                aria-hidden="true"
+                className="absolute left-6 top-5 bottom-6 w-px bg-brand-green-700/30 sm:left-8"
+              />
+
+              <ul className="flex flex-col gap-6 pl-12 sm:pl-16" role="list">
+                {networkCopy.teams.map((team, index) => {
+                  const Icon = teamIcons[index] ?? Network;
+                  return (
+                    <li key={index} className="relative">
+                      {/* Horizontal tick from the trunk line to this box */}
+                      <span
+                        aria-hidden="true"
+                        className="absolute -left-6 top-1/2 h-px w-6 -translate-y-1/2 bg-brand-green-700/30 sm:-left-8 sm:w-8"
+                      />
+                      <div
+                        className={`flex min-h-28 flex-col justify-between border p-4 sm:min-h-36 sm:p-5 ${getTeamTone(team.tone)}`}
+                      >
+                        <Icon aria-hidden="true" className="h-5 w-5 stroke-[1.5] opacity-80" />
+                        <span className="mt-6 font-display text-sm font-bold leading-snug sm:mt-8 sm:text-base">
+                          {team.title}
+                        </span>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
+            {/* Desktop: stem centered in its own full-width flex column,
+                feeding a horizontal branch line into a 4-column grid. */}
+            <div aria-hidden="true" className="hidden lg:flex lg:flex-col lg:items-center">
+              <span className="h-11 w-px bg-brand-green-700/30" />
+              <ArrowDown className="-mt-1 h-4 w-4 text-brand-green-700" />
+            </div>
             <div aria-hidden="true" className="relative hidden h-10 lg:block">
-              <div className="absolute inset-x-[12.5%] top-0 h-px bg-stone-300" />
+              <div className="absolute inset-x-[12.5%] top-0 h-px bg-brand-green-700/30" />
               <div className="grid h-full grid-cols-4">
                 {networkCopy.teams.map((_, index) => (
-                  <div key={index} className="mx-auto h-full w-px bg-stone-300" />
+                  <div key={index} className="mx-auto h-full w-px bg-brand-green-700/30" />
                 ))}
               </div>
             </div>
-
-            {/* Mobile/tablet: single vertical trunk line on the left with a
-                horizontal tick branching out to each stacked team box.
-                Desktop keeps the 4-column grid fed by the branch line above. */}
-            <ul className="relative mt-7 flex flex-col gap-6 pl-6 lg:mt-0 lg:grid lg:grid-cols-4 lg:gap-3 lg:pl-0" role="list">
-              <div
-                aria-hidden="true"
-                className="absolute bottom-6 left-0 top-0 w-px bg-stone-300 lg:hidden"
-              />
+            <ul className="hidden lg:grid lg:grid-cols-4 lg:gap-3" role="list">
               {networkCopy.teams.map((team, index) => {
                 const Icon = teamIcons[index] ?? Network;
-
                 return (
-                  <li key={index} className="relative">
-                    {/* Horizontal tick from the trunk line to this box (mobile/tablet only) */}
-                    <span
-                      aria-hidden="true"
-                      className="absolute -left-6 top-1/2 h-px w-6 -translate-y-1/2 bg-stone-300 lg:hidden"
-                    />
+                  <li key={index}>
                     <div
                       className={`flex min-h-28 flex-col justify-between border p-4 sm:min-h-36 sm:p-5 lg:p-6 ${getTeamTone(team.tone)}`}
                     >
