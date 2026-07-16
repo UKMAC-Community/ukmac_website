@@ -4,12 +4,12 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { Images } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
-import type { PublicPost } from "@/lib/news";
-import { sortPostsNewestFirst } from "@/components/news/news-utils";
+// import type { PublicPost } from "@/lib/news";
+// import { sortPostsNewestFirst } from "@/components/news/news-utils";
 
-type GalleryPreviewProps = {
-  posts: PublicPost[];
-};
+// type GalleryPreviewProps = {
+//   posts: PublicPost[];
+// };
 
 type GalleryItem = {
   src: string;
@@ -17,13 +17,22 @@ type GalleryItem = {
   href?: string;
 };
 
-const FALLBACK_IMAGES = [
-  "/images/unspast/img1.webp",
-  "/images/unspast/img2.webp",
-  "/images/unspast/img3.webp",
-  "/images/ukmac_cooperative_collaboration_1784000237090.jpg",
-  "/images/ukmac_smart_innovation_1784000222966.jpg",
-] as const;
+// const FALLBACK_IMAGES = [
+//   "/images/unspast/img1.webp",
+//   "/images/unspast/img2.webp",
+//   "/images/unspast/img3.webp",
+//   "/images/ukmac_cooperative_collaboration_1784000237090.jpg",
+//   "/images/ukmac_smart_innovation_1784000222966.jpg",
+// ] as const;
+
+// NEW: static gallery images (no API/posts needed)
+const GALLERY_IMAGES: GalleryItem[] = [
+  { src: "/images/gallery/img1.webp", alt: "Gallery image 1" },
+  { src: "/images/gallery/img2.webp", alt: "Gallery image 2" },
+  { src: "/images/gallery/img3.webp", alt: "Gallery image 3" },
+  { src: "/images/gallery/img4.webp", alt: "Gallery image 4" },
+  { src: "/images/gallery/img5.webp", alt: "Gallery image 5" },
+];
 
 const TILE_CLASSES = [
   "sm:col-span-2 lg:col-span-7 lg:row-span-2",
@@ -33,10 +42,12 @@ const TILE_CLASSES = [
   "lg:col-span-6",
 ] as const;
 
-export default function GalleryPreview({ posts }: GalleryPreviewProps) {
+// export default function GalleryPreview({ posts }: GalleryPreviewProps) {
+export default function GalleryPreview() {
   const { copy } = useLanguage();
   const galleryCopy = copy.home.gallery;
-  const items = buildGalleryItems(posts, galleryCopy.imageFallbackAlt);
+  // const items = buildGalleryItems(posts, galleryCopy.imageFallbackAlt);
+  const items = GALLERY_IMAGES; // NEW: use static images instead
 
   return (
     <section
@@ -112,34 +123,34 @@ export default function GalleryPreview({ posts }: GalleryPreviewProps) {
   );
 }
 
-function buildGalleryItems(posts: PublicPost[], fallbackAlt: string) {
-  const items: GalleryItem[] = [];
-  const seenSources = new Set<string>();
+// function buildGalleryItems(posts: PublicPost[], fallbackAlt: string) {
+//   const items: GalleryItem[] = [];
+//   const seenSources = new Set<string>();
 
-  for (const post of sortPostsNewestFirst(posts)) {
-    const href = `/news/${encodeURIComponent(post.slug)}`;
-    const postImages = [
-      ...(post.cover_image ? [{ src: post.cover_image, alt: post.title }] : []),
-      ...(post.images ?? []).map((image) => ({
-        src: image.image_url,
-        alt: image.caption?.trim() || post.title,
-      })),
-    ];
+//   for (const post of sortPostsNewestFirst(posts)) {
+//     const href = `/news/${encodeURIComponent(post.slug)}`;
+//     const postImages = [
+//       ...(post.cover_image ? [{ src: post.cover_image, alt: post.title }] : []),
+//       ...(post.images ?? []).map((image) => ({
+//         src: image.image_url,
+//         alt: image.caption?.trim() || post.title,
+//       })),
+//     ];
 
-    for (const image of postImages) {
-      if (!image.src || seenSources.has(image.src)) continue;
-      seenSources.add(image.src);
-      items.push({ ...image, href });
-      if (items.length === TILE_CLASSES.length) return items;
-    }
-  }
+//     for (const image of postImages) {
+//       if (!image.src || seenSources.has(image.src)) continue;
+//       seenSources.add(image.src);
+//       items.push({ ...image, href });
+//       if (items.length === TILE_CLASSES.length) return items;
+//     }
+//   }
 
-  for (const [index, src] of FALLBACK_IMAGES.entries()) {
-    if (items.length === TILE_CLASSES.length) break;
-    if (seenSources.has(src)) continue;
-    seenSources.add(src);
-    items.push({ src, alt: `${fallbackAlt} ${index + 1}` });
-  }
+//   for (const [index, src] of FALLBACK_IMAGES.entries()) {
+//     if (items.length === TILE_CLASSES.length) break;
+//     if (seenSources.has(src)) continue;
+//     seenSources.add(src);
+//     items.push({ src, alt: `${fallbackAlt} ${index + 1}` });
+//   }
 
-  return items;
-}
+//   return items;
+// }

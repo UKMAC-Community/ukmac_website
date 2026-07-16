@@ -5,6 +5,8 @@ import type { PublicPost } from "@/lib/news";
 export default async function Home() {
   let posts: PublicPost[] = [];
   let postsError = false;
+  let projectPosts: PublicPost[] = [];
+  let projectPostsError = false;
 
   try {
     posts = await getPublicPosts();
@@ -12,5 +14,18 @@ export default async function Home() {
     postsError = true;
   }
 
-  return <UkMacWebsite posts={posts} postsError={postsError} />;
+  try {
+    projectPosts = await getPublicPosts({ typeSlug: "news" });
+  } catch {
+    projectPostsError = true;
+  }
+
+  return (
+    <UkMacWebsite
+      posts={posts}
+      postsError={postsError}
+      projectPosts={projectPosts}
+      projectPostsError={projectPostsError}
+    />
+  );
 }

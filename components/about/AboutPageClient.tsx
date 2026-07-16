@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import AboutSection from "@/components/AboutSection";
+import DocumentsSection from "@/components/DocumentsSection";
 import FocusAreas from "@/components/FocusAreas";
 import InteractiveMap from "@/components/InteractiveMap";
 import PillarsSection from "@/components/PillarsSection";
@@ -19,20 +20,28 @@ export default function AboutPageClient() {
       <section
         id="about-top"
         aria-labelledby="about-page-title"
-        className="relative isolate overflow-hidden bg-brand-green-950 px-4 pb-20 pt-32 text-white sm:px-6 sm:pb-24 sm:pt-36 lg:px-8 lg:pb-28 lg:pt-40"
+        className="relative isolate flex min-h-[26rem] items-end overflow-hidden bg-brand-green-950 px-4 pb-12 pt-32 text-white sm:min-h-[30rem] sm:px-6 sm:pb-16 sm:pt-36 lg:min-h-[36rem] lg:px-8 lg:pb-20 lg:pt-40"
       >
+        <Image
+          src="/images/ukmac_cooperative_collaboration_1784000237090.jpg"
+          alt={copy.home.about.imageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(74,222,128,0.16),transparent_28%),linear-gradient(115deg,rgba(2,44,34,0.98)_0%,rgba(2,44,34,0.91)_50%,rgba(2,44,34,0.62)_100%)]"
+          className="absolute inset-0 [background:linear-gradient(100deg,rgba(2,44,34,0.96)_0%,rgba(2,44,34,0.88)_30%,rgba(2,44,34,0.5)_58%,rgba(2,44,34,0.1)_82%,rgba(2,44,34,0)_100%)]"
         />
 
-        <div className="relative mx-auto grid max-w-7xl items-end gap-12 lg:grid-cols-12 lg:gap-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="lg:col-span-7"
-          >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative mx-auto w-full max-w-7xl"
+        >
+          <div className="max-w-2xl">
             <span className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-brand-green-300">
               {aboutPageCopy.eyebrow}
             </span>
@@ -45,28 +54,8 @@ export default function AboutPageClient() {
             <p className="mt-6 max-w-2xl font-sans text-base leading-relaxed text-stone-200 sm:text-lg">
               {aboutPageCopy.description}
             </p>
-          </motion.div>
-
-          <motion.figure
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.75, delay: 0.08, ease: "easeOut" }}
-            className="relative min-h-64 overflow-hidden border border-white/15 bg-white/5 lg:col-span-5 lg:min-h-80"
-          >
-            <Image
-              src="/images/ukmac_cooperative_collaboration_1784000237090.jpg"
-              alt={copy.home.about.imageAlt}
-              fill
-              priority
-              sizes="(min-width: 1024px) 42vw, 100vw"
-              className="object-cover"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 bg-gradient-to-t from-brand-green-950/45 via-transparent to-transparent"
-            />
-          </motion.figure>
-        </div>
+          </div>
+        </motion.div>
       </section>
 
       <StatsOverview
@@ -82,6 +71,7 @@ export default function AboutPageClient() {
         id="structure"
         leadershipId="leadership"
       />
+      <DocumentsSection id="documents" />
     </main>
   );
 }

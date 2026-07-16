@@ -14,7 +14,6 @@ const MAIN_LINKS = [
   { id: "news", href: "/news" },
   { id: "projects", href: "/#projects" },
   { id: "gallery", href: "/#gallery" },
-  { id: "documents", href: "/#documents" },
   { id: "contact", href: "/#contact" },
 ] as const;
 
@@ -25,6 +24,7 @@ const ABOUT_LINKS = [
   { id: "leadership", href: "/about#leadership" },
   { id: "members", href: "/about#members" },
   { id: "structure", href: "/about#structure" },
+  { id: "documents", href: "/about#documents" },
 ] as const;
 
 type MainNavId = (typeof MAIN_LINKS)[number]["id"];
@@ -40,7 +40,6 @@ const HOME_SECTIONS: ReadonlyArray<{
   { sectionId: "about-preview", navId: "about" },
   { sectionId: "projects", navId: "projects" },
   { sectionId: "gallery", navId: "gallery" },
-  { sectionId: "documents", navId: "documents" },
   { sectionId: "contact", navId: "contact" },
 ];
 

@@ -35,7 +35,6 @@ const en = {
       news: "Announcements",
       projects: "Projects & Activities",
       gallery: "Gallery",
-      documents: "Documents",
       contact: "Contact",
     },
     aboutMenu: {
@@ -45,6 +44,7 @@ const en = {
       leadership: "Leadership & Management",
       members: "Member Benefits",
       structure: "Organizational Structure",
+      documents: "Documents",
     },
   },
   hero: {
@@ -74,27 +74,6 @@ const en = {
       title: "Practical work across the cooperative network",
       description:
         "Our activities connect local production with shared technical support, stronger markets, and more valuable agricultural products.",
-      learnMore: "Explore our objectives",
-      items: [
-        {
-          title: "Production & Market Coordination",
-          description:
-            "Aligning cooperative production plans with buyer demand and network-wide sales opportunities.",
-          imageAlt: "Agricultural production coordinated across cooperative farms",
-        },
-        {
-          title: "Training & Capacity Building",
-          description:
-            "Strengthening business planning, financial discipline, technical skills, and member confidence.",
-          imageAlt: "Agricultural cooperative training and capacity building",
-        },
-        {
-          title: "Processing & Value Addition",
-          description:
-            "Supporting storage, processing, packaging, branding, and stronger value chains.",
-          imageAlt: "Agricultural products prepared for processing and value addition",
-        },
-      ],
     },
     gallery: {
       eyebrow: "Gallery",
@@ -103,35 +82,34 @@ const en = {
         "A visual record of cooperative production, shared learning, community activity, and agricultural progress.",
       imageFallbackAlt: "UKMAC agricultural activity",
     },
-    documents: {
-      eyebrow: "Documents",
-      title: "Official resources in one place",
-      description:
-        "Approved statutes, reports, policies, and public resources will be published here as they become available.",
-      status: "Preparing for publication",
-      items: [
-        {
-          title: "Governance & Statutes",
-          description: "Union governance documents and approved constitutional statutes.",
-        },
-        {
-          title: "Reports & Publications",
-          description: "Public reports, presentations, and cooperative network publications.",
-        },
-        {
-          title: "Policies & Guidelines",
-          description: "Operational policies, standards, and practical guidance for members.",
-        },
-      ],
-    },
+  },
+  documents: {
+    eyebrow: "Documents",
+    title: "Official resources in one place",
+    description: "UKMAC — a partnership you can trust.",
+    status: "Preparing for publication",
+    items: [
+      {
+        title: "Governance & Statutes",
+        description: "Union governance documents and approved constitutional statutes.",
+      },
+      {
+        title: "Reports & Publications",
+        description: "Public reports, presentations, and cooperative network publications.",
+      },
+      {
+        title: "Policies & Guidelines",
+        description: "Operational policies, standards, and practical guidance for members.",
+      },
+    ],
   },
   aboutPage: {
     eyebrow: "About UKMAC",
     title: "Built locally. Stronger nationally.",
     description:
       "Discover why UKMAC was created, how the Union serves Modern Agricultural Cooperatives, and the shared structure guiding our work across Cambodia.",
-    statsEyebrow: "The Network at a Glance",
-    statsTitle: "One cooperative network with a shared national ambition",
+    statsEyebrow: "Union of Modern Agricultural Communities (UKMAC)",
+    statsTitle: "Solidify Unity • Expand the Market • Strengthen Management",
   },
   stats: {
     conclusion:
@@ -176,64 +154,29 @@ const en = {
   },
   pillars: {
     eyebrow: "Core Pillars",
-    title: "Four Strategic Pillars",
-    description: "Our mission is driven by four strategic pillars that strengthen every part of the agricultural community network.",
-    viewDetails: "View details",
-    closeDetails: "Close pillar details",
-    operationalDirective: "Strategic Pillar",
-    milestonesTitle: "Primary Areas of Work",
-    acknowledge: "Close Details",
+    title: "What is the Union?",
+    description:
+      "A non-profit institution established to help strengthen the governance of Modern Agricultural Communities.",
+    conclusion:
+      "Principle: Maintain local management belonging to the Modern Agricultural Communities + Establish a national-level support system.",
     items: {
       finance: {
-        title: "Finance & Governance",
+        title: "Finance and Governance",
         shortDescription:
-          "Building disciplined, transparent, and accountable community institutions.",
-        longDescription:
-          "Instilling strict financial discipline, transparent accounting systems, regular reporting, and robust internal auditing.",
-        metricLabel: "Strategic Pillar",
-        highlights: [
-          "Strict financial discipline",
-          "Transparent accounting systems",
-          "Regular financial reporting",
-          "Robust internal auditing",
-        ],
+          "Strengthen financial discipline, transparency, reporting, and monitoring.",
       },
       business: {
-        title: "Crop-Based Business Development",
-        shortDescription: "Turning community production into scalable, commercially viable enterprises.",
-        longDescription:
-          "Organizing crop-based business plans, establishing partnerships, and expanding commercial activities.",
-        metricLabel: "Strategic Pillar",
-        highlights: [
-          "Crop-specific business plans",
-          "Strong commercial partnerships",
-          "Expanded production capacity",
-        ],
+        title: "Crop-based Business Development",
+        shortDescription: "Plan, connect with partners, and expand businesses.",
       },
       technology: {
-        title: "Agricultural Technology",
-        shortDescription: "Improving productivity, consistency, and resilience through modern methods.",
-        longDescription:
-          "Supporting production, quality management, standardization, and risk reduction.",
-        metricLabel: "Strategic Pillar",
-        highlights: [
-          "Production support",
-          "Quality management and standardization",
-          "Agricultural risk reduction",
-        ],
+        title: "Agricultural Techniques",
+        shortDescription: "Support production, quality, standards, and risk reduction.",
       },
       market: {
-        title: "Market & Value Chains",
-        shortDescription: "Creating stronger buyer connections and more value from every harvest.",
-        longDescription:
-          "Connecting buyers, managing agricultural contract farming, matching demand forecasts, and facilitating processing.",
-        metricLabel: "Strategic Pillar",
-        highlights: [
-          "Buyer connections",
-          "Agricultural contract farming",
-          "Demand forecasting",
-          "Processing facilitation",
-        ],
+        title: "Market and Value Chain",
+        shortDescription:
+          "Connect buyers, handle contract farming, plan demand, and manage processing.",
       },
     },
   },
@@ -379,10 +322,11 @@ const en = {
         description:
           "Build transparency, discipline, and trust among members, banks, and buyers.",
       },
+      {
+        title: "Starting Today",
+        description: "Embrace the Union as our national supporting institution.",
+      },
     ],
-    startingToday:
-      "Starting today, embrace the Union as our national supporting institution.",
-    motto: "The Union is born from all of us, and it serves the benefit of all of us.",
   },
   contact: {
     eyebrow: "Build the Future Together",
@@ -474,14 +418,6 @@ const en = {
     title: "News & Announcements",
     description:
       "Follow UKMAC initiatives, public notices, events, and career opportunities across Cambodia.",
-    filterLabel: "Filter updates by category",
-    filters: {
-      all: "All",
-      announcement: "Announcements",
-      news: "News",
-      hiring: "Hiring",
-      event: "Events",
-    },
     categories: {
       announcement: "Announcement",
       news: "News",
@@ -505,6 +441,8 @@ const en = {
     listingTitle: "News, announcements, and opportunities",
     listingDescription:
       "Browse all published UKMAC notices, organizational news, events, and career opportunities.",
+    loadMore: "View more",
+    backToHome: "Back to home",
   },
   newsDetail: {
     allUpdates: "All updates",
@@ -587,7 +525,6 @@ const km: TranslationShape<typeof en> = {
       news: "សេចក្តីជូនដំណឹង",
       projects: "គម្រោង និងសកម្មភាព",
       gallery: "កម្រងរូបភាព",
-      documents: "ឯកសារ",
       contact: "ទំនាក់ទំនង",
     },
     aboutMenu: {
@@ -597,6 +534,7 @@ const km: TranslationShape<typeof en> = {
       leadership: "ភាពជាអ្នកដឹកនាំ និងការគ្រប់គ្រង",
       members: "អត្ថប្រយោជន៍សមាជិក",
       structure: "រចនាសម្ព័ន្ធអង្គការ",
+      documents: "ឯកសារ",
     },
   },
   hero: {
@@ -626,27 +564,6 @@ const km: TranslationShape<typeof en> = {
       title: "ការងារជាក់ស្តែងទូទាំងបណ្តាញសហគមន៍",
       description:
         "សកម្មភាពរបស់យើងភ្ជាប់ផលិតកម្មមូលដ្ឋានជាមួយការគាំទ្របច្ចេកទេសរួម ទីផ្សារកាន់តែរឹងមាំ និងផលិតផលកសិកម្មមានតម្លៃខ្ពស់។",
-      learnMore: "ស្វែងយល់ពីគោលបំណងរបស់យើង",
-      items: [
-        {
-          title: "សម្របសម្រួលផលិតកម្ម និងទីផ្សារ",
-          description:
-            "តម្រឹមផែនការផលិតកម្មសហគមន៍ជាមួយតម្រូវការអ្នកទិញ និងឱកាសលក់ទូទាំងបណ្តាញ។",
-          imageAlt: "ផលិតកម្មកសិកម្មដែលសម្របសម្រួលទូទាំងកសិដ្ឋានសហគមន៍",
-        },
-        {
-          title: "ការបណ្តុះបណ្តាល និងកសាងសមត្ថភាព",
-          description:
-            "ពង្រឹងផែនការអាជីវកម្ម វិន័យហិរញ្ញវត្ថុ ជំនាញបច្ចេកទេស និងទំនុកចិត្តសមាជិក។",
-          imageAlt: "ការបណ្តុះបណ្តាល និងកសាងសមត្ថភាពសហគមន៍កសិកម្ម",
-        },
-        {
-          title: "ការកែច្នៃ និងបន្ថែមតម្លៃ",
-          description:
-            "គាំទ្រការស្តុក កែច្នៃ វេចខ្ចប់ បង្កើតម៉ាក និងខ្សែច្រវាក់តម្លៃកាន់តែរឹងមាំ។",
-          imageAlt: "ផលិតផលកសិកម្មរៀបចំសម្រាប់ការកែច្នៃ និងបន្ថែមតម្លៃ",
-        },
-      ],
     },
     gallery: {
       eyebrow: "កម្រងរូបភាព",
@@ -655,35 +572,34 @@ const km: TranslationShape<typeof en> = {
         "កំណត់ត្រារូបភាពនៃផលិតកម្មសហគមន៍ ការរៀនសូត្ររួម សកម្មភាពមូលដ្ឋាន និងវឌ្ឍនភាពកសិកម្ម។",
       imageFallbackAlt: "សកម្មភាពកសិកម្មរបស់ UKMAC",
     },
-    documents: {
-      eyebrow: "ឯកសារ",
-      title: "ធនធានផ្លូវការនៅកន្លែងតែមួយ",
-      description:
-        "លក្ខន្តិកៈ របាយការណ៍ គោលនយោបាយ និងធនធានសាធារណៈដែលបានអនុម័ត នឹងត្រូវផ្សព្វផ្សាយនៅទីនេះនៅពេលរួចរាល់។",
-      status: "កំពុងរៀបចំសម្រាប់ការផ្សព្វផ្សាយ",
-      items: [
-        {
-          title: "អភិបាលកិច្ច និងលក្ខន្តិកៈ",
-          description: "ឯកសារអភិបាលកិច្ចសហភាព និងលក្ខន្តិកៈដែលបានអនុម័ត។",
-        },
-        {
-          title: "របាយការណ៍ និងការបោះពុម្ពផ្សាយ",
-          description: "របាយការណ៍សាធារណៈ បទបង្ហាញ និងការបោះពុម្ពផ្សាយរបស់បណ្តាញសហគមន៍។",
-        },
-        {
-          title: "គោលនយោបាយ និងសេចក្តីណែនាំ",
-          description: "គោលនយោបាយប្រតិបត្តិការ ស្តង់ដារ និងសេចក្តីណែនាំជាក់ស្តែងសម្រាប់សមាជិក។",
-        },
-      ],
-    },
+  },
+  documents: {
+    eyebrow: "ឯកសារ",
+    title: "ធនធានផ្លូវការនៅកន្លែងតែមួយ",
+    description: "UKMAC — ដៃគូដែលអ្នកអាចទុកចិត្តបាន។",
+    status: "កំពុងរៀបចំសម្រាប់ការផ្សព្វផ្សាយ",
+    items: [
+      {
+        title: "អភិបាលកិច្ច និងលក្ខន្តិកៈ",
+        description: "ឯកសារអភិបាលកិច្ចសហភាព និងលក្ខន្តិកៈដែលបានអនុម័ត។",
+      },
+      {
+        title: "របាយការណ៍ និងការបោះពុម្ពផ្សាយ",
+        description: "របាយការណ៍សាធារណៈ បទបង្ហាញ និងការបោះពុម្ពផ្សាយរបស់បណ្តាញសហគមន៍។",
+      },
+      {
+        title: "គោលនយោបាយ និងសេចក្តីណែនាំ",
+        description: "គោលនយោបាយប្រតិបត្តិការ ស្តង់ដារ និងសេចក្តីណែនាំជាក់ស្តែងសម្រាប់សមាជិក។",
+      },
+    ],
   },
   aboutPage: {
     eyebrow: "អំពី UKMAC",
     title: "កសាងនៅមូលដ្ឋាន រឹងមាំនៅថ្នាក់ជាតិ",
     description:
       "ស្វែងយល់ពីមូលហេតុបង្កើត UKMAC របៀបដែលសហភាពបម្រើសហគមន៍កសិកម្មទំនើប និងរចនាសម្ព័ន្ធរួមដែលដឹកនាំការងាររបស់យើងទូទាំងកម្ពុជា។",
-    statsEyebrow: "បណ្តាញក្នុងទិដ្ឋភាពសង្ខេប",
-    statsTitle: "បណ្តាញសហគមន៍តែមួយ ជាមួយមហិច្ឆតាជាតិរួម",
+    statsEyebrow: "បណ្តាញក្នុងទិដ្ឋភាពសង្ខេបសហភាពសហគមន៍កសិកម្មទំនើប ( UKMAC )",
+    statsTitle: "រួមសាមគ្គីភាព • ពង្រីកទីផ្សារ • ពង្រឹងការគ្រប់គ្រង",
   },
   stats: {
     conclusion:
@@ -728,64 +644,27 @@ const km: TranslationShape<typeof en> = {
   },
   pillars: {
     eyebrow: "សសរស្តម្ភស្នូល",
-    title: "សសរស្តម្ភយុទ្ធសាស្ត្រទាំងបួន",
+    title: "សហភាពជាអ្វី?",
     description:
-      "បេសកកម្មរបស់យើងត្រូវបានជំរុញដោយសសរស្តម្ភយុទ្ធសាស្ត្រចំនួនបួន ដែលពង្រឹងគ្រប់ផ្នែកនៃបណ្តាញសហគមន៍កសិកម្ម។",
-    viewDetails: "មើលព័ត៌មានលម្អិត",
-    closeDetails: "បិទព័ត៌មានសសរស្តម្ភ",
-    operationalDirective: "សសរស្តម្ភយុទ្ធសាស្ត្រ",
-    milestonesTitle: "វិស័យការងារសំខាន់ៗ",
-    acknowledge: "បិទព័ត៌មានលម្អិត",
+      "ស្ថាប័នមិនស្វែងរកប្រាក់ចំណេញ ដើម្បីជួយពង្រឹងអភិបាលកិច្ចរបស់សហគមន៍កសិកម្មទំនើប",
+    conclusion:
+      "គោលការណ៍៖ រក្សាការគ្រប់គ្រងនៅមូលដ្ឋានរបស់សហគមន៍កសិកម្មទំនើប + បង្កើតប្រព័ន្ធគាំទ្រកម្រិតជាតិ។",
     items: {
       finance: {
         title: "ហិរញ្ញវត្ថុ និងអភិបាលកិច្ច",
-        shortDescription: "កសាងស្ថាប័នសហគមន៍ដែលមានវិន័យ តម្លាភាព និងគណនេយ្យភាព។",
-        longDescription:
-          "បង្កើតវិន័យហិរញ្ញវត្ថុតឹងរ៉ឹង ប្រព័ន្ធគណនេយ្យមានតម្លាភាព ការរាយការណ៍ទៀងទាត់ និងសវនកម្មផ្ទៃក្នុងរឹងមាំ។",
-        metricLabel: "សសរស្តម្ភយុទ្ធសាស្ត្រ",
-        highlights: [
-          "វិន័យហិរញ្ញវត្ថុតឹងរ៉ឹង",
-          "ប្រព័ន្ធគណនេយ្យមានតម្លាភាព",
-          "ការរាយការណ៍ហិរញ្ញវត្ថុទៀងទាត់",
-          "សវនកម្មផ្ទៃក្នុងរឹងមាំ",
-        ],
+        shortDescription: "ពង្រឹងវិន័យហិរញ្ញវត្ថុ តម្លាភាព ការរាយការណ៍ និងការត្រួតពិនិត្យ",
       },
       business: {
-        title: "ការអភិវឌ្ឍអាជីវកម្មតាមដំណាំ",
-        shortDescription: "បម្លែងផលិតកម្មសហគមន៍ទៅជាសហគ្រាសពាណិជ្ជកម្មដែលអាចពង្រីកបាន។",
-        longDescription:
-          "រៀបចំផែនការអាជីវកម្មតាមដំណាំ បង្កើតភាពជាដៃគូ និងពង្រីកសកម្មភាពពាណិជ្ជកម្ម។",
-        metricLabel: "សសរស្តម្ភយុទ្ធសាស្ត្រ",
-        highlights: [
-          "ផែនការអាជីវកម្មតាមប្រភេទដំណាំ",
-          "ភាពជាដៃគូពាណិជ្ជកម្មរឹងមាំ",
-          "ការពង្រីកសមត្ថភាពផលិតកម្ម",
-        ],
+        title: "អភិវឌ្ឍអាជីវកម្មតាមដំណាំ",
+        shortDescription: "រៀបចំផែនការ ការភ្ជាប់ដៃគូ និងការពង្រីកអាជីវកម្ម",
       },
       technology: {
-        title: "បច្ចេកវិទ្យាកសិកម្ម",
-        shortDescription: "បង្កើនផលិតភាព ភាពស្មើគ្នានៃគុណភាព និងភាពធន់តាមរយៈវិធីសាស្ត្រទំនើប។",
-        longDescription:
-          "គាំទ្រផលិតកម្ម ការគ្រប់គ្រងគុណភាព ការធ្វើស្តង់ដារ និងការកាត់បន្ថយហានិភ័យ។",
-        metricLabel: "សសរស្តម្ភយុទ្ធសាស្ត្រ",
-        highlights: [
-          "ការគាំទ្រផលិតកម្ម",
-          "ការគ្រប់គ្រងគុណភាព និងស្តង់ដារ",
-          "ការកាត់បន្ថយហានិភ័យកសិកម្ម",
-        ],
+        title: "បច្ចេកទេសកសិកម្ម",
+        shortDescription: "គាំទ្រផលិតកម្ម គុណភាព ស្តង់ដារ និងការកាត់បន្ថយហានិភ័យ",
       },
       market: {
         title: "ទីផ្សារ និងខ្សែច្រវាក់តម្លៃ",
-        shortDescription: "បង្កើតទំនាក់ទំនងជាមួយអ្នកទិញកាន់តែរឹងមាំ និងបន្ថែមតម្លៃដល់គ្រប់ទិន្នផល។",
-        longDescription:
-          "ភ្ជាប់អ្នកទិញ គ្រប់គ្រងកសិកម្មតាមកិច្ចសន្យា ផ្គូផ្គងការព្យាករណ៍តម្រូវការ និងសម្របសម្រួលការកែច្នៃ។",
-        metricLabel: "សសរស្តម្ភយុទ្ធសាស្ត្រ",
-        highlights: [
-          "ការភ្ជាប់អ្នកទិញ",
-          "កសិកម្មតាមកិច្ចសន្យា",
-          "ការព្យាករណ៍តម្រូវការ",
-          "ការសម្របសម្រួលការកែច្នៃ",
-        ],
+        shortDescription: "ភ្ជាប់អ្នកទិញ កិច្ចសន្យាផលិតកម្មកសិកម្ម ផែនការតម្រូវការ និងការកែច្នៃ",
       },
     },
   },
@@ -922,9 +801,12 @@ const km: TranslationShape<typeof en> = {
         description:
           "កសាងតម្លាភាព វិន័យ និងទំនុកចិត្តក្នុងចំណោមសមាជិក ធនាគារ និងអ្នកទិញ។",
       },
+      {
+        title: "ចាប់ពីថ្ងៃនេះ",
+        description:
+          "ទទួលយក សហភាព ជាស្ថាប័នគាំទ្ររួមថ្នាក់ជាតិ",
+      },
     ],
-    startingToday: "ចាប់ពីថ្ងៃនេះ សូមទទួលយកសហភាពជាស្ថាប័នគាំទ្រថ្នាក់ជាតិរបស់យើង។",
-    motto: "សហភាពកើតចេញពីយើងទាំងអស់គ្នា ហើយបម្រើផលប្រយោជន៍របស់យើងទាំងអស់គ្នា។",
   },
   contact: {
     eyebrow: "រួមគ្នាកសាងអនាគត",
@@ -1015,14 +897,6 @@ const km: TranslationShape<typeof en> = {
     eyebrow: "ព័ត៌មានថ្មីពី UKMAC",
     title: "ព័ត៌មាន និងសេចក្តីជូនដំណឹង",
     description: "តាមដានគម្រោង សេចក្តីជូនដំណឹង ព្រឹត្តិការណ៍ និងឱកាសការងាររបស់ UKMAC នៅកម្ពុជា។",
-    filterLabel: "ត្រងបច្ចុប្បន្នភាពតាមប្រភេទ",
-    filters: {
-      all: "ទាំងអស់",
-      announcement: "សេចក្តីជូនដំណឹង",
-      news: "ព័ត៌មាន",
-      hiring: "ជ្រើសរើសបុគ្គលិក",
-      event: "ព្រឹត្តិការណ៍",
-    },
     categories: {
       announcement: "សេចក្តីជូនដំណឹង",
       news: "ព័ត៌មាន",
@@ -1045,6 +919,8 @@ const km: TranslationShape<typeof en> = {
     listingTitle: "ព័ត៌មាន សេចក្តីជូនដំណឹង និងឱកាស",
     listingDescription:
       "រកមើលសេចក្តីជូនដំណឹង ព័ត៌មានអង្គការ ព្រឹត្តិការណ៍ និងឱកាសការងាររបស់ UKMAC ដែលបានផ្សព្វផ្សាយទាំងអស់។",
+    loadMore: "មើលបន្ថែម",
+    backToHome: "ត្រឡប់ទៅទំព័រដើម",
   },
   newsDetail: {
     allUpdates: "បច្ចុប្បន្នភាពទាំងអស់",

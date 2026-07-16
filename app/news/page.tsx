@@ -14,7 +14,7 @@ export default async function NewsPage() {
   let postsError = false;
 
   try {
-    posts = await getPublicPosts(100);
+    posts = await getPublicPosts({ limit: 100 });
   } catch {
     postsError = true;
   }

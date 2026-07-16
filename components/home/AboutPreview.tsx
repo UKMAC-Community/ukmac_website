@@ -25,7 +25,7 @@ export default function AboutPreview() {
           className="relative min-h-[20rem] overflow-hidden bg-brand-green-950 sm:min-h-[28rem] lg:col-span-7 lg:min-h-[34rem]"
         >
           <Image
-            src="/images/ukmac_cooperative_collaboration_1784000237090.jpg"
+            src="/images/about1.webp"
             alt={aboutCopy.imageAlt}
             fill
             sizes="(min-width: 1024px) 58vw, 100vw"

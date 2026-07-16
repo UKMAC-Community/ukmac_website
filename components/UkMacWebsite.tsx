@@ -1,7 +1,6 @@
 "use client";
 
 import AboutPreview from "@/components/home/AboutPreview";
-import DocumentsPreview from "@/components/home/DocumentsPreview";
 import GalleryPreview from "@/components/home/GalleryPreview";
 import ProjectsActivities from "@/components/home/ProjectsActivities";
 import ImportantAnnouncement, {
@@ -15,9 +14,16 @@ import type { PublicPost } from "@/lib/news";
 interface UkMacWebsiteProps {
   posts: PublicPost[];
   postsError?: boolean;
+  projectPosts: PublicPost[];
+  projectPostsError?: boolean;
 }
 
-export default function UkMacWebsite({ posts, postsError }: UkMacWebsiteProps) {
+export default function UkMacWebsite({
+  posts,
+  postsError,
+  projectPosts,
+  projectPostsError,
+}: UkMacWebsiteProps) {
   const importantPost = selectImportantAnnouncement(posts);
 
   return (
@@ -30,9 +36,8 @@ export default function UkMacWebsite({ posts, postsError }: UkMacWebsiteProps) {
         excludePostId={importantPost?.id}
       />
       <AboutPreview />
-      <ProjectsActivities />
-      <GalleryPreview posts={posts} />
-      <DocumentsPreview />
+      <ProjectsActivities posts={projectPosts} error={projectPostsError} />
+      <GalleryPreview />
       <ContactSection />
     </main>
   );

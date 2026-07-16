@@ -42,9 +42,22 @@ function getApiBaseUrl() {
   return baseUrl;
 }
 
-export async function getPublicPosts(limit = 20): Promise<PublicPost[]> {
+export type GetPublicPostsOptions = {
+  limit?: number;
+  typeSlug?: string;
+};
+
+export async function getPublicPosts({
+  limit = 20,
+  typeSlug,
+}: GetPublicPostsOptions = {}): Promise<PublicPost[]> {
+  const params = new URLSearchParams({
+    limit: String(Math.min(Math.max(limit, 1), 100)),
+  });
+  if (typeSlug) params.set("type_slug", typeSlug);
+
   const response = await fetch(
-    `${getApiBaseUrl()}/public/posts?limit=${Math.min(Math.max(limit, 1), 100)}`,
+    `${getApiBaseUrl()}/public/posts?${params.toString()}`,
     {
       method: "GET",
       headers: { Accept: "application/json" },
