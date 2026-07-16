@@ -241,7 +241,11 @@ function isBlockId(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0 && value.length <= 100;
 }
 
-function isNumberInRange(value: unknown, minimum: number, maximum: number) {
+function isNumberInRange(
+  value: unknown,
+  minimum: number,
+  maximum: number,
+): value is number {
   return (
     typeof value === "number" &&
     Number.isFinite(value) &&
