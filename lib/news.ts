@@ -1,5 +1,7 @@
 import "server-only";
 
+import type { ContentDocument } from "@/lib/post-content";
+
 export type PostType = {
   id: number;
   name: string;
@@ -18,16 +20,17 @@ export type PublicPost = {
   id: string;
   title: string;
   slug: string;
-  content: string;
-  type_id: number;
+  content?: string | null;
+  content_json?: ContentDocument | null;
   type?: PostType | null;
   cover_image?: string | null;
-  published: boolean;
-  featured: boolean;
+  featured?: boolean;
   images?: PostImage[];
   created_at: string;
   updated_at: string;
 };
+
+const PUBLIC_API_TIMEOUT_MS = 10_000;
 
 function getApiBaseUrl() {
   const baseUrl = process.env.API_BASE_URL?.trim().replace(/\/$/, "");
@@ -41,11 +44,12 @@ function getApiBaseUrl() {
 
 export async function getPublicPosts(limit = 20): Promise<PublicPost[]> {
   const response = await fetch(
-    `${getApiBaseUrl()}/posts?limit=${Math.min(Math.max(limit, 1), 100)}`,
+    `${getApiBaseUrl()}/public/posts?limit=${Math.min(Math.max(limit, 1), 100)}`,
     {
       method: "GET",
       headers: { Accept: "application/json" },
-      next: { revalidate: 60 },
+      signal: AbortSignal.timeout(PUBLIC_API_TIMEOUT_MS),
+      cache: "no-store",
     },
   );
 
@@ -62,31 +66,47 @@ export async function fetchPublishedPostBySlug(
 ): Promise<PublicPost | null> {
   try {
     const response = await fetch(
-      `${getApiBaseUrl()}/posts/slug/${encodeURIComponent(slug)}`,
+      `${getApiBaseUrl()}/public/posts/slug/${encodeURIComponent(slug)}`,
       {
         method: "GET",
         headers: { Accept: "application/json" },
-        next: { revalidate: 60 },
+        signal: AbortSignal.timeout(PUBLIC_API_TIMEOUT_MS),
+        cache: "no-store",
       },
     );
 
     if (!response.ok) return null;
-    return (await response.json()) as PublicPost;
+    const payload: unknown = await response.json();
+    return normalizeObject<PublicPost>(payload);
   } catch {
     return null;
   }
 }
 
-function normalizeArray<T>(value: unknown): T[] {
+function normalizeArray<T>(value: unknown, depth = 0): T[] {
   if (Array.isArray(value)) return value as T[];
 
-  if (isRecord(value)) {
+  if (isRecord(value) && depth < 2) {
     for (const key of ["data", "items", "results", "posts"]) {
       if (Array.isArray(value[key])) return value[key] as T[];
+      if (isRecord(value[key])) {
+        const nested = normalizeArray<T>(value[key], depth + 1);
+        if (nested.length) return nested;
+      }
     }
   }
 
   return [];
+}
+
+function normalizeObject<T>(value: unknown): T | null {
+  if (!isRecord(value)) return null;
+
+  for (const key of ["data", "item", "result", "post"]) {
+    if (isRecord(value[key])) return value[key] as T;
+  }
+
+  return value as T;
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {

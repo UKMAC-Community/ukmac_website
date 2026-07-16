@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import {
@@ -6,7 +8,6 @@ import {
   useSpring,
   useTransform,
   useAnimationControls,
-  AnimatePresence,
 } from "motion/react";
 import { useLanguage } from "@/components/LanguageProvider";
 import { formatTranslation } from "@/lib/translations";
@@ -15,6 +16,8 @@ const HERO_IMAGES = [
   "/images/unspast/img1.webp",
   "/images/unspast/img2.webp",
   "/images/unspast/img3.webp",
+  "/images/unspast/img4.webp",
+  "/images/unspast/img5.webp",
 ];
 
 const SLIDE_DURATION = 5000; // ms each image stays before transitioning
@@ -111,25 +114,38 @@ export default function HeroSection() {
           style={{ y: bgY, scale: bgScale }}
           className="absolute -top-[10%] left-0 w-full h-[130%] select-none pointer-events-none"
         >
-          <AnimatePresence initial={false} mode="popLayout">
-            <motion.div
-              key={HERO_IMAGES[index]}
-              initial={{ x: "100%", opacity: 0 }}
-              animate={{ x: "0%", opacity: 1 }}
-              exit={{ x: "-100%", opacity: 0 }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-              className="absolute inset-0 w-full h-full"
+          {HERO_IMAGES.map((image, imageIndex) => {
+          const isActive = imageIndex === index;
+
+          return (
+            <div
+              key={image}
+              aria-hidden={!isActive}
+              className={`pointer-events-none absolute inset-0 h-full w-full transition-opacity duration-1000 ease-in-out ${
+                isActive ? "z-[1] opacity-100" : "z-0 opacity-0"
+              }`}
             >
-              <Image
-                src={HERO_IMAGES[index]}
-                alt={copy.hero.imageAlt}
-                fill
-                sizes="100vw"
-                priority={index === 0}
-                className="w-full h-full object-cover object-[62%_center] sm:object-center"
-              />
-            </motion.div>
-          </AnimatePresence>
+              <motion.div
+                className="relative h-full w-full"
+                animate={{ scale: isActive ? 1.12 : 1 }}
+                transition={{
+                  duration: isActive ? SLIDE_DURATION / 1000 : 0,
+                  ease: "linear",
+                }}
+              >
+                <Image
+                  src={image}
+                  alt={isActive ? copy.hero.imageAlt : ""}
+                  fill
+                  sizes="100vw"
+                  preload={imageIndex === 0}
+                  loading={imageIndex === 0 ? undefined : "eager"}
+                  className="h-full w-full object-cover object-[62%_center] sm:object-center"
+                />
+              </motion.div>
+            </div>
+          );
+        })}
 
           {/* Overlays stay fixed above the sliding images */}
           <div className="absolute inset-0 bg-[#9ae27f]/20 mix-blend-soft-light z-10" />
@@ -153,7 +169,7 @@ export default function HeroSection() {
         </motion.p> */}
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
           className="mb-3 font-sans text-[0.65rem] font-semibold uppercase leading-relaxed tracking-[0.16em] text-[#b8f0a8] drop-shadow-[0_3px_10px_rgba(0,0,0,0.7)] min-[375px]:text-[0.7rem] sm:mb-4 sm:text-xs"
@@ -162,7 +178,7 @@ export default function HeroSection() {
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="font-display font-extrabold text-[1.65rem] min-[375px]:text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.18] sm:leading-[1.12] drop-shadow-[0_4px_16px_rgba(0,0,0,0.65)]"
@@ -174,7 +190,7 @@ export default function HeroSection() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
           className="mt-3 max-w-[20rem] font-sans text-[0.72rem] font-medium leading-relaxed text-stone-100 drop-shadow-[0_3px_12px_rgba(0,0,0,0.7)] min-[375px]:text-xs sm:mt-4 sm:max-w-xl sm:text-sm"

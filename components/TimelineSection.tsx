@@ -5,7 +5,11 @@ import { useLanguage } from "@/components/LanguageProvider";
 
 const achievementIcons = [Wheat, ShoppingBasket, ShieldCheck] as const;
 
-export default function TimelineSection() {
+interface TimelineSectionProps {
+  id?: string;
+}
+
+export default function TimelineSection({ id = "timeline" }: TimelineSectionProps) {
   const { copy } = useLanguage();
   const timelineCopy = copy.timeline;
 
@@ -28,9 +32,9 @@ export default function TimelineSection() {
 
   return (
     <section
-      id="timeline"
+      id={id}
       aria-labelledby="timeline-title"
-      className="relative z-20 overflow-hidden bg-brand-green-950 py-24 text-white sm:py-32"
+      className="relative z-20 scroll-mt-24 overflow-hidden bg-brand-green-950 py-24 text-white sm:scroll-mt-28 sm:py-32"
     >
       <div
         aria-hidden="true"

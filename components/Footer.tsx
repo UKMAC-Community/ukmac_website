@@ -1,37 +1,36 @@
+"use client";
+
+import Link from "next/link";
 import { Sprout, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 import { formatTranslation } from "@/lib/translations";
 
-interface FooterProps {
-  onNavClick: (sectionId: string) => void;
-}
-
-const NAV_LINK_IDS = [
-  "hero",
-  "news",
-  "about",
-  "pillars",
-  "focus",
-  "network",
-  "timeline",
+const NAV_LINKS = [
+  { id: "home", href: "/" },
+  { id: "about", href: "/about" },
+  { id: "news", href: "/news" },
+  { id: "projects", href: "/#projects" },
+  { id: "gallery", href: "/#gallery" },
+  { id: "documents", href: "/#documents" },
+  { id: "contact", href: "/#contact" },
 ] as const;
 
 const FOCUS_RING =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black";
 
-export default function Footer({ onNavClick }: FooterProps) {
+export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { copy } = useLanguage();
 
   return (
-    <footer className="bg-black/60 text-zinc-400 font-sans border-t border-white/10 relative z-20">
+    <footer className="relative z-20 border-t border-white/10 bg-stone-950 font-sans text-zinc-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 sm:gap-16">
 
           {/* Column 1: Info */}
           <div className="md:col-span-5 space-y-6">
-            <button
-              onClick={() => onNavClick("hero")}
+            <Link
+              href="/"
               aria-label={copy.footer.homeLabel}
               className={`flex items-center gap-2.5 text-left group cursor-pointer ${FOCUS_RING}`}
             >
@@ -46,7 +45,7 @@ export default function Footer({ onNavClick }: FooterProps) {
                   {copy.brand.name}
                 </span>
               </div>
-            </button>
+            </Link>
 
             <p className="font-sans text-xs sm:text-sm text-zinc-400 leading-relaxed font-light">
               {copy.footer.description}
@@ -67,14 +66,14 @@ export default function Footer({ onNavClick }: FooterProps) {
               className="grid grid-cols-1 gap-2.5 text-xs sm:text-sm"
               aria-label={copy.footer.navigationLabel}
             >
-              {NAV_LINK_IDS.map((id) => (
-                <button
-                  key={id}
-                  onClick={() => onNavClick(id)}
+              {NAV_LINKS.map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.href}
                   className={`text-left w-fit hover:text-brand-green-400 transition-colors cursor-pointer rounded-sm ${FOCUS_RING}`}
                 >
-                  {copy.footer.navItems[id]}
-                </button>
+                  {copy.footer.navItems[item.id]}
+                </Link>
               ))}
             </nav>
           </div>

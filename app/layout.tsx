@@ -5,6 +5,8 @@ import {
   Plus_Jakarta_Sans,
 } from "next/font/google";
 import LanguageProvider from "@/components/LanguageProvider";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import { translations } from "@/lib/translations";
 import "./globals.css";
 
@@ -39,10 +41,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${plusJakartaSans.variable} ${outfit.variable} ${jetBrainsMono.variable} antialiased`}
     >
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

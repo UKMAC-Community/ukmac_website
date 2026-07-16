@@ -1,8 +1,10 @@
 import { useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
-import { CheckCircle2, ChevronRight, Loader2, Landmark, Sprout, Award, HelpCircle } from "lucide-react";
+import { Award, CheckCircle2, ChevronRight, CircleOff, HelpCircle, Landmark, Loader2, Mail, Sprout } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 import { provinces } from "@/lib/data";
+
+const MEMBERSHIP_FORM_AVAILABLE = false;
 
 const perkMetadata = [
   { id: "representation", icon: Landmark },
@@ -88,7 +90,7 @@ export default function ContactSection() {
     contactCopy.provinceOptions[selectedProvinceOption.copyKey];
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-earth-950 text-white relative z-20">
+    <section id="contact" className="relative z-20 scroll-mt-24 bg-earth-950 py-24 text-white sm:scroll-mt-28 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
@@ -136,7 +138,29 @@ export default function ContactSection() {
           {/* Right Column: Registration Panel */}
           <div className="lg:col-span-7">
             <div className="bg-white/[0.02] border border-white/10">
-              {!submitSuccess ? (
+              {!MEMBERSHIP_FORM_AVAILABLE ? (
+                <div className="flex min-h-[34rem] flex-col items-center justify-center p-8 text-center sm:p-12">
+                  <span className="flex h-14 w-14 items-center justify-center border border-white/15 bg-white/[0.03] text-brand-green-400">
+                    <CircleOff aria-hidden="true" className="h-6 w-6 stroke-[1.5]" />
+                  </span>
+                  <span className="mt-7 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-green-400">
+                    {contactCopy.unavailableEyebrow}
+                  </span>
+                  <h3 className="mt-3 max-w-lg font-display text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl">
+                    {contactCopy.unavailableTitle}
+                  </h3>
+                  <p className="mt-4 max-w-md text-sm leading-7 text-zinc-400 sm:text-base">
+                    {contactCopy.unavailableDescription}
+                  </p>
+                  <a
+                    href="mailto:secretariat@ukmac.org.kh"
+                    className="mt-8 inline-flex items-center gap-2 border border-brand-green-500 px-5 py-3 text-sm font-semibold text-brand-green-300 transition-colors hover:bg-brand-green-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green-400"
+                  >
+                    <Mail aria-hidden="true" className="h-4 w-4" />
+                    {contactCopy.unavailableAction}
+                  </a>
+                </div>
+              ) : !submitSuccess ? (
                 <form onSubmit={handleSubmit} className="p-6 sm:p-10 space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="space-y-1.5">

@@ -10,7 +10,13 @@ const statIcons = {
   revenueTarget: Target,
 } as const;
 
-export default function StatsOverview() {
+interface StatsOverviewProps {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+}
+
+export default function StatsOverview({ id, eyebrow, title }: StatsOverviewProps) {
   const { copy } = useLanguage();
 
   const containerVariants: Variants = {
@@ -36,8 +42,26 @@ export default function StatsOverview() {
   };
 
   return (
-    <section className="relative z-20 bg-white border-y border-stone-200 px-4 sm:px-6 lg:px-8">
+    <section
+      id={id}
+      aria-labelledby={title ? `${id ?? "stats"}-title` : undefined}
+      className="relative z-20 scroll-mt-24 border-y border-stone-200 bg-white px-4 sm:scroll-mt-28 sm:px-6 lg:px-8"
+    >
       <div className="max-w-7xl mx-auto">
+        {eyebrow && title && (
+          <header className="border-b border-stone-200 py-12 sm:py-16">
+            <span className="block font-mono text-xs font-semibold uppercase tracking-widest text-brand-green-700">
+              {eyebrow}
+            </span>
+            <h2
+              id={`${id ?? "stats"}-title`}
+              className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-stone-900 sm:text-4xl"
+            >
+              {title}
+            </h2>
+          </header>
+        )}
+
         <motion.div
           variants={containerVariants}
           initial="hidden"

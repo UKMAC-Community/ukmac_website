@@ -28,15 +28,23 @@ const en = {
   nav: {
     ariaLabel: "Primary navigation",
     toggleMenu: "Toggle menu",
-    joinNetwork: "Join Union Network",
+    joinNetwork: "Contact UKMAC",
     items: {
-      hero: "Overview",
-      news: "Updates",
-      about: "Why Now",
-      pillars: "Core Pillars",
-      focus: "Member Benefits",
-      network: "Structure & Roles",
-      timeline: "Shared Vision",
+      home: "Home",
+      about: "About Us",
+      news: "Announcements",
+      projects: "Projects & Activities",
+      gallery: "Gallery",
+      documents: "Documents",
+      contact: "Contact",
+    },
+    aboutMenu: {
+      background: "Organization Background",
+      visionMission: "Vision and Mission",
+      objectives: "Objectives",
+      leadership: "Leadership & Management",
+      members: "Member Benefits",
+      structure: "Organizational Structure",
     },
   },
   hero: {
@@ -51,6 +59,79 @@ const en = {
     imageAlt: "Cambodian modern agricultural cooperative members working together",
     indicatorsLabel: "Choose hero image",
     showImage: "Show hero image {number}",
+  },
+  home: {
+    about: {
+      eyebrow: "About UKMAC",
+      title: "Local ownership, strengthened by national support.",
+      description:
+        "UKMAC is a non-profit institution that unites Modern Agricultural Cooperatives across Cambodia. It helps member communities strengthen governance, coordinate production, access finance, and negotiate better markets together.",
+      learnMore: "Learn more about UKMAC",
+      imageAlt: "Modern Agricultural Cooperative members working together",
+    },
+    projects: {
+      eyebrow: "Projects & Activities",
+      title: "Practical work across the cooperative network",
+      description:
+        "Our activities connect local production with shared technical support, stronger markets, and more valuable agricultural products.",
+      learnMore: "Explore our objectives",
+      items: [
+        {
+          title: "Production & Market Coordination",
+          description:
+            "Aligning cooperative production plans with buyer demand and network-wide sales opportunities.",
+          imageAlt: "Agricultural production coordinated across cooperative farms",
+        },
+        {
+          title: "Training & Capacity Building",
+          description:
+            "Strengthening business planning, financial discipline, technical skills, and member confidence.",
+          imageAlt: "Agricultural cooperative training and capacity building",
+        },
+        {
+          title: "Processing & Value Addition",
+          description:
+            "Supporting storage, processing, packaging, branding, and stronger value chains.",
+          imageAlt: "Agricultural products prepared for processing and value addition",
+        },
+      ],
+    },
+    gallery: {
+      eyebrow: "Gallery",
+      title: "UKMAC in the field",
+      description:
+        "A visual record of cooperative production, shared learning, community activity, and agricultural progress.",
+      imageFallbackAlt: "UKMAC agricultural activity",
+    },
+    documents: {
+      eyebrow: "Documents",
+      title: "Official resources in one place",
+      description:
+        "Approved statutes, reports, policies, and public resources will be published here as they become available.",
+      status: "Preparing for publication",
+      items: [
+        {
+          title: "Governance & Statutes",
+          description: "Union governance documents and approved constitutional statutes.",
+        },
+        {
+          title: "Reports & Publications",
+          description: "Public reports, presentations, and cooperative network publications.",
+        },
+        {
+          title: "Policies & Guidelines",
+          description: "Operational policies, standards, and practical guidance for members.",
+        },
+      ],
+    },
+  },
+  aboutPage: {
+    eyebrow: "About UKMAC",
+    title: "Built locally. Stronger nationally.",
+    description:
+      "Discover why UKMAC was created, how the Union serves Modern Agricultural Cooperatives, and the shared structure guiding our work across Cambodia.",
+    statsEyebrow: "The Network at a Glance",
+    statsTitle: "One cooperative network with a shared national ambition",
   },
   stats: {
     conclusion:
@@ -308,6 +389,11 @@ const en = {
     title: "Join UKMAC",
     description:
       "Joining UKMAC means building the future of Modern Agricultural Cooperatives and member farmers through shared production, markets, and management.",
+    unavailableEyebrow: "Membership Applications",
+    unavailableTitle: "Online applications are temporarily unavailable",
+    unavailableDescription:
+      "We are preparing an approved and secure submission service. In the meantime, please contact the UKMAC Secretariat directly for membership enquiries.",
+    unavailableAction: "Email the Secretariat",
     partnershipBefore:
       "Are you a cooperative, buyer, financial institution, researcher, or development partner? Write directly to",
     partnershipAfter: "to explore how we can work together.",
@@ -412,6 +498,13 @@ const en = {
     emptyPreview: "Open this update to read more.",
     recentUpdate: "Recent update",
     coverAlt: "{title} cover",
+    importantEyebrow: "Important Announcement",
+    importantTitle: "Priority update from UKMAC",
+    viewAll: "View all news & announcements",
+    listingEyebrow: "UKMAC Updates",
+    listingTitle: "News, announcements, and opportunities",
+    listingDescription:
+      "Browse all published UKMAC notices, organizational news, events, and career opportunities.",
   },
   newsDetail: {
     allUpdates: "All updates",
@@ -419,6 +512,8 @@ const en = {
     back: "Back to news & announcements",
     galleryAlt: "{title} gallery image",
     loading: "Loading update...",
+    emptyContent: "Article details are not available yet.",
+    imageUnavailable: "This article image is unavailable.",
   },
   notFound: {
     title: "Update not found",
@@ -443,13 +538,13 @@ const en = {
     maff: "MAFF Cambodia",
     opensNewTab: "(opens in new tab)",
     navItems: {
-      hero: "Overview",
+      home: "Home",
+      about: "About Us",
       news: "News & Announcements",
-      about: "Why Now",
-      pillars: "Core Pillars",
-      focus: "Member Benefits",
-      network: "Structure & Roles",
-      timeline: "Shared Vision",
+      projects: "Projects & Activities",
+      gallery: "Gallery",
+      documents: "Documents",
+      contact: "Contact",
     },
   },
 } as const;
@@ -485,15 +580,23 @@ const km: TranslationShape<typeof en> = {
   nav: {
     ariaLabel: "ម៉ឺនុយមេ",
     toggleMenu: "បើក ឬបិទម៉ឺនុយ",
-    joinNetwork: "ចូលរួមបណ្តាញសហភាព",
+    joinNetwork: "ទាក់ទង UKMAC",
     items: {
-      hero: "ទិដ្ឋភាពទូទៅ",
-      news: "បច្ចុប្បន្នភាព",
-      about: "ហេតុអ្វីឥឡូវនេះ",
-      pillars: "សសរស្តម្ភស្នូល",
-      focus: "អត្ថប្រយោជន៍សមាជិក",
-      network: "រចនាសម្ព័ន្ធ និងតួនាទី",
-      timeline: "ចក្ខុវិស័យរួម",
+      home: "ទំព័រដើម",
+      about: "អំពីយើង",
+      news: "សេចក្តីជូនដំណឹង",
+      projects: "គម្រោង និងសកម្មភាព",
+      gallery: "កម្រងរូបភាព",
+      documents: "ឯកសារ",
+      contact: "ទំនាក់ទំនង",
+    },
+    aboutMenu: {
+      background: "ប្រវត្តិអង្គការ",
+      visionMission: "ចក្ខុវិស័យ និងបេសកកម្ម",
+      objectives: "គោលបំណង",
+      leadership: "ភាពជាអ្នកដឹកនាំ និងការគ្រប់គ្រង",
+      members: "អត្ថប្រយោជន៍សមាជិក",
+      structure: "រចនាសម្ព័ន្ធអង្គការ",
     },
   },
   hero: {
@@ -508,6 +611,79 @@ const km: TranslationShape<typeof en> = {
     imageAlt: "សមាជិកសហគមន៍កសិកម្មទំនើបកម្ពុជាធ្វើការរួមគ្នា",
     indicatorsLabel: "ជ្រើសរើសរូបភាពផ្ទាំងមេ",
     showImage: "បង្ហាញរូបភាពផ្ទាំងមេលេខ {number}",
+  },
+  home: {
+    about: {
+      eyebrow: "អំពី UKMAC",
+      title: "ភាពជាម្ចាស់នៅមូលដ្ឋាន ពង្រឹងដោយការគាំទ្រថ្នាក់ជាតិ",
+      description:
+        "UKMAC គឺជាស្ថាប័នមិនស្វែងរកប្រាក់ចំណេញ ដែលរួបរួមសហគមន៍កសិកម្មទំនើបនៅទូទាំងកម្ពុជា។ សហភាពជួយសមាជិកពង្រឹងអភិបាលកិច្ច សម្របសម្រួលផលិតកម្ម ទទួលបានហិរញ្ញប្បទាន និងចរចាទីផ្សារកាន់តែប្រសើររួមគ្នា។",
+      learnMore: "ស្វែងយល់បន្ថែមអំពី UKMAC",
+      imageAlt: "សមាជិកសហគមន៍កសិកម្មទំនើបធ្វើការរួមគ្នា",
+    },
+    projects: {
+      eyebrow: "គម្រោង និងសកម្មភាព",
+      title: "ការងារជាក់ស្តែងទូទាំងបណ្តាញសហគមន៍",
+      description:
+        "សកម្មភាពរបស់យើងភ្ជាប់ផលិតកម្មមូលដ្ឋានជាមួយការគាំទ្របច្ចេកទេសរួម ទីផ្សារកាន់តែរឹងមាំ និងផលិតផលកសិកម្មមានតម្លៃខ្ពស់។",
+      learnMore: "ស្វែងយល់ពីគោលបំណងរបស់យើង",
+      items: [
+        {
+          title: "សម្របសម្រួលផលិតកម្ម និងទីផ្សារ",
+          description:
+            "តម្រឹមផែនការផលិតកម្មសហគមន៍ជាមួយតម្រូវការអ្នកទិញ និងឱកាសលក់ទូទាំងបណ្តាញ។",
+          imageAlt: "ផលិតកម្មកសិកម្មដែលសម្របសម្រួលទូទាំងកសិដ្ឋានសហគមន៍",
+        },
+        {
+          title: "ការបណ្តុះបណ្តាល និងកសាងសមត្ថភាព",
+          description:
+            "ពង្រឹងផែនការអាជីវកម្ម វិន័យហិរញ្ញវត្ថុ ជំនាញបច្ចេកទេស និងទំនុកចិត្តសមាជិក។",
+          imageAlt: "ការបណ្តុះបណ្តាល និងកសាងសមត្ថភាពសហគមន៍កសិកម្ម",
+        },
+        {
+          title: "ការកែច្នៃ និងបន្ថែមតម្លៃ",
+          description:
+            "គាំទ្រការស្តុក កែច្នៃ វេចខ្ចប់ បង្កើតម៉ាក និងខ្សែច្រវាក់តម្លៃកាន់តែរឹងមាំ។",
+          imageAlt: "ផលិតផលកសិកម្មរៀបចំសម្រាប់ការកែច្នៃ និងបន្ថែមតម្លៃ",
+        },
+      ],
+    },
+    gallery: {
+      eyebrow: "កម្រងរូបភាព",
+      title: "UKMAC នៅតាមមូលដ្ឋាន",
+      description:
+        "កំណត់ត្រារូបភាពនៃផលិតកម្មសហគមន៍ ការរៀនសូត្ររួម សកម្មភាពមូលដ្ឋាន និងវឌ្ឍនភាពកសិកម្ម។",
+      imageFallbackAlt: "សកម្មភាពកសិកម្មរបស់ UKMAC",
+    },
+    documents: {
+      eyebrow: "ឯកសារ",
+      title: "ធនធានផ្លូវការនៅកន្លែងតែមួយ",
+      description:
+        "លក្ខន្តិកៈ របាយការណ៍ គោលនយោបាយ និងធនធានសាធារណៈដែលបានអនុម័ត នឹងត្រូវផ្សព្វផ្សាយនៅទីនេះនៅពេលរួចរាល់។",
+      status: "កំពុងរៀបចំសម្រាប់ការផ្សព្វផ្សាយ",
+      items: [
+        {
+          title: "អភិបាលកិច្ច និងលក្ខន្តិកៈ",
+          description: "ឯកសារអភិបាលកិច្ចសហភាព និងលក្ខន្តិកៈដែលបានអនុម័ត។",
+        },
+        {
+          title: "របាយការណ៍ និងការបោះពុម្ពផ្សាយ",
+          description: "របាយការណ៍សាធារណៈ បទបង្ហាញ និងការបោះពុម្ពផ្សាយរបស់បណ្តាញសហគមន៍។",
+        },
+        {
+          title: "គោលនយោបាយ និងសេចក្តីណែនាំ",
+          description: "គោលនយោបាយប្រតិបត្តិការ ស្តង់ដារ និងសេចក្តីណែនាំជាក់ស្តែងសម្រាប់សមាជិក។",
+        },
+      ],
+    },
+  },
+  aboutPage: {
+    eyebrow: "អំពី UKMAC",
+    title: "កសាងនៅមូលដ្ឋាន រឹងមាំនៅថ្នាក់ជាតិ",
+    description:
+      "ស្វែងយល់ពីមូលហេតុបង្កើត UKMAC របៀបដែលសហភាពបម្រើសហគមន៍កសិកម្មទំនើប និងរចនាសម្ព័ន្ធរួមដែលដឹកនាំការងាររបស់យើងទូទាំងកម្ពុជា។",
+    statsEyebrow: "បណ្តាញក្នុងទិដ្ឋភាពសង្ខេប",
+    statsTitle: "បណ្តាញសហគមន៍តែមួយ ជាមួយមហិច្ឆតាជាតិរួម",
   },
   stats: {
     conclusion:
@@ -755,6 +931,11 @@ const km: TranslationShape<typeof en> = {
     title: "ចូលរួមជាមួយ UKMAC",
     description:
       "ការចូលរួម UKMAC គឺជាការកសាងអនាគតរបស់សហគមន៍កសិកម្មទំនើប និងកសិករសមាជិក តាមរយៈផលិតកម្ម ទីផ្សារ និងការគ្រប់គ្រងរួម។",
+    unavailableEyebrow: "ពាក្យស្នើសុំសមាជិកភាព",
+    unavailableTitle: "ការដាក់ពាក្យតាមអនឡាញមិនអាចប្រើបានជាបណ្តោះអាសន្ន",
+    unavailableDescription:
+      "យើងកំពុងរៀបចំសេវាដាក់ពាក្យដែលមានសុវត្ថិភាព និងទទួលបានការអនុម័ត។ ក្នុងអំឡុងពេលនេះ សូមទាក់ទងលេខាធិការដ្ឋាន UKMAC ដោយផ្ទាល់សម្រាប់ព័ត៌មានសមាជិកភាព។",
+    unavailableAction: "ផ្ញើអ៊ីមែលទៅលេខាធិការដ្ឋាន",
     partnershipBefore:
       "តើអ្នកជាសហគមន៍ អ្នកទិញ ស្ថាប័នហិរញ្ញវត្ថុ អ្នកស្រាវជ្រាវ ឬដៃគូអភិវឌ្ឍន៍មែនទេ? សូមសរសេរមក",
     partnershipAfter: "ដើម្បីស្វែងរកឱកាសធ្វើការរួមគ្នា។",
@@ -857,6 +1038,13 @@ const km: TranslationShape<typeof en> = {
     emptyPreview: "បើកបច្ចុប្បន្នភាពនេះដើម្បីអានបន្ថែម។",
     recentUpdate: "បច្ចុប្បន្នភាពថ្មី",
     coverAlt: "រូបគម្រប {title}",
+    importantEyebrow: "សេចក្តីជូនដំណឹងសំខាន់",
+    importantTitle: "បច្ចុប្បន្នភាពអាទិភាពពី UKMAC",
+    viewAll: "មើលព័ត៌មាន និងសេចក្តីជូនដំណឹងទាំងអស់",
+    listingEyebrow: "បច្ចុប្បន្នភាព UKMAC",
+    listingTitle: "ព័ត៌មាន សេចក្តីជូនដំណឹង និងឱកាស",
+    listingDescription:
+      "រកមើលសេចក្តីជូនដំណឹង ព័ត៌មានអង្គការ ព្រឹត្តិការណ៍ និងឱកាសការងាររបស់ UKMAC ដែលបានផ្សព្វផ្សាយទាំងអស់។",
   },
   newsDetail: {
     allUpdates: "បច្ចុប្បន្នភាពទាំងអស់",
@@ -864,6 +1052,8 @@ const km: TranslationShape<typeof en> = {
     back: "ត្រឡប់ទៅព័ត៌មាន និងសេចក្តីជូនដំណឹង",
     galleryAlt: "រូបភាពក្នុងកម្រងរបស់ {title}",
     loading: "កំពុងផ្ទុកព័ត៌មាន...",
+    emptyContent: "ព័ត៌មានលម្អិតនៃអត្ថបទនេះមិនទាន់មាននៅឡើយទេ។",
+    imageUnavailable: "រូបភាពក្នុងអត្ថបទនេះមិនអាចបង្ហាញបានទេ។",
   },
   notFound: {
     title: "រកមិនឃើញបច្ចុប្បន្នភាព",
@@ -886,13 +1076,13 @@ const km: TranslationShape<typeof en> = {
     maff: "ក្រសួងកសិកម្ម កម្ពុជា",
     opensNewTab: "(បើកក្នុងផ្ទាំងថ្មី)",
     navItems: {
-      hero: "ទិដ្ឋភាពទូទៅ",
+      home: "ទំព័រដើម",
+      about: "អំពីយើង",
       news: "ព័ត៌មាន និងសេចក្តីជូនដំណឹង",
-      about: "ហេតុអ្វីឥឡូវនេះ",
-      pillars: "សសរស្តម្ភស្នូល",
-      focus: "អត្ថប្រយោជន៍សមាជិក",
-      network: "រចនាសម្ព័ន្ធ និងតួនាទី",
-      timeline: "ចក្ខុវិស័យរួម",
+      projects: "គម្រោង និងសកម្មភាព",
+      gallery: "កម្រងរូបភាព",
+      documents: "ឯកសារ",
+      contact: "ទំនាក់ទំនង",
     },
   },
 };

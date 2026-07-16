@@ -41,7 +41,15 @@ function getTeamTone(tone: string) {
   }
 }
 
-export default function InteractiveMap() {
+interface InteractiveMapProps {
+  id?: string;
+  leadershipId?: string;
+}
+
+export default function InteractiveMap({
+  id = "network",
+  leadershipId,
+}: InteractiveMapProps) {
   const { copy } = useLanguage();
   const networkCopy = copy.network;
 
@@ -70,9 +78,9 @@ export default function InteractiveMap() {
 
   return (
     <section
-      id="network"
+      id={id}
       aria-labelledby="network-title"
-      className="relative z-20 overflow-hidden bg-stone-50 py-24 text-stone-900 sm:py-32"
+      className="relative z-20 scroll-mt-24 overflow-hidden bg-stone-50 py-24 text-stone-900 sm:scroll-mt-28 sm:py-32"
     >
       <div
         aria-hidden="true"
@@ -113,11 +121,12 @@ export default function InteractiveMap() {
         </div>
 
         <motion.div
+          id={leadershipId}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="py-16 sm:py-20"
+          className="scroll-mt-24 py-16 sm:scroll-mt-28 sm:py-20"
         >
           <motion.h3
             variants={itemVariants}

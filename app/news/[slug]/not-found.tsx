@@ -18,7 +18,7 @@ export default function NewsPostNotFound() {
           {copy.notFound.description}
         </p>
         <Link
-          href="/#news"
+          href="/news"
           className="mt-7 inline-flex items-center gap-2 bg-brand-green-600 px-5 py-3 text-sm font-bold text-white hover:bg-brand-green-500"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />

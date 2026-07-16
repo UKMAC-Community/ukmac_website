@@ -2,7 +2,11 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 
-export default function AboutSection() {
+interface AboutSectionProps {
+  id?: string;
+}
+
+export default function AboutSection({ id = "about" }: AboutSectionProps) {
   const { copy } = useLanguage();
 
   const challengeGroups = [
@@ -20,9 +24,9 @@ export default function AboutSection() {
 
   return (
     <section
-      id="about"
+      id={id}
       aria-labelledby="about-title"
-      className="relative z-20 border-y border-stone-200 bg-[#f4f5f1] py-24 sm:py-32"
+      className="relative z-20 scroll-mt-24 border-y border-stone-200 bg-[#f4f5f1] py-24 sm:scroll-mt-28 sm:py-32"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div

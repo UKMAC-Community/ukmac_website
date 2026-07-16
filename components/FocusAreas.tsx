@@ -12,7 +12,11 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 
-export default function FocusAreas() {
+interface FocusAreasProps {
+  id?: string;
+}
+
+export default function FocusAreas({ id = "focus" }: FocusAreasProps) {
   const { copy } = useLanguage();
   const getIcon = (name: string, className: string) => {
     switch (name) {
@@ -53,7 +57,10 @@ export default function FocusAreas() {
   };
 
   return (
-    <section id="focus" className="py-24 sm:py-32 bg-white relative z-20">
+    <section
+      id={id}
+      className="relative z-20 scroll-mt-24 bg-white py-24 sm:scroll-mt-28 sm:py-32"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Title */}

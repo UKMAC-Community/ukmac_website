@@ -14,7 +14,11 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 
-export default function PillarsSection() {
+interface PillarsSectionProps {
+  id?: string;
+}
+
+export default function PillarsSection({ id = "pillars" }: PillarsSectionProps) {
   const { copy } = useLanguage();
   const [selectedPillar, setSelectedPillar] = useState<Pillar | null>(null);
 
@@ -34,7 +38,10 @@ export default function PillarsSection() {
   };
 
   return (
-    <section id="pillars" className="py-24 sm:py-32 bg-white text-stone-900 relative z-20">
+    <section
+      id={id}
+      className="relative z-20 scroll-mt-24 bg-white py-24 text-stone-900 sm:scroll-mt-28 sm:py-32"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}

@@ -1,72 +1,28 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, CalendarDays, Images, Languages } from "lucide-react";
+import { ArrowLeft, CalendarDays, Images } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
+import PostContent from "@/components/news/PostContent";
 import { formatTranslation } from "@/lib/translations";
 import type { PublicPost } from "@/lib/news";
+import {
+  documentFromLegacy,
+  parseContentDocument,
+} from "@/lib/post-content";
 
 export default function NewsDetail({ post }: { post: PublicPost }) {
-  const { copy, language, locale, toggleLanguage } = useLanguage();
+  const { copy, locale } = useLanguage();
   const typeName = getTypeName(post, copy.news.categories);
-  const galleryImages =
-    post.images?.filter((image) => image.image_role === "gallery") ?? [];
+  const structuredDocument = parseContentDocument(post.content_json);
+  const contentDocument =
+    structuredDocument ?? documentFromLegacy(post.content);
+  const galleryImages = structuredDocument
+    ? []
+    : (post.images?.filter((image) => image.image_role === "gallery") ?? []);
 
   return (
-    <main className="min-h-screen bg-earth-50 text-stone-900">
-      <header className="border-b border-stone-200 bg-white">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/#news"
-            className="flex min-w-0 items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green-500"
-          >
-            <span className="relative h-11 w-11 flex-shrink-0">
-              <Image
-                src="/logo/UKMAC_Logo.webp"
-                alt={copy.brand.logoAlt}
-                fill
-                sizes="44px"
-                className="object-contain"
-              />
-            </span>
-            <span className="min-w-0">
-              <span className="block font-display text-base font-extrabold tracking-wide">
-                UKMAC
-              </span>
-              <span className="hidden truncate text-[8px] font-semibold uppercase tracking-tight text-stone-500 sm:block">
-                {copy.brand.name}
-              </span>
-            </span>
-          </Link>
-
-          <div className="flex flex-shrink-0 items-center gap-3">
-            <button
-              type="button"
-              onClick={toggleLanguage}
-              aria-label={
-                language === "en"
-                  ? copy.language.switchToKhmer
-                  : copy.language.switchToEnglish
-              }
-              className="inline-flex items-center gap-1.5 border border-stone-200 px-3 py-2 text-xs font-bold text-stone-700 transition-colors hover:border-brand-green-500 hover:text-brand-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green-500"
-            >
-              <Languages className="h-4 w-4" aria-hidden="true" />
-              {language === "en"
-                ? copy.language.khmerShort
-                : copy.language.englishShort}
-            </button>
-            <Link
-              href="/#news"
-              className="inline-flex items-center gap-2 text-sm font-bold text-brand-green-700 hover:text-brand-green-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green-500"
-            >
-              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-              <span className="hidden sm:inline">{copy.newsDetail.allUpdates}</span>
-            </Link>
-          </div>
-        </div>
-      </header>
-
+    <main className="min-h-screen bg-earth-50 pt-16 text-stone-900">
       <article>
         <div className="bg-brand-green-950 text-white">
           <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
@@ -101,10 +57,13 @@ export default function NewsDetail({ post }: { post: PublicPost }) {
           </div>
         </div>
 
-        <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
-          <div className="whitespace-pre-wrap text-base leading-8 text-stone-700 sm:text-lg">
-            {post.content}
-          </div>
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <PostContent
+            document={contentDocument}
+            images={post.images ?? []}
+            emptyText={copy.newsDetail.emptyContent}
+            unavailableImageText={copy.newsDetail.imageUnavailable}
+          />
 
           {galleryImages.length > 0 && (
             <section
@@ -147,7 +106,7 @@ export default function NewsDetail({ post }: { post: PublicPost }) {
 
           <div className="mt-16 border-t border-stone-200 pt-8">
             <Link
-              href="/#news"
+              href="/news"
               className="inline-flex items-center gap-2 border border-brand-green-600 px-5 py-3 text-sm font-bold text-brand-green-700 transition-colors hover:bg-brand-green-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green-500"
             >
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />

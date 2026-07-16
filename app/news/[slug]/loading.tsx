@@ -6,11 +6,10 @@ export default function LoadingNewsPost() {
   const { copy } = useLanguage();
 
   return (
-    <main className="min-h-screen animate-pulse bg-earth-50">
+    <main className="min-h-screen animate-pulse bg-earth-50 pt-16">
       <span className="sr-only" role="status">
         {copy.newsDetail.loading}
       </span>
-      <div className="h-20 border-b border-stone-200 bg-white" />
       <div className="h-[32rem] bg-brand-green-950" />
       <div className="mx-auto max-w-3xl space-y-4 px-4 py-16 sm:px-6">
         <div className="h-4 w-full bg-stone-200" />
