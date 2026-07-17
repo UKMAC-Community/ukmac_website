@@ -24,7 +24,7 @@ export default function AboutPageClient() {
         className="relative isolate flex min-h-[26rem] items-end overflow-hidden bg-brand-green-950 px-4 pb-12 pt-32 text-white sm:min-h-[30rem] sm:px-6 sm:pb-16 sm:pt-36 lg:min-h-[36rem] lg:px-8 lg:pb-20 lg:pt-40"
       >
         <Image
-          src="/images/ukmac_cooperative_collaboration_1784000237090.jpg"
+          src="/images/about_cover1.webp"
           alt={copy.home.about.imageAlt}
           fill
           priority
